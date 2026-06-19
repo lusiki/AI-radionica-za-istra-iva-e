@@ -1,0 +1,66 @@
+---
+title: "Vođena vježba"
+subtitle: "Odvrtite petlju jednom — oko 20 minuta"
+lang: hr
+format:
+  html:
+    theme: [cosmo, theme-doc.scss]
+    toc: true
+    toc-title: "Sadržaj"
+    toc-location: left
+    embed-resources: true
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+---
+
+Najbolji način da *osjetite* radni okvir je da ga jednom pokrenete na ovom repozitoriju. Cijela vježba
+ima isti ritam koji okvir teži: **plan → djeluj → provjeri → pregledaj → vaše odobrenje.**
+
+## Priprema
+
+Preduvjeti i instalacija: vidi [Postavljanje](setup.html). Ukratko trebate **Claude Code, git** i (za
+ovu vježbu) **Quarto**.
+
+```bash
+git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
+cd AI-radionica-za-istra-iva-e
+```
+
+Otvorite mapu u **VS Codeu** i pokrenite Claude Code panel (ili u terminalu utipkajte `claude`).
+
+## Korak 1 — zatražite promjenu (prvo plan)
+
+Recite, običnim jezikom:
+
+> *„Dodaj završni slajd 'Hvala' u špicu, pa je renderiraj.”*
+
+Gledajte kako Claude **prvo pokaže plan** i čeka vaše odobrenje — još ništa nije dirao.
+
+## Korak 2 — odobrite i gledajte izvođača
+
+Odobrite plan. Claude uredi `slides/talk.qmd`, pokrene `/render` i **provjeri** da je HTML stvarno
+nastao prije nego javi „gotovo”. (Bez Quarta `/render` pošteno STANE i kaže da ga instalirate.)
+
+## Korak 3 — pregled (suparnička petlja)
+
+Pokrenite:
+
+```
+/review-deck
+```
+
+Kritičar (`deck-critic`) i specijalist za publiku (`audience-reviewer`) — oba **samo čitaju** — nađu
+greške i daju ocjenu. Ispravljač (`deck-fixer`) popravi najgore prvo, pa kritičar **ponovno** provjeri.
+*Trik:* prije pokretanja namjerno ubacite tvrdnju bez pokrića i gledajte kako je petlja uhvati.
+
+## Korak 4 — spremanje uz odobrenje
+
+Pokrenite `/commit`. Claude prvo pita prije nego išta spremi (`git init` / `commit`). **Vi ostajete glavni.**
+
+## Što ste vidjeli
+
+Taj jedan krug — **plan → djeluj → provjeri → pregledaj → vaše odobrenje** — *jest* cijeli radni okvir
+u malom, na vašem stvarnom projektu, a ne na igrački.

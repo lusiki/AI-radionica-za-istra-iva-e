@@ -1,0 +1,18 @@
+---
+pagetitle: "Postavljanje, sučelja i cijene — AI radionica"
+lang: hr
+format:
+  html:
+    theme: [cosmo, theme-doc.scss]
+    toc: true
+    toc-title: "Sadržaj"
+    toc-location: left
+    embed-resources: true
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+---
+
+{{< include setup/README.md >}}

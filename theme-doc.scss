@@ -15,6 +15,7 @@ $code-color: #18181B;
 
 /*-- scss:rules --*/
 $accent: #2348E5;
+$ink: #18181B;
 $muted: #71717A;
 $hairline: #E6E6E1;
 
@@ -64,3 +65,14 @@ tbody td { border-bottom: 1px solid $hairline; }
 #TOC, .sidebar nav { font-family: 'Roboto Mono', monospace; font-size: .8rem; }
 .sidebar nav a { color: $muted; border: 0; }
 .sidebar nav a:hover, .sidebar nav a.active { color: $accent; }
+
+// Document H1 (for included pages like setup)
+main h1, .quarto-title-block h1 { letter-spacing: -0.02em; }
+
+// Clickable tiles
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 1.5rem 0; }
+.tile { display: block; border: 1px solid $hairline; border-left: 3px solid $accent; border-radius: 6px; padding: 14px 16px; color: inherit; }
+.tile:hover { border-color: $accent; background: rgba(35, 72, 229, 0.04); }
+.tile .tile-k { display: block; font-family: 'Roboto Mono', monospace; font-weight: 500; font-size: .95rem; color: $ink; }
+.tile .tile-k::after { content: " ↗"; color: $accent; }
+.tile .tile-d { display: block; font-size: .85rem; color: $muted; margin-top: 4px; }

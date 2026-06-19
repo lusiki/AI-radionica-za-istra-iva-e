@@ -154,6 +154,8 @@ Već stojite u (namjerno sićušnoj) instanci sustava:
 
 ## Vođena vježba — odvrtite petlju jednom (≈ 20 min)
 
+*Web-verzija ove vježbe: <https://lusiki.github.io/AI-radionica-za-istra-iva-e/vjezba.html>.*
+
 1. **Instalirajte Quarto** (`winget install --id Posit.Quarto -e`, pa ponovno otvorite ljusku).
 2. Zatražite od Claudea, običnim jezikom: *"Dodaj završni slajd 'hvala / pitanja' u špicu, pa je
    renderiraj."* — gledajte kako **prvo planira**.

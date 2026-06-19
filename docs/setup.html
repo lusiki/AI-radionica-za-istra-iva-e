@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Luka Šikić">
 
-<title>Od chata do delegiranja</title>
+<title>Postavljanje, sučelja i cijene — AI radionica</title>
 <style>
 
 code{white-space: pre-wrap;}
@@ -20,41 +19,6 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
-}
-
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-}
-pre.numberSource { margin-left: 3em; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -2260,26 +2224,16 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
     <h2 id="toc-title">Sadržaj</h2>
    
   <ul>
-  <li><a href="#gdje-ste-sada" id="toc-gdje-ste-sada" class="nav-link active" data-scroll-target="#gdje-ste-sada">Gdje ste sada</a></li>
-  <li><a href="#iskorak" id="toc-iskorak" class="nav-link" data-scroll-target="#iskorak">Iskorak</a></li>
-  <li><a href="#ovo-je-vama-poznata-vrsta-problema" id="toc-ovo-je-vama-poznata-vrsta-problema" class="nav-link" data-scroll-target="#ovo-je-vama-poznata-vrsta-problema">Ovo je vama poznata vrsta problema</a></li>
-  <li><a href="#četiri-boli-koje-rješava" id="toc-četiri-boli-koje-rješava" class="nav-link" data-scroll-target="#četiri-boli-koje-rješava">Četiri boli koje rješava</a></li>
-  <li><a href="#sve-u-jednom-dahu" id="toc-sve-u-jednom-dahu" class="nav-link" data-scroll-target="#sve-u-jednom-dahu">Sve u jednom dahu</a></li>
-  <li><a href="#ekipa-i-kuća-pet-slojeva" id="toc-ekipa-i-kuća-pet-slojeva" class="nav-link" data-scroll-target="#ekipa-i-kuća-pet-slojeva">Ekipa i kuća — pet slojeva</a></li>
-  <li><a href="#dvije-ideje-zbog-kojih-sve-funkcionira" id="toc-dvije-ideje-zbog-kojih-sve-funkcionira" class="nav-link" data-scroll-target="#dvije-ideje-zbog-kojih-sve-funkcionira">Dvije ideje zbog kojih sve funkcionira</a></li>
-  <li><a href="#dva-pravila-koja-održavaju-poštenje" id="toc-dva-pravila-koja-održavaju-poštenje" class="nav-link" data-scroll-target="#dva-pravila-koja-održavaju-poštenje">Dva pravila koja održavaju poštenje</a></li>
-  <li><a href="#što-preživi-kad-se-chat-napuni" id="toc-što-preživi-kad-se-chat-napuni" class="nav-link" data-scroll-target="#što-preživi-kad-se-chat-napuni">Što preživi kad se chat napuni</a></li>
-  <li><a href="#kako-teče-stvarni-posao" id="toc-kako-teče-stvarni-posao" class="nav-link" data-scroll-target="#kako-teče-stvarni-posao">Kako teče stvarni posao</a></li>
-  <li><a href="#griješi-i-to-je-poanta" id="toc-griješi-i-to-je-poanta" class="nav-link" data-scroll-target="#griješi-i-to-je-poanta">Griješi — i to je poanta</a></li>
-  <li><a href="#trošak-raspodjela-70-20-10" id="toc-trošak-raspodjela-70-20-10" class="nav-link" data-scroll-target="#trošak-raspodjela-70-20-10">Trošak — raspodjela 70 / 20 / 10</a></li>
-  <li><a href="#ne-treba-vam-sve-odjednom" id="toc-ne-treba-vam-sve-odjednom" class="nav-link" data-scroll-target="#ne-treba-vam-sve-odjednom">Ne treba vam sve odjednom</a></li>
-  <li><a href="#kako-se-zapravo-radi" id="toc-kako-se-zapravo-radi" class="nav-link" data-scroll-target="#kako-se-zapravo-radi">Kako se zapravo radi</a></li>
-  <li><a href="#što-vam-treba-i-koliko-košta" id="toc-što-vam-treba-i-koliko-košta" class="nav-link" data-scroll-target="#što-vam-treba-i-koliko-košta">Što vam treba i koliko košta</a></li>
-  <li><a href="#empirijski-primjer-uzmite-s-githuba" id="toc-empirijski-primjer-uzmite-s-githuba" class="nav-link" data-scroll-target="#empirijski-primjer-uzmite-s-githuba">Empirijski primjer — uzmite s GitHuba</a></li>
-  <li><a href="#gdje-početi-ovaj-tjedan" id="toc-gdje-početi-ovaj-tjedan" class="nav-link" data-scroll-target="#gdje-početi-ovaj-tjedan">Gdje početi ovaj tjedan</a></li>
-  <li><a href="#pogledajte-i-isprobajte" id="toc-pogledajte-i-isprobajte" class="nav-link" data-scroll-target="#pogledajte-i-isprobajte">Pogledajte i isprobajte</a>
+  <li><a href="#postavljanje-sučelja-preduvjeti-i-cijene" id="toc-postavljanje-sučelja-preduvjeti-i-cijene" class="nav-link active" data-scroll-target="#postavljanje-sučelja-preduvjeti-i-cijene">Postavljanje: sučelja, preduvjeti i cijene</a>
   <ul class="collapse">
-  <li><a href="#materijali" id="toc-materijali" class="nav-link" data-scroll-target="#materijali">Materijali</a></li>
+  <li><a href="#načini-rada-gdje-živi-agent" id="toc-načini-rada-gdje-živi-agent" class="nav-link" data-scroll-target="#načini-rada-gdje-živi-agent">1. Načini rada — gdje “živi” agent</a></li>
+  <li><a href="#preduvjeti" id="toc-preduvjeti" class="nav-link" data-scroll-target="#preduvjeti">2. Preduvjeti</a></li>
+  <li><a href="#cijene" id="toc-cijene" class="nav-link" data-scroll-target="#cijene">3. Cijene</a>
+  <ul class="collapse">
+  <li><a href="#pretplate-uključuju-claude-code" id="toc-pretplate-uključuju-claude-code" class="nav-link" data-scroll-target="#pretplate-uključuju-claude-code">Pretplate (uključuju Claude Code)</a></li>
+  <li><a href="#api-plaćanje-po-potrošnji" id="toc-api-plaćanje-po-potrošnji" class="nav-link" data-scroll-target="#api-plaćanje-po-potrošnji">API (plaćanje po potrošnji)</a></li>
+  <li><a href="#što-odabrati" id="toc-što-odabrati" class="nav-link" data-scroll-target="#što-odabrati">Što odabrati</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -2288,80 +2242,70 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 </div>
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Od chata do delegiranja</h1>
-<p class="subtitle lead">Agentska AI za metodološka istraživanja</p>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Luka Šikić </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">19. lipnja 2026.</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<blockquote class="blockquote">
-<p>Kako metodološki istraživači mogu prijeći s <em>chat-promptanja</em> na <strong>agentski rad</strong> — i zašto je to upravo njihov teren. Ovaj dokument je web-verzija prezentacije; postoji i <a href="slides/talk.html">verzija sa slajdovima</a>.</p>
-</blockquote>
-<section id="gdje-ste-sada" class="level2">
-<h2 class="anchored" data-anchor-id="gdje-ste-sada">Gdje ste sada</h2>
-<p>Otvorite prozor za chat. Sastavite prompt. Dobijete odgovor. Zatim <strong>vi</strong> kopirate kôd, pokrenete ga, naletite na grešku, zalijepite je natrag i pokušate ponovno. Vi ste voditelj projekta — cijeli plan držite u svojoj glavi, a AI vam pomaže s <strong>jednim korakom u nizu.</strong></p>
+<section id="postavljanje-sučelja-preduvjeti-i-cijene" class="level1">
+<h1>Postavljanje: sučelja, preduvjeti i cijene</h1>
+<p>Kratki praktični vodič — <em>kako</em> uopće raditi s AI-jem na ovaj (agentski) način, što vam treba i koliko košta. <em>(Stanje: lipanj 2026. Cijene se mijenjaju — provjerite na službenom izvoru, vidi dno.)</em></p>
+<section id="načini-rada-gdje-živi-agent" class="level2">
+<h2 class="anchored" data-anchor-id="načini-rada-gdje-živi-agent">1. Načini rada — gdje “živi” agent</h2>
+<p>Razgovarate s istim Claudeom, ali kroz različita sučelja:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sučelje</th>
+<th>Za koga</th>
+<th>Što vidite</th>
+<th>Agentski rad?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Chat</strong> (claude.ai / aplikacija)</td>
+<td>svi, za učenje</td>
+<td>prozor za razgovor</td>
+<td>❌ ne dira vaše datoteke</td>
+</tr>
+<tr class="even">
+<td><strong>Ekstenzija u VS Codeu</strong> <em>(plugin)</em></td>
+<td><strong>netehnički — preporuka</strong></td>
+<td>uređivač + panel, datoteke, gumbi</td>
+<td>✅ da</td>
+</tr>
+<tr class="odd">
+<td><strong>Terminal / CLI</strong> (<code>claude</code>)</td>
+<td>onima kojima terminal ne smeta</td>
+<td>tekstualna ljuska</td>
+<td>✅ da</td>
+</tr>
+<tr class="even">
+<td><strong>Desktop aplikacija</strong></td>
+<td>alternativa VS Codeu</td>
+<td>samostalna aplikacija</td>
+<td>✅ da</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Što je terminal / CLI?</strong> Prozor u koji <em>tipkate</em> naredbe umjesto da klikate. Zvuči zastrašujuće, ali za ovo trebate zapamtiti samo jednu naredbu — <code>claude</code> — a sve ostalo radite običnim jezikom.</p>
+<p><strong>Preporuka za radionicu:</strong> počnite s <strong>ekstenzijom u VS Codeu</strong>. Terminal je skriven, vidite svaku promjenu datoteke i klikom odobravate korake. Agenti, vještine i pravila rade jednako u svim sučeljima.</p>
 </section>
-<section id="iskorak" class="level2">
-<h2 class="anchored" data-anchor-id="iskorak">Iskorak</h2>
-<ul>
-<li><strong>Razgovorna AI (chat AI)</strong> <em>pomaže vam</em> da obavite posao.</li>
-<li><strong>Agentskoj AI (agentic AI)</strong> se posao <em>povjerava</em>.</li>
-</ul>
-<p>Prestajete sastavljati prompt da biste dobili odgovor. Počinjete <strong>zadavati cilj i ograničenja</strong>, a zatim <strong>nadzirati</strong> dok ona planira, djeluje, provjerava vlastiti rad i vraća se kad je gotovo.</p>
+<section id="preduvjeti" class="level2">
+<h2 class="anchored" data-anchor-id="preduvjeti">2. Preduvjeti</h2>
+<p><strong>Obavezno:</strong> - <strong>Claude Code</strong> — instalirajte ekstenziju iz VS Code Marketplacea <em>ili</em> native instalacijom (<code>curl -fsSL https://claude.ai/install.sh | bash</code>). - <strong>Claude račun</strong> — pretplata (Pro ili Max) <em>ili</em> Anthropic API ključ. - <strong>Node.js 18+</strong> — potreban za pokretanje Claude Codea (provjera: <code>node --version</code>). - <strong>git</strong> — verzioniranje (provjera: <code>git --version</code>).</p>
+<p><strong>Opcionalno (ovisno o projektu):</strong> - <strong>Quarto</strong> — za renderiranje slajdova (ova radionica): <code>winget install --id Posit.Quarto -e</code> - <strong>R / Python</strong> — za figure i analizu podataka. - <strong>gh</strong> (GitHub CLI) — za rad s pull requestovima.</p>
 </section>
-<section id="ovo-je-vama-poznata-vrsta-problema" class="level2">
-<h2 class="anchored" data-anchor-id="ovo-je-vama-poznata-vrsta-problema">Ovo je vama poznata vrsta problema</h2>
-<p>Ne razmišljajte „pametniji chatbot”. Razmislite o onome što ionako svakodnevno radite:</p>
-<ul>
-<li><strong>Brifirate i nadzirete asistenta (RA)</strong> — i provjeravate njegov rad.</li>
-<li>Pišete <strong>plan analize</strong> prije nego što dotaknete podatke.</li>
-<li><strong>Recenzirate (peer review)</strong> — autor ne ocjenjuje vlastiti rad.</li>
-<li>Vodite <strong>revizijski trag</strong> kako bi rezultat bio obranjiv i ponovljiv.</li>
-</ul>
-<p>Agentska AI sastavljena je upravo od tih poteza. Vi ste <strong>jedinstveno</strong> osposobljeni da je vodite.</p>
-</section>
-<section id="četiri-boli-koje-rješava" class="level2">
-<h2 class="anchored" data-anchor-id="četiri-boli-koje-rješava">Četiri boli koje rješava</h2>
-<ol type="1">
-<li><strong>Zaboravlja</strong> — između sesija, <em>zašto</em> ste odabrali tu notaciju ili koji ste bug ispravili.</li>
-<li><strong>Kvaliteta varira</strong> — jedna tablica je čista, sljedećoj nedostaju standardne greške.</li>
-<li><strong>Pregledavanje iscrpljuje</strong> — ručno provjeriti 140 slajdova ubija volju.</li>
-<li><strong>Ona najdublja</strong> — provjera pravopisa uhvati <em>pogrešku u slovu</em>, ali nikad <strong>obrnuti predznak</strong> u teoremu ili regresiju koja je tiho pogrešna.</li>
-</ol>
-</section>
-<section id="sve-u-jednom-dahu" class="level2">
-<h2 class="anchored" data-anchor-id="sve-u-jednom-dahu">Sve u jednom dahu</h2>
-<p>Opišete što želite, običnim jezikom. Claude se ponaša kao <strong>glavni izvođač radova</strong>: izradi <strong>nacrt</strong> i zatraži vaše odobrenje, <strong>unajmi ekipu</strong> specijalista, <strong>pregleda</strong> njihov rad i vrati ih da poprave što ne valja, te se vrati k vama tek kad posao <strong>prođe inspekciju</strong>. <strong>Vi govorite, Claude vodi gradilište.</strong></p>
-</section>
-<section id="ekipa-i-kuća-pet-slojeva" class="level2">
-<h2 class="anchored" data-anchor-id="ekipa-i-kuća-pet-slojeva">Ekipa i kuća — pet slojeva</h2>
-<p>Svaki sloj ima nadimak na običnom jeziku; engleska imena ostaju u zagradama.</p>
+<section id="cijene" class="level2">
+<h2 class="anchored" data-anchor-id="cijene">3. Cijene</h2>
+<section id="pretplate-uključuju-claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="pretplate-uključuju-claude-code">Pretplate (uključuju Claude Code)</h3>
+<p>Claude Code <strong>nema zasebnu cijenu</strong> — koristi potrošnju iz vaše pretplate (zajednički 5-satni prozori).</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -2370,142 +2314,81 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 </colgroup>
 <thead>
 <tr class="header">
-<th>Sloj</th>
-<th>Nadimak</th>
-<th>Što je</th>
+<th>Plan</th>
+<th>Cijena / mjesec</th>
+<th>Za koga</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>CLAUDE.md</code></td>
-<td><strong>Ustav</strong></td>
-<td>jedna kratka stranica kućnih pravila, čita se svake sesije</td>
+<td><strong>Claude Pro</strong></td>
+<td><strong>~20 $</strong></td>
+<td>pojedinci, povremena upotreba — <em>dovoljno za početak</em></td>
 </tr>
 <tr class="even">
-<td>Rules</td>
-<td><strong>Priručnici</strong></td>
-<td>priručnici koji se pojave samo kad su relevantni (po putanji)</td>
+<td>Claude Max 5×</td>
+<td>~100 $</td>
+<td>redoviti korisnici</td>
 </tr>
 <tr class="odd">
-<td>Skills</td>
-<td><strong>Gumbi</strong></td>
-<td>imenovani recepti — <code>/render</code>, <code>/proofread</code>, <code>/commit</code></td>
-</tr>
-<tr class="even">
-<td>Agents</td>
-<td><strong>Ekipa</strong></td>
-<td>uski specijalisti, svaki provjerava jednu stvar</td>
-</tr>
-<tr class="odd">
-<td>Settings + Hooks</td>
-<td><strong>Automatski sustavi</strong></td>
-<td>dozvole i alarmi koji se sami okidaju</td>
+<td>Claude Max 20×</td>
+<td>~200 $</td>
+<td>intenzivan rad</td>
 </tr>
 </tbody>
 </table>
-<p>Ispod svega: <strong>memorija koja preživljava</strong> kroz sesije.</p>
+<p>Napomene: od 15.6.2026. “headless” / Agent SDK upotreba troši zaseban kredit ($20 Pro / $100 Max 5× / $200 Max 20×). Team Standard ($20/sjedalo) <em>ne</em> uključuje Claude Code; Team Premium ($100/sjedalo, najmanje 5) uključuje.</p>
 </section>
-<section id="dvije-ideje-zbog-kojih-sve-funkcionira" class="level2">
-<h2 class="anchored" data-anchor-id="dvije-ideje-zbog-kojih-sve-funkcionira">Dvije ideje zbog kojih sve funkcionira</h2>
-<p><strong>1 — Specijalisti pobjeđuju generalista.</strong> Tražite od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku <em>i</em> kôd → osrednje obavi sve. Dajte svakoj dimenziji <strong>vlastitog uskog inspektora</strong> i greške skrivene na vidnom mjestu napokon budu uhvaćene.</p>
-<p><strong>2 — Suparnička petlja (adversarial loop).</strong> <strong>Kritičar (deck-critic)</strong> čita rad i nabraja svaku grešku, ali <em>ne smije dirati datoteke</em>. Zaseban <strong>ispravljač (deck-fixer)</strong> obavlja popravke, ali <em>ne smije odobriti vlastiti rad</em>. Kritičar zatim ponovno čita — i tako u krug, do čistog prolaza. To je naprosto <strong>recenzija</strong>, i ubija najčešći AI promašaj: veselo objaviti „izgleda dobro” kad nije.</p>
-</section>
-<section id="dva-pravila-koja-održavaju-poštenje" class="level2">
-<h2 class="anchored" data-anchor-id="dva-pravila-koja-održavaju-poštenje">Dva pravila koja održavaju poštenje</h2>
-<p>Ocjena od 100, čita se kao semafor: <strong>80</strong> → sigurno za spremanje · <strong>90</strong> → spremno za isporuku · <strong>95</strong> → izvrsnost · <strong>ispod 80</strong> → blokirano dok se greške ne isprave.</p>
-<p><strong>Pravilo provjere:</strong> Claude ne smije proglasiti zadatak gotovim dok stvarno nije <strong>kompajlirao, renderirao ili pokrenuo</strong> rezultat. Bez objave uspjeha iz mašte.</p>
-</section>
-<section id="što-preživi-kad-se-chat-napuni" class="level2">
-<h2 class="anchored" data-anchor-id="što-preživi-kad-se-chat-napuni">Što preživi kad se chat napuni</h2>
-<p>Dugi razgovori se sažimaju — i živi chat je ono što <em>ne</em> preživljava. Zato sve vrijedno čuvanja ide na <strong>disk</strong>, u četiri označene ladice: <strong>ustav</strong> (stalna pravila), <strong>dnevnik ispravaka</strong> (lekcije, da se greška ne ponovi), <strong>planovi</strong> (strategija za zadatak) i <strong>dnevnici sesija</strong> (<em>zašto</em> iza svake odluke). <em>Git bilježi što; dnevnik bilježi zašto.</em></p>
-</section>
-<section id="kako-teče-stvarni-posao" class="level2">
-<h2 class="anchored" data-anchor-id="kako-teče-stvarni-posao">Kako teče stvarni posao</h2>
-<p>Dva poteza, redom. <strong>Prvo plan:</strong> Claude izradi plan, spremi ga i pokaže vam <em>prije</em> nego dotakne ijednu datoteku — vi odobrite ili izmijenite. Zatim <strong>način rada izvođača (contractor mode)</strong> preuzima upravljač: radi, provjerava, pokreće inspektore paralelno, popravlja od najgoreg prema najmanjem, ocjenjuje i vrti petlju do čistog prolaza. Na kraju vam preda kratak sažetak. <strong>Ništa ne sprema dok vi ne kažete.</strong></p>
-</section>
-<section id="griješi-i-to-je-poanta" class="level2">
-<h2 class="anchored" data-anchor-id="griješi-i-to-je-poanta">Griješi — i to je poanta</h2>
-<p>Besprijekorna demonstracija je prodajni trik. Pošteni alati pokazuju svoje načine otkazivanja:</p>
-<ul>
-<li>Može <strong>izmisliti citat (halucinacija)</strong> — pa provjeritelj uspoređuje svaku referencu sa stvarnim katalogom.</li>
-<li>Može biti <strong>samouvjereno u krivu</strong> — pa kritičar ponovno provjerava, a prag <strong>blokira</strong> loš rad.</li>
-<li>Može poduzeti <strong>pogrešnu radnju</strong> — pa visokorizični koraci čekaju vaše odobrenje.</li>
-</ul>
-<p><strong>Autonomija je regulator, a ne prekidač.</strong> Vi odlučujete gdje je sigurno popustiti uzde.</p>
-</section>
-<section id="trošak-raspodjela-70-20-10" class="level2">
-<h2 class="anchored" data-anchor-id="trošak-raspodjela-70-20-10">Trošak — raspodjela 70 / 20 / 10</h2>
-<p>Jeftini modeli rade crnčarenje; skupi model razmišlja.</p>
+<section id="api-plaćanje-po-potrošnji" class="level3">
+<h3 class="anchored" data-anchor-id="api-plaćanje-po-potrošnji">API (plaćanje po potrošnji)</h3>
+<p>Po milijun tokena (ulaz / izlaz):</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Model</th>
-<th>Uloga</th>
-<th>Udio</th>
+<th>Ulaz</th>
+<th>Izlaz</th>
+<th>Uloga (raspodjela 70/20/10)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Haiku 4.5</td>
-<td>brz/jeftin — mehanički posao</td>
-<td>~70%</td>
+<td><strong>Haiku 4.5</strong></td>
+<td>1 $</td>
+<td>5 $</td>
+<td>brz/jeftin — ~70% mehaničkog posla</td>
 </tr>
 <tr class="even">
-<td>Sonnet 4.6</td>
-<td>srednji — pregled i kritika</td>
-<td>~20%</td>
+<td><strong>Sonnet 4.6</strong></td>
+<td>3 $</td>
+<td>15 $</td>
+<td>srednji — ~20% pregleda</td>
 </tr>
 <tr class="odd">
-<td>Opus 4.8</td>
-<td>vrhunski — prosudba</td>
-<td>~10%</td>
+<td><strong>Opus 4.8</strong></td>
+<td>5 $</td>
+<td>25 $</td>
+<td>vrhunski — ~10% prosudbe</td>
+</tr>
+<tr class="even">
+<td>Fable 5</td>
+<td>10 $</td>
+<td>50 $</td>
+<td>najsposobniji (opcionalno)</td>
 </tr>
 </tbody>
 </table>
-<p>Račun padne <strong>50–80%</strong>, a mehanički posao ništa ne gubi. (Detaljne cijene: vidi <em>Postavljanje</em> u repozitoriju.)</p>
+<p>Štednje: skupna obrada (<em>batch</em>) −50%, predmemorija (<em>cache</em>) −90% na ponovljeni ulaz, kontekst od 1M tokena bez doplate. Zbog raspodjele 70/20/10 račun je <strong>50–80% niži</strong> nego da sve ide na vrhunski model.</p>
 </section>
-<section id="ne-treba-vam-sve-odjednom" class="level2">
-<h2 class="anchored" data-anchor-id="ne-treba-vam-sve-odjednom">Ne treba vam sve odjednom</h2>
-<p>Cijeli sustav je <strong>18 agenata, 52 vještine, 32 pravila.</strong> To je <strong>strop, a ne pod.</strong> Počnite s <strong>ustavom</strong> i <strong>tri gumba</strong> — <code>/render</code>, <code>/proofread</code>, <code>/commit</code> — i dodajte priručnik ili specijalista tek kad stvarno osjetite da nedostaje.</p>
-</section>
-<section id="kako-se-zapravo-radi" class="level2">
-<h2 class="anchored" data-anchor-id="kako-se-zapravo-radi">Kako se zapravo radi</h2>
-<p>Razgovarate s <em>istim</em> Claudeom kroz različita sučelja:</p>
+<section id="što-odabrati" class="level3">
+<h3 class="anchored" data-anchor-id="što-odabrati">Što odabrati</h3>
 <ul>
-<li><strong>Chat (claude.ai)</strong> — poznato, ali <em>ne</em> dira vaše datoteke. Za učenje, ne za projekt.</li>
-<li><strong>Ekstenzija u VS Codeu (plugin)</strong> — Claude unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. <strong>Preporuka za početak.</strong></li>
-<li><strong>Terminal (CLI)</strong> — utipkate <code>claude</code> u mapi projekta. Najmoćnije; terminal se brzo zavoli.</li>
+<li><strong>Za radionicu / početak:</strong> <strong>Claude Pro (~20 $/mj)</strong> je dovoljan — ne treba API ni programiranje.</li>
+<li>API uzmite tek ako gradite automatizaciju izvan interaktivnog rada.</li>
 </ul>
-</section>
-<section id="što-vam-treba-i-koliko-košta" class="level2">
-<h2 class="anchored" data-anchor-id="što-vam-treba-i-koliko-košta">Što vam treba i koliko košta</h2>
-<p>Preduvjeti: <strong>Claude Code, Node.js, git</strong> (Quarto / R po potrebi). <strong>Claude Pro (~20 $/mj) uključuje Claude Code</strong> i dovoljan je za početak; Max 5× (~100 $) i Max 20× (~200 $) za intenzivan rad. <em>(Cijene se mijenjaju — provjerite na anthropic.com/pricing.)</em></p>
-</section>
-<section id="empirijski-primjer-uzmite-s-githuba" class="level2">
-<h2 class="anchored" data-anchor-id="empirijski-primjer-uzmite-s-githuba">Empirijski primjer — uzmite s GitHuba</h2>
-<p>Nije teorija. Klonirajte repozitorij i pokrenite dva mala pokusa:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><strong>Pokus 1 — <code>/render</code>:</strong> Claude izgradi špicu i <em>provjeri</em> da HTML postoji prije nego javi gotovo.</li>
-<li><strong>Pokus 2 — <code>/review-deck</code>:</strong> kritičar nađe greške i ocijeni → ispravljač popravi → kritičar ponovno provjeri.</li>
-</ul>
-</section>
-<section id="gdje-početi-ovaj-tjedan" class="level2">
-<h2 class="anchored" data-anchor-id="gdje-početi-ovaj-tjedan">Gdje početi ovaj tjedan</h2>
-<p>Odaberite <strong>jedan dosadan, mehanički zadatak</strong> koji biste dali asistentu prve godine. Napišite ga kao <strong>specifikaciju zadatka (task spec)</strong>: cilj, ograničenja, kako izgleda „gotovo”. Pustite agenta da ga isplanira, <strong>odobrite plan</strong>, pa pregledajte rezultat prema vlastitim mjerilima. Taj jedan pokus nauči vas više od bilo kojeg slajda.</p>
-</section>
-<section id="pogledajte-i-isprobajte" class="level2">
-<h2 class="anchored" data-anchor-id="pogledajte-i-isprobajte">Pogledajte i isprobajte</h2>
-<div class="tiles">
-<p><a class="tile" href="primjeri.html"><span class="tile-k">Primjeri datoteka</span><span class="tile-d">Kako izgledaju CLAUDE.md, agent, pravilo, vještina</span></a> <a class="tile" href="setup.html"><span class="tile-k">Postavljanje</span><span class="tile-d">Sučelja, preduvjeti i cijene</span></a> <a class="tile" href="vjezba.html"><span class="tile-k">Vođena vježba</span><span class="tile-d">Odvrtite petlju jednom (~20 min)</span></a></p>
-</div>
 <hr>
-<section id="materijali" class="level3">
-<h3 class="anchored" data-anchor-id="materijali">Materijali</h3>
-<ul>
-<li><strong>Verzija sa slajdovima:</strong> <a href="slides/talk.html">slides/talk.html</a></li>
-<li><strong>Repozitorij i svi materijali</strong> (pojmovnik, mapa za učenje, postavljanje, pokusi): <a href="https://github.com/lusiki/AI-radionica-za-istra-iva-e">github.com/lusiki/AI-radionica-za-istra-iva-e</a></li>
-</ul>
+<p><em>Izvori / provjera (cijene se mijenjaju):</em> službeno na <strong>anthropic.com/pricing</strong> i <strong>claude.com</strong>. <em>Stanje u ovom dokumentu: lipanj 2026.</em></p>
+</section>
 </section>
 </section>
 

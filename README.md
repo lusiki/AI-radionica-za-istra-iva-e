@@ -20,6 +20,9 @@ gledate sam okvir na djelu. *(Medij je poruka.)*
 .
 ├─ README.md                 # ova stranica
 ├─ index.qmd                 # prezentacija kao web-dokument (Quarto) → docs/index.html
+├─ primjeri.qmd              # primjeri datoteka (s pločicama) → docs/primjeri.html
+├─ setup.qmd                 # sučelja, preduvjeti, cijene (web) → docs/setup.html
+├─ vjezba.qmd                # vođena vježba (web) → docs/vjezba.html
 ├─ pregled.html              # interaktivni pregled gradivnih blokova (klikni za primjer)
 ├─ docs/                     # objavljena web-stranica (GitHub Pages)
 ├─ slides/talk.qmd           # prezentacija (Quarto → RevealJS): "Od chata do delegiranja"
@@ -68,7 +71,11 @@ Detaljno objašnjenje svakog bloka, s točnim datotekama i analogijama, je u
 ## Kako koristiti
 
 ### 1. Za čitanje / učenje
-- **Živa web-verzija prezentacije:** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
+- **Žive web-stranice (GitHub Pages):**
+  - Prezentacija: <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
+  - Primjeri datoteka: <https://lusiki.github.io/AI-radionica-za-istra-iva-e/primjeri.html>
+  - Postavljanje, sučelja i cijene: <https://lusiki.github.io/AI-radionica-za-istra-iva-e/setup.html>
+  - Vođena vježba: <https://lusiki.github.io/AI-radionica-za-istra-iva-e/vjezba.html>
 - **Brzi pregled svih blokova:** otvorite `pregled.html` u pregledniku — svaki naziv datoteke je poveznica na sam primjer.
 - Počnite od prezentacije: [`slides/talk.qmd`](slides/talk.qmd) (ili renderirani HTML).
 - Za "ispod haube": [`harness-map/README.md`](harness-map/README.md) — što je svaki blok, kako radi i zašto.

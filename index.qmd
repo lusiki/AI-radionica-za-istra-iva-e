@@ -38,7 +38,7 @@ zatim **nadzirati** dok ona planira, djeluje, provjerava vlastiti rad i vraća s
 
 ## Ovo je vama poznata vrsta problema
 
-Ne razmišljajte „pametniji chatbot". Razmislite o onome što ionako svakodnevno radite:
+Ne razmišljajte „pametniji chatbot”. Razmislite o onome što ionako svakodnevno radite:
 
 - **Brifirate i nadzirete asistenta (RA)** — i provjeravate njegov rad.
 - Pišete **plan analize** prije nego što dotaknete podatke.
@@ -84,7 +84,7 @@ inspektora** i greške skrivene na vidnom mjestu napokon budu uhvaćene.
 **2 — Suparnička petlja (adversarial loop).** **Kritičar (deck-critic)** čita rad i nabraja svaku
 grešku, ali *ne smije dirati datoteke*. Zaseban **ispravljač (deck-fixer)** obavlja popravke, ali *ne
 smije odobriti vlastiti rad*. Kritičar zatim ponovno čita — i tako u krug, do čistog prolaza. To je
-naprosto **recenzija**, i ubija najčešći AI promašaj: veselo objaviti „izgleda dobro" kad nije.
+naprosto **recenzija**, i ubija najčešći AI promašaj: veselo objaviti „izgleda dobro” kad nije.
 
 ## Dva pravila koja održavaju poštenje
 
@@ -164,9 +164,17 @@ git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
 ## Gdje početi ovaj tjedan
 
 Odaberite **jedan dosadan, mehanički zadatak** koji biste dali asistentu prve godine. Napišite ga kao
-**specifikaciju zadatka (task spec)**: cilj, ograničenja, kako izgleda „gotovo". Pustite agenta da ga
+**specifikaciju zadatka (task spec)**: cilj, ograničenja, kako izgleda „gotovo”. Pustite agenta da ga
 isplanira, **odobrite plan**, pa pregledajte rezultat prema vlastitim mjerilima. Taj jedan pokus nauči
 vas više od bilo kojeg slajda.
+
+## Pogledajte i isprobajte
+
+::: {.tiles}
+<a class="tile" href="primjeri.html"><span class="tile-k">Primjeri datoteka</span><span class="tile-d">Kako izgledaju CLAUDE.md, agent, pravilo, vještina</span></a>
+<a class="tile" href="setup.html"><span class="tile-k">Postavljanje</span><span class="tile-d">Sučelja, preduvjeti i cijene</span></a>
+<a class="tile" href="vjezba.html"><span class="tile-k">Vođena vježba</span><span class="tile-d">Odvrtite petlju jednom (~20 min)</span></a>
+:::
 
 ---
 

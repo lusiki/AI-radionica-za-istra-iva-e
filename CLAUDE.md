@@ -25,6 +25,7 @@ medium demonstrates the message.
 
 ## Folder structure
 - `index.qmd`     — the talk as a Quarto HTML document → renders to `docs/` (published via GitHub Pages)
+- `primjeri.qmd` / `setup.qmd` / `vjezba.qmd` — extra web docs (examples gallery + tiles, setup, guided exercise) → `docs/`
 - `pregled.html`  — clickable building-block overview (open locally)
 - `slides/`       — the Quarto → RevealJS deck (`talk.qmd`), the dog-food artifact
 - `resources/`    — the takeaway kit (glossary, quality-gate card, cheat sheet)
@@ -64,6 +65,7 @@ Verification, Adversarial Review, Memory, Audience Fidelity). They override this
   English block/skill/agent names are kept and bracketed as *hrvatski pojam (english-name)*; slash-commands stay English.
 - **HTML overview:** `pregled.html` — a clickable index of every building block; each name links to the file.
 - **Published web page:** `index.qmd` → `docs/index.html`, live at https://lusiki.github.io/AI-radionica-za-istra-iva-e/ (GitHub Pages, source main /docs).
+- **Web docs:** `primjeri.qmd` (examples + clickable tiles), `setup.qmd` (interfaces/prereqs/prices), `vjezba.qmd` (guided exercise) → `docs/*.html`. The presentation links to these via tiles.
 - **Onboarding:** `setup/` (interfaces + prereqs + pricing) and `demos/` (clone-and-run empirical example), both Croatian.
 - **Quarto installed** (1.9.x) — `quarto render` builds the deck + document into `docs/`.
 - Resources: Croatian glossary in `resources/`, quality-gate card + cheat sheet still to build.

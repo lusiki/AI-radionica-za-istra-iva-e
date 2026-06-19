@@ -1,0 +1,122 @@
+---
+title: "Primjeri datoteka"
+subtitle: "Kako gradivni blokovi izgledaju u praksi"
+lang: hr
+format:
+  html:
+    theme: [cosmo, theme-doc.scss]
+    toc: true
+    toc-title: "Sadržaj"
+    toc-location: left
+    embed-resources: true
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+---
+
+Ovo je mali skup primjera — *kostur* svakog gradivnog bloka, s engleskim ključevima i hrvatskim
+komentarima. Kliknite pločicu da skočite na primjer. Stvarne, radne verzije su u repozitoriju
+(`CLAUDE.md`, `.claude/agents/`, `.claude/rules/`, `.claude/skills/`).
+
+::: {.tiles}
+<a class="tile" href="#ustav"><span class="tile-k">CLAUDE.md</span><span class="tile-d">Ustav — stalna pravila projekta</span></a>
+<a class="tile" href="#agent"><span class="tile-k">Agent</span><span class="tile-d">Specijalist koji provjerava jednu stvar</span></a>
+<a class="tile" href="#pravilo"><span class="tile-k">Pravilo (rule)</span><span class="tile-d">Priručnik koji se učitava po putanji</span></a>
+<a class="tile" href="#vjestina"><span class="tile-k">Vještina (skill)</span><span class="tile-d">Naredba s koracima</span></a>
+:::
+
+## CLAUDE.md — ustav {#ustav}
+
+Vitka stranica (~120 redaka) koju Claude čita na početku svake sesije: kratke direktive i pokazivači,
+**ne** opširna dokumentacija.
+
+```markdown
+# CLAUDE.md — ustav projekta
+
+## Načela                          # 4–5 kratkih pravila, ne više
+1. Prvo plan za netrivijalne zadatke; pokaži mi plan PRIJE izmjena.
+2. Provjeri prije nego javiš "gotovo" (stvarno renderiraj / pokreni).
+3. Specijalisti pobjeđuju generalista.
+4. Odluke piši na disk, ne samo u chat.
+
+## Struktura mapa                  # gdje što živi
+- slides/      — prezentacija
+- .claude/     — radni okvir (rules, skills, agents)
+
+## Vještine                        # brza referenca naredbi
+| Naredba   | Što radi                          |
+|-----------|-----------------------------------|
+| /render   | izgradi špicu i provjeri          |
+| /commit   | spremi tek uz moje odobrenje      |
+
+## Trenutno stanje                 # kratko, ažurira se
+- Prezentacija objavljena na GitHub Pages.
+```
+
+*Stvarni primjer:* [`CLAUDE.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/CLAUDE.md)
+
+## Agent — specijalist {#agent}
+
+Živi u `.claude/agents/<ime>.md`. Zaglavlje (YAML) postavlja model i alate; tekst su upute agentu.
+Popis alata bez `Edit`/`Write` čini agenta **samo-za-čitanje** (kritičar koji ne može mijenjati datoteke).
+
+```markdown
+---
+name: deck-critic                  # ime kojim ga vještine pozivaju
+description: Read-only kritičar špice; nalazi greške i ocjenjuje.
+model: sonnet                      # razina: haiku / sonnet / opus (raspodjela 70/20/10)
+tools: Read, Grep, Glob            # SAMO čitanje → ne može uređivati datoteke
+---
+
+Ti si skeptični recenzent. Ne smiješ uređivati datoteke — samo nalaziš greške.
+Provjeri: (1) sadržaj, (2) jasnoću, (3) dosljednost pojmova, (4) prelijevanje slajda.
+Izvijesti po težini (Kritično / Veliko / Malo) i daj ocjenu 0–100.
+```
+
+*Stvarni primjer:* [`.claude/agents/deck-critic.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/agents/deck-critic.md)
+
+## Pravilo (rule) — priručnik {#pravilo}
+
+Živi u `.claude/rules/<ime>.md`. Polje `paths:` čini ga **vezanim uz putanju** — učitava se samo kad
+Claude dotakne datoteku koja odgovara. Bez `paths:` pravilo je "uvijek uključeno".
+
+```markdown
+---
+description: Renderiraj prije nego javiš "gotovo".
+paths: ['**/*.qmd']                # učitava se SAMO na .qmd datotekama
+---
+
+# Pravilo provjere
+- Nakon svake izmjene .qmd pokreni /render (quarto render + provjera da HTML postoji).
+- Ako render padne: pročitaj grešku, popravi, ponovno renderiraj.
+- "Gotovo" znači *renderirano i provjereno*, nikad "izgleda dobro u glavi".
+```
+
+*Stvarni primjer:* [`.claude/rules/quality-gates.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/rules/quality-gates.md)
+
+## Vještina (skill) — gumb {#vjestina}
+
+Živi u `.claude/skills/<ime>/SKILL.md`. Zaglavlje opisuje *kad* se koristi; tijelo su numerirani koraci.
+Pozivate je s `/<ime>` ili je Claude sam odabere iz vašeg zahtjeva na običnom jeziku.
+
+```markdown
+---
+name: render
+description: Izgradi špicu (Quarto) i provjeri da je HTML stvarno nastao.
+argument-hint: "[datoteka .qmd — zadano slides/talk.qmd]"
+---
+
+# Koraci
+1. Provjeri da `quarto` postoji; ako ne — STANI i reci korisniku da ga instalira.
+2. Pokreni `quarto render <datoteka>`.
+3. PROVJERI da izlazni `.html` postoji i da je naredba uspjela. Tek tada javi "gotovo".
+4. Ako je render pao: pročitaj grešku, popravi, ponovno renderiraj.
+```
+
+*Stvarni primjer:* [`.claude/skills/render/SKILL.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/skills/render/SKILL.md)
+
+---
+
+Više o tome kako se svaki blok uklapa: [mapa za učenje](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/harness-map/README.md).
