@@ -1,0 +1,66 @@
+/*-- scss:defaults --*/
+// "Quiet data terminal on paper" — applied to the Quarto HTML document.
+// Fonts (Roboto Mono + Source Sans 3) come via include-in-header in index.qmd.
+
+$body-bg: #F7F7F4;
+$body-color: #18181B;
+$link-color: #2348E5;
+$font-family-sans-serif: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+$headings-font-family: 'Roboto Mono', monospace;
+$headings-font-weight: 700;
+$headings-color: #18181B;
+$border-color: #E6E6E1;
+$code-bg: #EFEFEA;
+$code-color: #18181B;
+
+/*-- scss:rules --*/
+$accent: #2348E5;
+$muted: #71717A;
+$hairline: #E6E6E1;
+
+body { -webkit-font-smoothing: antialiased; line-height: 1.7; }
+::selection { background: $accent; color: #fff; }
+
+h1, h2, h3, h4 { letter-spacing: -0.015em; }
+.quarto-title .title { letter-spacing: -0.02em; }
+.quarto-title .subtitle { color: $muted; font-family: 'Source Sans 3', sans-serif; font-weight: 400; }
+.quarto-title-meta { font-family: 'Roboto Mono', monospace; font-size: .8rem; color: $muted; }
+
+// Section headings: hairline + accent tick
+main h2 {
+  margin-top: 2.6rem;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid $hairline;
+  position: relative;
+  font-size: 1.45rem;
+}
+main h2::after {
+  content: ""; position: absolute; left: 0; bottom: -1px;
+  width: 2.2em; height: 2px; background: $accent;
+}
+
+a { text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
+a:hover { border-bottom-color: $accent; }
+
+code { font-family: 'Roboto Mono', monospace; background: $code-bg; padding: .08em .32em; border-radius: 3px; }
+pre { background: $code-bg !important; border: 1px solid $hairline; border-radius: 4px; }
+pre code { background: none; }
+
+blockquote {
+  border-left: 2px solid $accent;
+  color: $muted;
+  padding: .2rem 0 .2rem 1rem;
+  font-size: 1.02rem;
+}
+
+table { font-family: 'Roboto Mono', monospace; font-size: .9rem; }
+thead th {
+  border-bottom: 1.5px solid #18181B !important;
+  text-transform: uppercase; font-size: .78rem; letter-spacing: .06em; color: $muted;
+}
+tbody td { border-bottom: 1px solid $hairline; }
+
+// Sidebar table of contents
+#TOC, .sidebar nav { font-family: 'Roboto Mono', monospace; font-size: .8rem; }
+.sidebar nav a { color: $muted; border: 0; }
+.sidebar nav a:hover, .sidebar nav a.active { color: $accent; }

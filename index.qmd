@@ -1,0 +1,177 @@
+---
+title: "Od chata do delegiranja"
+subtitle: "Agentska AI za metodološka istraživanja"
+author: "Luka Šikić"
+date: today
+lang: hr
+format:
+  html:
+    theme: [cosmo, theme-doc.scss]
+    toc: true
+    toc-title: "Sadržaj"
+    toc-location: left
+    embed-resources: true
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+---
+
+> Kako metodološki istraživači mogu prijeći s *chat-promptanja* na **agentski rad** — i zašto je
+> to upravo njihov teren. Ovaj dokument je web-verzija prezentacije; postoji i
+> [verzija sa slajdovima](slides/talk.html).
+
+## Gdje ste sada
+
+Otvorite prozor za chat. Sastavite prompt. Dobijete odgovor. Zatim **vi** kopirate kôd, pokrenete ga,
+naletite na grešku, zalijepite je natrag i pokušate ponovno. Vi ste voditelj projekta — cijeli plan
+držite u svojoj glavi, a AI vam pomaže s **jednim korakom u nizu.**
+
+## Iskorak
+
+- **Razgovorna AI (chat AI)** *pomaže vam* da obavite posao.
+- **Agentskoj AI (agentic AI)** se posao *povjerava*.
+
+Prestajete sastavljati prompt da biste dobili odgovor. Počinjete **zadavati cilj i ograničenja**, a
+zatim **nadzirati** dok ona planira, djeluje, provjerava vlastiti rad i vraća se kad je gotovo.
+
+## Ovo je vama poznata vrsta problema
+
+Ne razmišljajte „pametniji chatbot". Razmislite o onome što ionako svakodnevno radite:
+
+- **Brifirate i nadzirete asistenta (RA)** — i provjeravate njegov rad.
+- Pišete **plan analize** prije nego što dotaknete podatke.
+- **Recenzirate (peer review)** — autor ne ocjenjuje vlastiti rad.
+- Vodite **revizijski trag** kako bi rezultat bio obranjiv i ponovljiv.
+
+Agentska AI sastavljena je upravo od tih poteza. Vi ste **jedinstveno** osposobljeni da je vodite.
+
+## Četiri boli koje rješava
+
+1. **Zaboravlja** — između sesija, *zašto* ste odabrali tu notaciju ili koji ste bug ispravili.
+2. **Kvaliteta varira** — jedna tablica je čista, sljedećoj nedostaju standardne greške.
+3. **Pregledavanje iscrpljuje** — ručno provjeriti 140 slajdova ubija volju.
+4. **Ona najdublja** — provjera pravopisa uhvati *pogrešku u slovu*, ali nikad **obrnuti predznak** u
+   teoremu ili regresiju koja je tiho pogrešna.
+
+## Sve u jednom dahu
+
+Opišete što želite, običnim jezikom. Claude se ponaša kao **glavni izvođač radova**: izradi **nacrt** i
+zatraži vaše odobrenje, **unajmi ekipu** specijalista, **pregleda** njihov rad i vrati ih da poprave što
+ne valja, te se vrati k vama tek kad posao **prođe inspekciju**. **Vi govorite, Claude vodi gradilište.**
+
+## Ekipa i kuća — pet slojeva
+
+Svaki sloj ima nadimak na običnom jeziku; engleska imena ostaju u zagradama.
+
+| Sloj | Nadimak | Što je |
+|---|---|---|
+| `CLAUDE.md` | **Ustav** | jedna kratka stranica kućnih pravila, čita se svake sesije |
+| Rules | **Priručnici** | priručnici koji se pojave samo kad su relevantni (po putanji) |
+| Skills | **Gumbi** | imenovani recepti — `/render`, `/proofread`, `/commit` |
+| Agents | **Ekipa** | uski specijalisti, svaki provjerava jednu stvar |
+| Settings + Hooks | **Automatski sustavi** | dozvole i alarmi koji se sami okidaju |
+
+Ispod svega: **memorija koja preživljava** kroz sesije.
+
+## Dvije ideje zbog kojih sve funkcionira
+
+**1 — Specijalisti pobjeđuju generalista.** Tražite od jednog asistenta da istovremeno pazi na
+gramatiku, raspored, matematiku *i* kôd → osrednje obavi sve. Dajte svakoj dimenziji **vlastitog uskog
+inspektora** i greške skrivene na vidnom mjestu napokon budu uhvaćene.
+
+**2 — Suparnička petlja (adversarial loop).** **Kritičar (deck-critic)** čita rad i nabraja svaku
+grešku, ali *ne smije dirati datoteke*. Zaseban **ispravljač (deck-fixer)** obavlja popravke, ali *ne
+smije odobriti vlastiti rad*. Kritičar zatim ponovno čita — i tako u krug, do čistog prolaza. To je
+naprosto **recenzija**, i ubija najčešći AI promašaj: veselo objaviti „izgleda dobro" kad nije.
+
+## Dva pravila koja održavaju poštenje
+
+Ocjena od 100, čita se kao semafor: **80** → sigurno za spremanje · **90** → spremno za isporuku ·
+**95** → izvrsnost · **ispod 80** → blokirano dok se greške ne isprave.
+
+**Pravilo provjere:** Claude ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
+renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
+
+## Što preživi kad se chat napuni
+
+Dugi razgovori se sažimaju — i živi chat je ono što *ne* preživljava. Zato sve vrijedno čuvanja ide na
+**disk**, u četiri označene ladice: **ustav** (stalna pravila), **dnevnik ispravaka** (lekcije, da se
+greška ne ponovi), **planovi** (strategija za zadatak) i **dnevnici sesija** (*zašto* iza svake odluke).
+*Git bilježi što; dnevnik bilježi zašto.*
+
+## Kako teče stvarni posao
+
+Dva poteza, redom. **Prvo plan:** Claude izradi plan, spremi ga i pokaže vam *prije* nego dotakne
+ijednu datoteku — vi odobrite ili izmijenite. Zatim **način rada izvođača (contractor mode)** preuzima
+upravljač: radi, provjerava, pokreće inspektore paralelno, popravlja od najgoreg prema najmanjem,
+ocjenjuje i vrti petlju do čistog prolaza. Na kraju vam preda kratak sažetak. **Ništa ne sprema dok vi ne kažete.**
+
+## Griješi — i to je poanta
+
+Besprijekorna demonstracija je prodajni trik. Pošteni alati pokazuju svoje načine otkazivanja:
+
+- Može **izmisliti citat (halucinacija)** — pa provjeritelj uspoređuje svaku referencu sa stvarnim katalogom.
+- Može biti **samouvjereno u krivu** — pa kritičar ponovno provjerava, a prag **blokira** loš rad.
+- Može poduzeti **pogrešnu radnju** — pa visokorizični koraci čekaju vaše odobrenje.
+
+**Autonomija je regulator, a ne prekidač.** Vi odlučujete gdje je sigurno popustiti uzde.
+
+## Trošak — raspodjela 70 / 20 / 10
+
+Jeftini modeli rade crnčarenje; skupi model razmišlja.
+
+| Model | Uloga | Udio |
+|---|---|---|
+| Haiku 4.5 | brz/jeftin — mehanički posao | ~70% |
+| Sonnet 4.6 | srednji — pregled i kritika | ~20% |
+| Opus 4.8 | vrhunski — prosudba | ~10% |
+
+Račun padne **50–80%**, a mehanički posao ništa ne gubi. (Detaljne cijene: vidi *Postavljanje* u repozitoriju.)
+
+## Ne treba vam sve odjednom
+
+Cijeli sustav je **18 agenata, 52 vještine, 32 pravila.** To je **strop, a ne pod.** Počnite s
+**ustavom** i **tri gumba** — `/render`, `/proofread`, `/commit` — i dodajte priručnik ili specijalista
+tek kad stvarno osjetite da nedostaje.
+
+## Kako se zapravo radi
+
+Razgovarate s *istim* Claudeom kroz različita sučelja:
+
+- **Chat (claude.ai)** — poznato, ali *ne* dira vaše datoteke. Za učenje, ne za projekt.
+- **Ekstenzija u VS Codeu (plugin)** — Claude unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
+- **Terminal (CLI)** — utipkate `claude` u mapi projekta. Najmoćnije; terminal se brzo zavoli.
+
+## Što vam treba i koliko košta
+
+Preduvjeti: **Claude Code, Node.js, git** (Quarto / R po potrebi). **Claude Pro (~20 $/mj) uključuje
+Claude Code** i dovoljan je za početak; Max 5× (~100 $) i Max 20× (~200 $) za intenzivan rad.
+*(Cijene se mijenjaju — provjerite na anthropic.com/pricing.)*
+
+## Empirijski primjer — uzmite s GitHuba
+
+Nije teorija. Klonirajte repozitorij i pokrenite dva mala pokusa:
+
+```bash
+git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
+```
+
+- **Pokus 1 — `/render`:** Claude izgradi špicu i *provjeri* da HTML postoji prije nego javi gotovo.
+- **Pokus 2 — `/review-deck`:** kritičar nađe greške i ocijeni → ispravljač popravi → kritičar ponovno provjeri.
+
+## Gdje početi ovaj tjedan
+
+Odaberite **jedan dosadan, mehanički zadatak** koji biste dali asistentu prve godine. Napišite ga kao
+**specifikaciju zadatka (task spec)**: cilj, ograničenja, kako izgleda „gotovo". Pustite agenta da ga
+isplanira, **odobrite plan**, pa pregledajte rezultat prema vlastitim mjerilima. Taj jedan pokus nauči
+vas više od bilo kojeg slajda.
+
+---
+
+### Materijali
+
+- **Verzija sa slajdovima:** [slides/talk.html](slides/talk.html)
+- **Repozitorij i svi materijali** (pojmovnik, mapa za učenje, postavljanje, pokusi):
+  [github.com/lusiki/AI-radionica-za-istra-iva-e](https://github.com/lusiki/AI-radionica-za-istra-iva-e)

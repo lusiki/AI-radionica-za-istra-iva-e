@@ -13,3 +13,5 @@ desktop.ini
 
 # Claude Code local (personal, machine-specific overrides)
 .claude/settings.local.json
+
+**/*.quarto_ipynb
