@@ -23,6 +23,8 @@ gledate sam okvir na djelu. *(Medij je poruka.)*
 │   ├─ glossary.md           #   pojmovnik: od riječi iz chata do agentskih riječi
 │   └─ README.md             #   plan kompleta resursa
 ├─ harness-map/README.md     # komentirana mapa cijelog radnog okvira (za učenje)
+├─ setup/README.md           # sučelja, preduvjeti i cijene
+├─ demos/README.md           # empirijski primjer: dva pokusa s GitHuba
 ├─ CLAUDE.md                 # "ustav" projekta — pravila koja Claude čita svake sesije
 └─ .claude/                  # sam radni okvir (the harness):
     ├─ rules/                #   priručnici (rules) — učitavaju se po potrebi (po putanji)
@@ -67,6 +69,8 @@ Detaljno objašnjenje svakog bloka, s točnim datotekama i analogijama, je u
 - Za "ispod haube": [`harness-map/README.md`](harness-map/README.md) — što je svaki blok, kako radi i zašto.
 
 ### 2. Za pokretanje (uživo)
+Sučelja, preduvjeti i cijene → [`setup/README.md`](setup/README.md). Dva gotova pokusa korak-po-korak → [`demos/README.md`](demos/README.md).
+
 Preduvjeti: [Claude Code](https://claude.ai/code), [Quarto](https://quarto.org), `git`.
 1. Instalirajte Quarto: `winget install --id Posit.Quarto -e` (pa ponovno otvorite ljusku).
 2. **Renderirajte špicu:** u Claude Codeu utipkajte `/render` — provjerava da se HTML *stvarno* izgradio.
@@ -82,6 +86,7 @@ Forkajte repozitorij, zamijenite sadržaj špice svojim, prilagodite pravila i a
 
 - ✅ Blokovi: ustav, 4 pravila, ustavno upravljanje, 4 vještine, 3 agenta.
 - ✅ Prezentacija + pojmovnik + mapa za učenje (na hrvatskom).
+- ✅ Interaktivni pregled (`index.html`), postavljanje + cijene (`setup/`), empirijski primjer (`demos/`).
 - ⏳ Quarto još nije instaliran → špica još **nije renderirana** (pravilo provjere: ne tvrdimo da radi dok ne provjerimo).
 - ⏳ Preostaje: 5. sloj (`settings` + `hooks`), kartica praga kvalitete + podsjetnik, objava na GitHub Pages.
 

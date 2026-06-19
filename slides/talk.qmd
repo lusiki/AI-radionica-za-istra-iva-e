@@ -247,6 +247,34 @@ Medij *jest* poruka: ovako izgleda "rad koji je napisao agent i koji je ponovlji
 - **Počnite malo** i pustite da raste.
 :::
 
+## Kako se zapravo radi {.smaller}
+
+Tri načina da razgovarate s *istim* Claudeom:
+
+::: {.incremental}
+- **Chat (claude.ai)** — poznato, ali *ne* dira vaše datoteke. Za učenje, ne za projekt.
+- **Ekstenzija u VS Codeu (plugin)** — Claude unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
+- **Terminal (CLI)** — utipkate `claude` u mapi projekta. Najmoćnije; terminal se brzo zavoli.
+:::
+
+::: {.fragment}
+Agenti, vještine i pravila žive u zadnja dva — tu je "gradilište". *(Detalji: `setup/README.md`.)*
+:::
+
+## Što vam treba i koliko košta {.smaller}
+
+Preduvjeti: **Claude Code, Node.js, git** (Quarto / R po potrebi).
+
+::: {.incremental}
+- **Claude Pro — ~20 $/mj — uključuje Claude Code.** Dovoljno za početak.
+- Max 5× ~100 $/mj · Max 20× ~200 $/mj — za intenzivan rad.
+- Trik s troškom: raspodjela **70 / 20 / 10** (Haiku / Sonnet / Opus) → račun pada **50–80%**.
+:::
+
+::: {.fragment}
+Točne cijene i preduvjeti: `setup/README.md` · službeno: anthropic.com/pricing. *(cijene se mijenjaju)*
+:::
+
 ## Gdje početi ovaj tjedan {.smaller}
 
 ::: {.incremental}
@@ -257,4 +285,54 @@ Medij *jest* poruka: ovako izgleda "rad koji je napisao agent i koji je ponovlji
 
 ::: {.fragment}
 Taj jedan pokus nauči vas više od bilo kojeg slajda. *(Komplet resursa: pojmovnik + kartica praga kvalitete + podsjetnik.)*
+:::
+
+## Empirijski primjer — uzmite s GitHuba {.smaller}
+
+Nije teorija. Klonirajte repozitorij i pokrenite dva mala pokusa:
+
+```bash
+git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
+```
+
+::: {.fragment}
+Otvorite mapu u VS Codeu (ili `claude` u terminalu) — i krenite. *(Korak po korak: `demos/README.md`.)*
+:::
+
+## Pokus 1 — renderiraj i provjeri {.smaller}
+
+**Što utipkate:** `/render`
+
+::: {.incremental}
+- Claude pokrene `quarto render`, pa **provjeri da `slides/talk.html` stvarno postoji.**
+- Tek tada javi "gotovo". Otvorite HTML — špica je tu.
+:::
+
+::: {.fragment}
+**Poanta:** agent ne tvrdi uspjeh dok ga nije provjerio. Jedna naredba → ponovljiv rezultat. *(Bez Quarta `/render` pošteno STANE.)*
+:::
+
+## Pokus 2 — suparnička petlja {.smaller}
+
+**Što utipkate:** `/review-deck`
+
+::: {.incremental}
+- `deck-critic` + `audience-reviewer` (samo čitaju) → nalazi po težini + ocjena 0–100.
+- `deck-fixer` popravi najgore prvo → kritičar **ponovno** provjeri → nova ocjena.
+:::
+
+::: {.fragment}
+**Poanta:** kritičar ne smije uređivati, ispravljač ne smije sam sebe odobriti. Recenzija koja hvata i ono što provjera pravopisa ne bi (npr. tvrdnju bez pokrića).
+:::
+
+## Hvala — i naprijed {.smaller}
+
+::: {.incremental}
+- Sve je u repozitoriju: [github.com/lusiki/AI-radionica-za-istra-iva-e](https://github.com/lusiki/AI-radionica-za-istra-iva-e)
+- Pregled blokova: `index.html` · Mapa za učenje: `harness-map/` · Pokusi: `demos/`
+- Odaberite jedan dosadan zadatak ovaj tjedan i **delegirajte ga.**
+:::
+
+::: {.fragment}
+Pitanja?
 :::

@@ -26,7 +26,8 @@ medium demonstrates the message.
 ## Folder structure
 - `slides/`       — the Quarto → RevealJS deck (`talk.qmd`), the dog-food artifact
 - `resources/`    — the takeaway kit (glossary, quality-gate card, cheat sheet)
-- `demos/`        — scripted demo steps + recorded fallbacks (for later)
+- `setup/`       — interfaces, prerequisites & pricing (Croatian)
+- `demos/`        — empirical example: clone from GitHub + two worked examples (Croatian)
 - `harness-map/`  — my annotated study map of the full harness (for Luka)
 - `.claude/`      — this mini-harness: `skills/`, `rules/`, `agents/`, `constitutional-governance.md`
 
@@ -60,6 +61,7 @@ Verification, Adversarial Review, Memory, Audience Fidelity). They override this
   `resources/`, `harness-map/`); the machinery (this file, rules, agents, governance) stays English.
   English block/skill/agent names are kept and bracketed as *hrvatski pojam (english-name)*; slash-commands stay English.
 - **HTML overview:** `index.html` — a clickable index of every building block; each name links to the file.
+- **Onboarding:** `setup/` (interfaces + prereqs + pricing) and `demos/` (clone-and-run empirical example), both Croatian.
 - **Quarto not yet installed** — `/render` will stop and tell you to install it. See `harness-map/README.md`.
 - Resources: Croatian glossary in `resources/`, quality-gate card + cheat sheet still to build.
 - **Git:** connected to GitHub `origin` → `lusiki/AI-radionica-za-istra-iva-e` (branch `main`).
