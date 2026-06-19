@@ -1,14 +1,14 @@
 # CLAUDE.md — Project Constitution
 
 > This file is the "constitution" Claude reads at the start of every session.
-> It is deliberately **slim** — the same design rule the Sant'Anna harness teaches:
+> It is deliberately **slim** — the same design rule the harness teaches:
 > Claude reliably follows ~100–150 instructions, so keep standing rules short and
 > push detail into files that load only when relevant. (Aim ≤ ~120 lines.)
 
 ## What this project is
 A presentation **and** follow-up resources that teach a group of **non-technical
 methodological researchers** to move from *chat-prompting* to *agentic AI work*,
-using the Sant'Anna Claude Code harness as the conceptual spine.
+using an agentic Claude Code harness as the conceptual spine.
 
 This repo is also, on purpose, a **tiny working example** of that harness — so the
 medium demonstrates the message.
@@ -27,7 +27,7 @@ medium demonstrates the message.
 - `slides/`       — the Quarto → RevealJS deck (`talk.qmd`), the dog-food artifact
 - `resources/`    — the takeaway kit (glossary, quality-gate card, cheat sheet)
 - `demos/`        — scripted demo steps + recorded fallbacks (for later)
-- `harness-map/`  — my annotated study map of the full Sant'Anna harness (for Luka)
+- `harness-map/`  — my annotated study map of the full harness (for Luka)
 - `.claude/`      — this mini-harness: `skills/`, `rules/`, `agents/`, `constitutional-governance.md`
 
 ## Skills (the buttons)
@@ -59,6 +59,7 @@ Verification, Adversarial Review, Memory, Audience Fidelity). They override this
 - **Language:** audience-facing content + the study map are in **Croatian** (`slides/talk.qmd`,
   `resources/`, `harness-map/`); the machinery (this file, rules, agents, governance) stays English.
   English block/skill/agent names are kept and bracketed as *hrvatski pojam (english-name)*; slash-commands stay English.
+- **HTML overview:** `index.html` — a clickable index of every building block; each name links to the file.
 - **Quarto not yet installed** — `/render` will stop and tell you to install it. See `harness-map/README.md`.
 - Resources: Croatian glossary in `resources/`, quality-gate card + cheat sheet still to build.
 - **Git:** connected to GitHub `origin` → `lusiki/AI-radionica-za-istra-iva-e` (branch `main`).

@@ -1,12 +1,9 @@
-# Sant'Anna Claude Code harness — komentirana mapa za učenje
+# Claude Code harness — komentirana mapa za učenje
 
 Vaša referenca za razumijevanje stroja *iza* izvršne mape. Izlaganje prenosi **zašto**; ovaj dokument
 prenosi **kako**, s točnim datotekama, mehanikom i jednostavnom analogijom za svaki dio. Engleska
 tehnička imena ostaju na engleskom i navode se u zagradama: *hrvatski pojam (english-name)*; nazivi
 naredbi (`/render`) ostaju na engleskom jer ih Claude Code tako poziva.
-
-Izvor: <https://psantanna.com/claude-code-my-workflow/workflow-guide.html> ·
-predložak (repozitorij): `pedrohcgs/claude-code-my-workflow` (jedan ~2,3 MB HTML vodič + repozitorij za fork).
 
 > **Kako ovo koristiti:** pročitajte jednom od početka do kraja, a zatim napravite **vođenu vježbu** na
 > dnu — u *ovoj* mapi. Petlju ćete razumjeti mnogo brže ako je jednom osjetite nego čitajući cijeli vodič.
@@ -127,9 +124,9 @@ Ušteda u odnosu na sve-na-Opusu: **50–80%**, bez gubitka kvalitete na mehani�
 je **napor *(effort)*** (`low → medium → high → xhigh → max`); "Haiku + visok napor" može pobijediti
 "Opus + nizak napor" na omeđenim zadacima. Pratite s `/cost` i `/usage`.
 
-## Početak (pravi predložak, kad budete spremni)
+## Početak s punim okvirom (kad budete spremni)
 
-Tri stvari: **instalirajte Claude Code → forkajte `pedrohcgs/claude-code-my-workflow` → zalijepite jedan
+Tri stvari: **instalirajte Claude Code → forkajte predložak harnessa → zalijepite jedan
 početni prompt** koji imenuje vaš projekt. Claude pročita konfiguraciju, popuni vaše podatke, predloži
 prilagodbe, pokaže plan, vi odobrite. Zatim *"počnite samo s `CLAUDE.md` i 2–3 vještine, ostalo dodajte
 kako otkrijete da vam treba"* — **strop, a ne pod.**

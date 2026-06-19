@@ -17,11 +17,12 @@ gledate sam okvir na djelu. *(Medij je poruka.)*
 ```
 .
 ├─ README.md                 # ova stranica
+├─ index.html                # interaktivni pregled gradivnih blokova (klikni za primjer)
 ├─ slides/talk.qmd           # prezentacija (Quarto → RevealJS): "Od chata do delegiranja"
 ├─ resources/                # prateći materijali za ponijeti
 │   ├─ glossary.md           #   pojmovnik: od riječi iz chata do agentskih riječi
 │   └─ README.md             #   plan kompleta resursa
-├─ harness-map/README.md     # komentirana mapa cijelog Sant'Anna harnessa (za učenje)
+├─ harness-map/README.md     # komentirana mapa cijelog radnog okvira (za učenje)
 ├─ CLAUDE.md                 # "ustav" projekta — pravila koja Claude čita svake sesije
 └─ .claude/                  # sam radni okvir (the harness):
     ├─ rules/                #   priručnici (rules) — učitavaju se po potrebi (po putanji)
@@ -61,6 +62,7 @@ Detaljno objašnjenje svakog bloka, s točnim datotekama i analogijama, je u
 ## Kako koristiti
 
 ### 1. Za čitanje / učenje
+- **Brzi pregled svih blokova:** otvorite `index.html` u pregledniku — svaki naziv datoteke je poveznica na sam primjer.
 - Počnite od prezentacije: [`slides/talk.qmd`](slides/talk.qmd) (ili renderirani HTML).
 - Za "ispod haube": [`harness-map/README.md`](harness-map/README.md) — što je svaki blok, kako radi i zašto.
 
@@ -83,10 +85,10 @@ Forkajte repozitorij, zamijenite sadržaj špice svojim, prilagodite pravila i a
 - ⏳ Quarto još nije instaliran → špica još **nije renderirana** (pravilo provjere: ne tvrdimo da radi dok ne provjerimo).
 - ⏳ Preostaje: 5. sloj (`settings` + `hooks`), kartica praga kvalitete + podsjetnik, objava na GitHub Pages.
 
-## Izvor i zahvale
+## O pristupu
 
-Zasnovano na radnom okviru **Pedra Sant'Anne** ("Claude Code — my workflow") i njegovoj *izvršnoj mapi*.
-Vodič: <https://psantanna.com/claude-code-my-workflow/workflow-guide.html> ·
-predložak: `pedrohcgs/claude-code-my-workflow`.
+Repozitorij slijedi ustaljene obrasce za **agentski rad s alatom Claude Code** (Claude Code "harness"):
+vitki ustav, pravila vezana uz putanju, vještine, specijalizirani agenti i suparnička petlja
+kritičar–ispravljač. Cilj je pokazati te obrasce na konkretnom, malom primjeru.
 
 *Autor / voditelj radionice: Luka Šikić.*

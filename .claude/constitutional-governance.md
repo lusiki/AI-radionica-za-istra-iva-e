@@ -1,5 +1,5 @@
 ---
-description: The project's higher-altitude governing articles. In the Sant'Anna harness this is OPTIONAL and added only after 3-7 recurring patterns emerge — included here as a learning building block.
+description: The project's higher-altitude governing articles. In this harness it is OPTIONAL and added only after 3-7 recurring patterns emerge — included here as a learning building block.
 ---
 
 # Constitutional Governance
