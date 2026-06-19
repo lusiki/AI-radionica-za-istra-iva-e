@@ -1,0 +1,129 @@
+/*-- scss:defaults --*/
+// "Quiet data terminal on paper" — aesthetic applied to the RevealJS deck.
+// Fonts are loaded via include-in-header in talk.qmd (Roboto Mono + Source Sans 3).
+
+$paper:    #F7F7F4;
+$ink:      #18181B;
+$muted:    #71717A;
+$hairline: #E6E6E1;
+$accent:   #2348E5;
+$code-bg:  #EFEFEA;
+
+// Base
+$body-bg: $paper;
+$body-color: $ink;
+$font-family-sans-serif: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+$presentation-font-size-root: 30px;
+$presentation-line-height: 1.5;
+
+// Links / selection
+$link-color: $accent;
+$link-color-hover: $accent;
+$selection-bg: $accent;
+$selection-color: #fff;
+
+// Headings -> Roboto Mono
+$presentation-heading-font: 'Roboto Mono', monospace;
+$presentation-heading-color: $ink;
+$presentation-heading-font-weight: 700;
+$presentation-heading-line-height: 1.15;
+
+// Code
+$code-block-bg: $code-bg;
+$code-color: $ink;
+
+/*-- scss:rules --*/
+
+$accent: #2348E5;
+$ink: #18181B;
+$muted: #71717A;
+$hairline: #E6E6E1;
+$code-bg: #EFEFEA;
+
+.reveal { -webkit-font-smoothing: antialiased; }
+
+// Slide titles: mono, tight, with a thin accent tick under a hairline
+.reveal .slides section h2 {
+  letter-spacing: -0.015em;
+  padding-bottom: .25em;
+  margin-bottom: .6em;
+  border-bottom: 1px solid $hairline;
+  position: relative;
+}
+.reveal .slides section h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 2.2em; height: 2px;
+  background: $accent;
+}
+.reveal h1, .reveal h3, .reveal h4 { letter-spacing: -0.015em; }
+
+// Body
+.reveal p, .reveal li { font-family: 'Source Sans 3', system-ui, sans-serif; }
+.reveal ul, .reveal ol { line-height: 1.5; }
+.reveal strong { color: $ink; font-weight: 600; }
+.reveal em { color: $muted; font-style: italic; }
+.reveal .slides section ul li::marker { color: $accent; }
+
+// Inline code & slash-commands
+.reveal code {
+  font-family: 'Roboto Mono', monospace;
+  background: $code-bg;
+  padding: .08em .32em;
+  border-radius: 3px;
+  font-size: .9em;
+  color: $ink;
+}
+.reveal pre { box-shadow: none; }
+.reveal pre code {
+  border: 1px solid $hairline;
+  border-radius: 4px;
+  background: $code-bg;
+}
+
+// Tables: hairlines, mono, tabular
+.reveal table { font-family: 'Roboto Mono', monospace; font-size: .8em; border-collapse: collapse; }
+.reveal table th {
+  border-bottom: 1.5px solid $ink;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: $muted;
+}
+.reveal table td { border-bottom: 1px solid $hairline; }
+
+// Blockquote / callout: accent left rule, no heavy fill
+.reveal blockquote {
+  border-left: 2px solid $accent;
+  background: none;
+  box-shadow: none;
+  font-style: normal;
+  color: $muted;
+  padding: .2em 0 .2em 1em;
+  width: auto;
+}
+
+// Chrome
+.reveal .slide-number { background: none; color: $muted; font-family: 'Roboto Mono', monospace; }
+.reveal .controls { color: $accent; }
+.reveal .progress { color: $accent; }
+
+// Title slide
+#title-slide .title {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $ink;
+}
+#title-slide .subtitle {
+  font-family: 'Source Sans 3', sans-serif;
+  color: $muted;
+  font-style: normal;
+}
+#title-slide .author, #title-slide .date {
+  font-family: 'Roboto Mono', monospace;
+  font-size: .6em;
+  color: $muted;
+  letter-spacing: .04em;
+}

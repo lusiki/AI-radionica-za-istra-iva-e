@@ -4,157 +4,197 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI radionica za istraživače — pregled gradivnih blokova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  :root { --accent: #0d9488; --ink: #1a1a1a; --muted: #6b7280; --line: #e5e7eb; }
-  * { box-sizing: border-box; }
-  body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    color: var(--ink); background: #fafafa; line-height: 1.6;
-    max-width: 880px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+  :root{
+    --paper:#F7F7F4; --ink:#18181B; --muted:#71717A; --hairline:#E6E6E1;
+    --accent:#2348E5; --surface:#F1F1EC; --code:#EFEFEA;
   }
-  h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
-  .sub { color: var(--muted); font-size: 1.05rem; margin: 0 0 1.5rem; }
-  .legend {
-    background: #ecfdf5; border: 1px solid #99f6e4; border-radius: 8px;
-    padding: .7rem 1rem; font-size: .92rem; margin: 0 0 2rem;
+  html[data-theme="dark"]{
+    --paper:#0F0F11; --ink:#ECECEC; --muted:#8A8A90; --hairline:#262629;
+    --accent:#5C78FF; --surface:#17171A; --code:#141417;
   }
-  .intro { margin: 0 0 2rem; }
-  .block {
-    background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--accent);
-    border-radius: 8px; padding: 1rem 1.25rem; margin: 0 0 1rem;
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Source Sans 3', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.7;
+    transition:background .45s ease, color .45s ease;
   }
-  .block h2 { font-size: 1.15rem; margin: 0 0 .4rem; }
-  .block h2 .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
-  .desc { margin: 0 0 .7rem; color: #374151; }
-  ul.files { list-style: none; margin: 0; padding: 0; }
-  ul.files li { padding: .2rem 0; border-top: 1px solid #f3f4f6; }
-  ul.files li:first-child { border-top: 0; }
-  a.file {
-    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-    color: var(--accent); text-decoration: none; font-size: .92rem;
-    background: #f0fdfa; padding: .1rem .35rem; border-radius: 4px;
-  }
-  a.file:hover { text-decoration: underline; background: #ccfbf1; }
-  .note { color: var(--muted); font-size: .9rem; }
-  .todo { opacity: .6; border-left-color: #d1d5db; }
-  .todo .tag {
-    font-size: .75rem; background: #f3f4f6; color: var(--muted);
-    padding: .1rem .4rem; border-radius: 4px; margin-left: .4rem;
-  }
-  .section-label { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--muted); margin: 2rem 0 .75rem; }
-  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line);
-    color: var(--muted); font-size: .9rem; }
-  footer a { color: var(--accent); }
+  ::selection{ background:var(--accent); color:#fff; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:clamp(24px,5vw,56px) clamp(20px,6vw,80px) 0; }
+
+  header.top{ display:flex; flex-wrap:wrap; gap:16px 32px; align-items:center; justify-content:space-between;
+    padding-bottom:20px; border-bottom:1px solid var(--hairline); }
+  .wordmark{ font-family:'Roboto Mono',monospace; font-weight:700; font-size:16px; letter-spacing:-0.01em; color:var(--ink); }
+  .themebtn{ width:30px; height:30px; display:grid; place-items:center; background:none; border:1px solid var(--hairline);
+    border-radius:50%; cursor:pointer; color:var(--ink); transition:border-color .2s,color .2s; }
+  .themebtn:hover{ border-color:var(--accent); color:var(--accent); }
+
+  .eyebrow{ font-family:'Roboto Mono',monospace; font-size:11.5px; font-weight:500; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--accent); margin:clamp(36px,6vw,64px) 0 14px; }
+  h1{ font-family:'Roboto Mono',monospace; font-weight:700; font-size:clamp(28px,5vw,42px); line-height:1.12;
+    letter-spacing:-0.02em; margin:0 0 14px; }
+  .sub{ font-size:16px; color:var(--muted); max-width:620px; margin:0; }
+  .legend{ font-family:'Roboto Mono',monospace; font-size:12px; line-height:1.6; color:var(--muted);
+    border-left:2px solid var(--accent); padding:6px 0 6px 14px; margin:22px 0 0; }
+
+  .section{ margin-top:clamp(40px,6vw,72px); padding-top:26px; border-top:1px solid var(--hairline); }
+  .section-label{ font-family:'Roboto Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:18px; }
+
+  .row{ padding:18px 0; border-top:1px solid var(--hairline); }
+  .row:first-of-type{ border-top:0; }
+  .row h3{ font-family:'Roboto Mono',monospace; font-weight:500; font-size:16px; letter-spacing:-0.01em; margin:0 0 6px; color:var(--ink); }
+  .row h3 .en{ color:var(--muted); font-weight:400; font-size:13px; }
+  .row .desc{ font-size:14.5px; color:var(--muted); margin:0 0 10px; max-width:66ch; }
+  .row.todo{ opacity:.55; }
+  .tag{ font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--muted); border:1px solid var(--hairline); border-radius:20px; padding:2px 9px; margin-left:8px; }
+
+  a.file{ font-family:'Roboto Mono',monospace; font-size:12.5px; color:var(--accent);
+    border-bottom:1px solid transparent; transition:border-color .2s; }
+  a.file:hover{ border-bottom-color:var(--accent); }
+  ul.files{ list-style:none; margin:0; padding:0; }
+  ul.files li{ padding:5px 0; font-size:13.5px; color:var(--muted); }
+  code{ font-family:'Roboto Mono',monospace; font-size:.9em; background:var(--code); padding:.06em .34em; border-radius:3px; color:var(--ink); }
+
+  footer{ margin-top:clamp(48px,6vw,80px); padding:30px 0 50px; border-top:1px solid var(--hairline);
+    font-family:'Roboto Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:.04em; line-height:1.9; }
+  footer a{ color:var(--accent); }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>AI radionica za istraživače</h1>
-<p class="sub">Agentska AI za metodološka istraživanja — interaktivni pregled gradivnih blokova</p>
+  <header class="top">
+    <span class="wordmark">AI radionica za istraživače</span>
+    <button id="themebtn" class="themebtn" aria-label="Promijeni temu">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M7 0a7 7 0 100 14A4.6 4.6 0 017 0z"></path></svg>
+    </button>
+  </header>
 
-<p class="legend">
-  👉 Kliknite na <a class="file" href="CLAUDE.md" target="_blank" rel="noopener">naziv datoteke</a>
-  da otvorite sam primjer. Datoteke se otvaraju u novoj kartici. Engleska imena blokova su u zagradama.
-</p>
+  <div class="eyebrow">Pregled</div>
+  <h1>Gradivni blokovi radnog okvira</h1>
+  <p class="sub">Agentska AI za metodološka istraživanja. Ovaj repozitorij je i sam mali radni primjer okvira koji radionica objašnjava.</p>
+  <p class="legend">Kliknite na naziv datoteke da otvorite sam primjer. Datoteke se otvaraju u novoj kartici. Engleska imena blokova su u zagradama.</p>
 
-<p class="intro">
-  Ovaj repozitorij je i sam mali radni primjer <em>"harnessa"</em> (radnog okvira) za agentski rad s
-  alatom Claude Code. Pet slojeva ispod obavlja sav posao; svaki ima nadimak na običnom jeziku.
-</p>
+  <section class="section">
+    <div class="section-label">01 — Radni okvir · pet slojeva</div>
 
-<div class="section-label">Radni okvir — pet slojeva</div>
+    <div class="row">
+      <h3>Ustav <span class="en">(CLAUDE.md)</span></h3>
+      <p class="desc">Jedna kratka stranica kućnih pravila koju Claude čita na početku svake sesije. Vitka — oko 120 redaka.</p>
+      <a class="file" href="CLAUDE.md" target="_blank" rel="noopener">CLAUDE.md</a>
+    </div>
 
-<section class="block">
-  <h2>1 · Ustav <span class="en">(CLAUDE.md)</span></h2>
-  <p class="desc">Jedna kratka stranica kućnih pravila koju Claude čita na početku svake sesije. Vitka — oko 120 redaka.</p>
-  <a class="file" href="CLAUDE.md" target="_blank" rel="noopener">CLAUDE.md</a>
-</section>
+    <div class="row">
+      <h3>Priručnici <span class="en">(rules)</span></h3>
+      <p class="desc">Pravila koja se učitavaju automatski, ali samo kad su relevantna (vezana uz putanju datoteke).</p>
+      <ul class="files">
+        <li><a class="file" href=".claude/rules/plan-first-workflow.md" target="_blank" rel="noopener">.claude/rules/plan-first-workflow.md</a> — uvijek uključeno: prvo plan</li>
+        <li><a class="file" href=".claude/rules/verification-protocol.md" target="_blank" rel="noopener">.claude/rules/verification-protocol.md</a> — na <code>.qmd</code>: renderiraj prije „gotovo”</li>
+        <li><a class="file" href=".claude/rules/quality-gates.md" target="_blank" rel="noopener">.claude/rules/quality-gates.md</a> — ocjena kvalitete 80 / 90 / 95</li>
+        <li><a class="file" href=".claude/rules/audience-framing.md" target="_blank" rel="noopener">.claude/rules/audience-framing.md</a> — kako se obraćati metodolozima</li>
+      </ul>
+    </div>
 
-<section class="block">
-  <h2>2 · Priručnici <span class="en">(rules)</span></h2>
-  <p class="desc">Pravila koja se učitavaju automatski, ali samo kad su relevantna (vezana uz putanju datoteke).</p>
-  <ul class="files">
-    <li><a class="file" href=".claude/rules/plan-first-workflow.md" target="_blank" rel="noopener">.claude/rules/plan-first-workflow.md</a> — uvijek uključeno: prvo plan, pa gradnja</li>
-    <li><a class="file" href=".claude/rules/verification-protocol.md" target="_blank" rel="noopener">.claude/rules/verification-protocol.md</a> — na <code>.qmd</code>: renderiraj prije "gotovo"</li>
-    <li><a class="file" href=".claude/rules/quality-gates.md" target="_blank" rel="noopener">.claude/rules/quality-gates.md</a> — ocjena kvalitete 80 / 90 / 95</li>
-    <li><a class="file" href=".claude/rules/audience-framing.md" target="_blank" rel="noopener">.claude/rules/audience-framing.md</a> — kako se obraćati metodolozima</li>
-  </ul>
-</section>
+    <div class="row">
+      <h3>Ustavno upravljanje <span class="en">(governance)</span></h3>
+      <p class="desc">Viši sloj — članci I–VI koji nadjačavaju ustav u slučaju sukoba. (Inače opcionalno; ovdje kao primjer.)</p>
+      <a class="file" href=".claude/constitutional-governance.md" target="_blank" rel="noopener">.claude/constitutional-governance.md</a>
+    </div>
 
-<section class="block">
-  <h2>2½ · Ustavno upravljanje <span class="en">(governance)</span></h2>
-  <p class="desc">Viši sloj — članci I–VI koji nadjačavaju ustav u slučaju sukoba. (Inače opcionalno; ovdje kao primjer.)</p>
-  <a class="file" href=".claude/constitutional-governance.md" target="_blank" rel="noopener">.claude/constitutional-governance.md</a>
-</section>
+    <div class="row">
+      <h3>Gumbi <span class="en">(skills)</span></h3>
+      <p class="desc">Imenovani recepti — naredbe koje pokrećete s <code>/</code>. Vi ih imenujete, Claude pritisne pravi.</p>
+      <ul class="files">
+        <li><a class="file" href=".claude/skills/render/SKILL.md" target="_blank" rel="noopener">.claude/skills/render/SKILL.md</a> — <code>/render</code>: izgradi špicu i provjeri</li>
+        <li><a class="file" href=".claude/skills/proofread/SKILL.md" target="_blank" rel="noopener">.claude/skills/proofread/SKILL.md</a> — <code>/proofread</code>: četiri specijalistička prolaza</li>
+        <li><a class="file" href=".claude/skills/commit/SKILL.md" target="_blank" rel="noopener">.claude/skills/commit/SKILL.md</a> — <code>/commit</code>: spremi uz odobrenje</li>
+        <li><a class="file" href=".claude/skills/review-deck/SKILL.md" target="_blank" rel="noopener">.claude/skills/review-deck/SKILL.md</a> — <code>/review-deck</code>: suparnička petlja</li>
+      </ul>
+    </div>
 
-<section class="block">
-  <h2>3 · Gumbi <span class="en">(skills)</span></h2>
-  <p class="desc">Imenovani recepti — naredbe koje pokrećete s <code>/</code>. Vi ih imenujete, Claude pritisne pravi.</p>
-  <ul class="files">
-    <li><a class="file" href=".claude/skills/render/SKILL.md" target="_blank" rel="noopener">.claude/skills/render/SKILL.md</a> — <code>/render</code>: izgradi špicu i provjeri da HTML postoji</li>
-    <li><a class="file" href=".claude/skills/proofread/SKILL.md" target="_blank" rel="noopener">.claude/skills/proofread/SKILL.md</a> — <code>/proofread</code>: četiri specijalistička prolaza</li>
-    <li><a class="file" href=".claude/skills/commit/SKILL.md" target="_blank" rel="noopener">.claude/skills/commit/SKILL.md</a> — <code>/commit</code>: spremi tek uz vaše odobrenje</li>
-    <li><a class="file" href=".claude/skills/review-deck/SKILL.md" target="_blank" rel="noopener">.claude/skills/review-deck/SKILL.md</a> — <code>/review-deck</code>: suparnička petlja kritičar→ispravljač</li>
-  </ul>
-</section>
+    <div class="row">
+      <h3>Ekipa <span class="en">(agents)</span></h3>
+      <p class="desc">Uski specijalisti, svaki provjerava jednu stvar. Pozivaju ih vještine, ne vi izravno.</p>
+      <ul class="files">
+        <li><a class="file" href=".claude/agents/deck-critic.md" target="_blank" rel="noopener">.claude/agents/deck-critic.md</a> — kritičar: nalazi greške i ocjenjuje (samo čita)</li>
+        <li><a class="file" href=".claude/agents/deck-fixer.md" target="_blank" rel="noopener">.claude/agents/deck-fixer.md</a> — ispravljač: popravlja (ne smije sam sebe odobriti)</li>
+        <li><a class="file" href=".claude/agents/audience-reviewer.md" target="_blank" rel="noopener">.claude/agents/audience-reviewer.md</a> — specijalist za uokvirivanje prema publici</li>
+      </ul>
+    </div>
 
-<section class="block">
-  <h2>4 · Ekipa <span class="en">(agents)</span></h2>
-  <p class="desc">Uski specijalisti, svaki provjerava jednu stvar. Pozivaju ih vještine, ne vi izravno.</p>
-  <ul class="files">
-    <li><a class="file" href=".claude/agents/deck-critic.md" target="_blank" rel="noopener">.claude/agents/deck-critic.md</a> — kritičar: nalazi greške i ocjenjuje (samo čita)</li>
-    <li><a class="file" href=".claude/agents/deck-fixer.md" target="_blank" rel="noopener">.claude/agents/deck-fixer.md</a> — ispravljač: popravlja (ne smije sam sebe odobriti)</li>
-    <li><a class="file" href=".claude/agents/audience-reviewer.md" target="_blank" rel="noopener">.claude/agents/audience-reviewer.md</a> — specijalist za uokvirivanje prema publici</li>
-  </ul>
-</section>
+    <div class="row todo">
+      <h3>Automatski sustavi <span class="en">(settings + hooks)</span><span class="tag">još nije izrađeno</span></h3>
+      <p class="desc">Dozvole i alarmi koji se sami okidaju (npr. zaštitne ograde za git). Peti sloj — dodaje se sljedeći.</p>
+    </div>
+  </section>
 
-<section class="block todo">
-  <h2>5 · Automatski sustavi <span class="en">(settings + hooks)</span> <span class="tag">još nije izrađeno</span></h2>
-  <p class="desc">Dozvole i alarmi koji se sami okidaju (npr. zaštitne ograde za git). Peti sloj — dodaje se sljedeći.</p>
-</section>
+  <section class="section">
+    <div class="section-label">02 — Sadržaj radionice</div>
 
-<div class="section-label">Sadržaj radionice</div>
+    <div class="row">
+      <h3>Prezentacija</h3>
+      <p class="desc">Špica „Od chata do delegiranja” (Quarto → RevealJS). Klik otvara <em>izvor</em>; renderirani HTML nastaje naredbom <code>/render</code>.</p>
+      <a class="file" href="slides/talk.qmd" target="_blank" rel="noopener">slides/talk.qmd</a>
+    </div>
 
-<section class="block">
-  <h2>📊 Prezentacija</h2>
-  <p class="desc">Špica "Od chata do delegiranja" (Quarto → RevealJS). Klik otvara <em>izvor</em>; renderirani HTML nastaje naredbom <code>/render</code>.</p>
-  <a class="file" href="slides/talk.qmd" target="_blank" rel="noopener">slides/talk.qmd</a>
-</section>
+    <div class="row">
+      <h3>Resursi</h3>
+      <p class="desc">Materijali za ponijeti.</p>
+      <ul class="files">
+        <li><a class="file" href="resources/glossary.md" target="_blank" rel="noopener">resources/glossary.md</a> — pojmovnik: od riječi iz chata do agentskih riječi</li>
+        <li><a class="file" href="resources/README.md" target="_blank" rel="noopener">resources/README.md</a> — plan kompleta resursa</li>
+      </ul>
+    </div>
 
-<section class="block">
-  <h2>🧰 Resursi</h2>
-  <p class="desc">Materijali za ponijeti.</p>
-  <ul class="files">
-    <li><a class="file" href="resources/glossary.md" target="_blank" rel="noopener">resources/glossary.md</a> — pojmovnik: od riječi iz chata do agentskih riječi</li>
-    <li><a class="file" href="resources/README.md" target="_blank" rel="noopener">resources/README.md</a> — plan kompleta resursa</li>
-  </ul>
-</section>
+    <div class="row">
+      <h3>Mapa za učenje</h3>
+      <p class="desc">Komentirana mapa cijelog radnog okvira — što je svaki blok, s točnim datotekama i analogijama.</p>
+      <a class="file" href="harness-map/README.md" target="_blank" rel="noopener">harness-map/README.md</a>
+    </div>
+  </section>
 
-<section class="block">
-  <h2>🗺️ Mapa za učenje</h2>
-  <p class="desc">Komentirana mapa cijelog radnog okvira — što je svaki blok, s točnim datotekama i analogijama.</p>
-  <a class="file" href="harness-map/README.md" target="_blank" rel="noopener">harness-map/README.md</a>
-</section>
+  <section class="section">
+    <div class="section-label">03 — Postavljanje i pokusi</div>
 
-<div class="section-label">Postavljanje i pokusi</div>
+    <div class="row">
+      <h3>Postavljanje <span class="en">(sučelja · preduvjeti · cijene)</span></h3>
+      <p class="desc">Kako uopće raditi s AI-jem: chat vs. VS Code vs. terminal; što vam treba i koliko košta.</p>
+      <a class="file" href="setup/README.md" target="_blank" rel="noopener">setup/README.md</a>
+    </div>
 
-<section class="block">
-  <h2>⚙️ Postavljanje <span class="en">(sučelja · preduvjeti · cijene)</span></h2>
-  <p class="desc">Kako uopće raditi s AI-jem: chat vs. VS Code vs. terminal; što vam treba i koliko košta.</p>
-  <a class="file" href="setup/README.md" target="_blank" rel="noopener">setup/README.md</a>
-</section>
+    <div class="row">
+      <h3>Empirijski primjer</h3>
+      <p class="desc">Klonirajte repozitorij s GitHuba i pokrenite dva mala pokusa (<code>/render</code> i <code>/review-deck</code>).</p>
+      <a class="file" href="demos/README.md" target="_blank" rel="noopener">demos/README.md</a>
+    </div>
+  </section>
 
-<section class="block">
-  <h2>🧪 Empirijski primjer</h2>
-  <p class="desc">Klonirajte repozitorij s GitHuba i pokrenite dva mala pokusa (<code>/render</code> i <code>/review-deck</code>).</p>
-  <a class="file" href="demos/README.md" target="_blank" rel="noopener">demos/README.md</a>
-</section>
+  <footer>
+    Repozitorij: <a href="https://github.com/lusiki/AI-radionica-za-istra-iva-e">github.com/lusiki/AI-radionica-za-istra-iva-e</a><br>
+    Datoteke se lokalno otvaraju kao tekst; za prikaz s formatiranjem otvorite ih na GitHubu.
+  </footer>
 
-<footer>
-  Repozitorij: <a href="https://github.com/lusiki/AI-radionica-za-istra-iva-e">github.com/lusiki/AI-radionica-za-istra-iva-e</a>.<br>
-  Datoteke se lokalno otvaraju kao tekst; za prikaz s formatiranjem otvorite ih na GitHubu.
-</footer>
-
+</div>
+<script>
+  (function () {
+    var root = document.documentElement;
+    try { var t = localStorage.getItem('radionica-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+    var btn = document.getElementById('themebtn');
+    if (btn) btn.addEventListener('click', function () {
+      var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('radionica-theme', next); } catch (e) {}
+    });
+  })();
+</script>
 </body>
 </html>
