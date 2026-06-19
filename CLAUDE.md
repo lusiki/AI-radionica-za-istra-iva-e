@@ -24,6 +24,8 @@ medium demonstrates the message.
 5. **Write decisions to disk,** not just into the chat (plans, session notes) — chat gets wiped.
 
 ## Folder structure
+- `index.qmd`     — the talk as a Quarto HTML document → renders to `docs/` (published via GitHub Pages)
+- `pregled.html`  — clickable building-block overview (open locally)
 - `slides/`       — the Quarto → RevealJS deck (`talk.qmd`), the dog-food artifact
 - `resources/`    — the takeaway kit (glossary, quality-gate card, cheat sheet)
 - `setup/`       — interfaces, prerequisites & pricing (Croatian)
@@ -60,9 +62,10 @@ Verification, Adversarial Review, Memory, Audience Fidelity). They override this
 - **Language:** audience-facing content + the study map are in **Croatian** (`slides/talk.qmd`,
   `resources/`, `harness-map/`); the machinery (this file, rules, agents, governance) stays English.
   English block/skill/agent names are kept and bracketed as *hrvatski pojam (english-name)*; slash-commands stay English.
-- **HTML overview:** `index.html` — a clickable index of every building block; each name links to the file.
+- **HTML overview:** `pregled.html` — a clickable index of every building block; each name links to the file.
+- **Published web page:** `index.qmd` → `docs/index.html`, live at https://lusiki.github.io/AI-radionica-za-istra-iva-e/ (GitHub Pages, source main /docs).
 - **Onboarding:** `setup/` (interfaces + prereqs + pricing) and `demos/` (clone-and-run empirical example), both Croatian.
-- **Quarto not yet installed** — `/render` will stop and tell you to install it. See `harness-map/README.md`.
+- **Quarto installed** (1.9.x) — `quarto render` builds the deck + document into `docs/`.
 - Resources: Croatian glossary in `resources/`, quality-gate card + cheat sheet still to build.
 - **Git:** connected to GitHub `origin` → `lusiki/AI-radionica-za-istra-iva-e` (branch `main`).
 

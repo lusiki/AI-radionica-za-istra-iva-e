@@ -3,6 +3,8 @@
 **Agentska AI za metodološka istraživanja** — materijali za radionicu *i* mali radni primjer
 "harnessa" (radnog okvira) koji ta radionica objašnjava.
 
+**🌐 Živa prezentacija (web):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
+
 > **Cilj radionice:** pomoći metodološkim istraživačima da naprave iskorak od *chat-promptanja*
 > (razgovora s AI-jem radi jednog odgovora) prema **agentskom radu** — gdje AI-ju *povjeravate* cijeli
 > zadatak: on ga planira, izvršava, provjerava vlastiti rad i vraća se tek na vaše odobrenje.
@@ -17,7 +19,9 @@ gledate sam okvir na djelu. *(Medij je poruka.)*
 ```
 .
 ├─ README.md                 # ova stranica
-├─ index.html                # interaktivni pregled gradivnih blokova (klikni za primjer)
+├─ index.qmd                 # prezentacija kao web-dokument (Quarto) → docs/index.html
+├─ pregled.html              # interaktivni pregled gradivnih blokova (klikni za primjer)
+├─ docs/                     # objavljena web-stranica (GitHub Pages)
 ├─ slides/talk.qmd           # prezentacija (Quarto → RevealJS): "Od chata do delegiranja"
 ├─ resources/                # prateći materijali za ponijeti
 │   ├─ glossary.md           #   pojmovnik: od riječi iz chata do agentskih riječi
@@ -64,7 +68,8 @@ Detaljno objašnjenje svakog bloka, s točnim datotekama i analogijama, je u
 ## Kako koristiti
 
 ### 1. Za čitanje / učenje
-- **Brzi pregled svih blokova:** otvorite `index.html` u pregledniku — svaki naziv datoteke je poveznica na sam primjer.
+- **Živa web-verzija prezentacije:** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
+- **Brzi pregled svih blokova:** otvorite `pregled.html` u pregledniku — svaki naziv datoteke je poveznica na sam primjer.
 - Počnite od prezentacije: [`slides/talk.qmd`](slides/talk.qmd) (ili renderirani HTML).
 - Za "ispod haube": [`harness-map/README.md`](harness-map/README.md) — što je svaki blok, kako radi i zašto.
 
@@ -86,9 +91,10 @@ Forkajte repozitorij, zamijenite sadržaj špice svojim, prilagodite pravila i a
 
 - ✅ Blokovi: ustav, 4 pravila, ustavno upravljanje, 4 vještine, 3 agenta.
 - ✅ Prezentacija + pojmovnik + mapa za učenje (na hrvatskom).
-- ✅ Interaktivni pregled (`index.html`), postavljanje + cijene (`setup/`), empirijski primjer (`demos/`).
-- ⏳ Quarto još nije instaliran → špica još **nije renderirana** (pravilo provjere: ne tvrdimo da radi dok ne provjerimo).
-- ⏳ Preostaje: 5. sloj (`settings` + `hooks`), kartica praga kvalitete + podsjetnik, objava na GitHub Pages.
+- ✅ Interaktivni pregled (`pregled.html`), postavljanje + cijene (`setup/`), empirijski primjer (`demos/`).
+- ✅ Objavljena web-prezentacija: Quarto dokument (`index.qmd`) → `docs/`, GitHub Pages.
+- ✅ Quarto instaliran; prezentacija renderirana i objavljena na GitHub Pages.
+- ⏳ Preostaje: 5. sloj (`settings` + `hooks`), kartica praga kvalitete + podsjetnik.
 
 ## O pristupu
 
