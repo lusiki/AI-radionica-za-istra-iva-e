@@ -1,8 +1,9 @@
 ---
-title: "From Chatting to Delegating"
-subtitle: "Agentic AI for methodological research"
+title: "Od chata do delegiranja"
+subtitle: "Agentska AI za metodološka istraživanja"
 author: "Luka Šikić"
 date: today
+lang: hr
 format:
   revealjs:
     theme: simple
@@ -13,248 +14,247 @@ format:
     center: false
 ---
 
-## Where you are now {.smaller}
+## Gdje ste sada {.smaller}
 
-You open a chat window. You craft a prompt. You get an answer.
+Otvorite prozor za chat. Sastavite prompt. Dobijete odgovor.
 
-Then **you** copy the code, run it, hit an error, paste the error back, and try again.
+Zatim **vi** kopirate kôd, pokrenete ga, naletite na grešku, zalijepite grešku natrag i pokušate ponovno.
 
 ::: {.fragment}
-You are the project manager. You hold the whole plan in your head.
-The AI helps you with **one step at a time.**
+Vi ste voditelj projekta. Cijeli plan držite u svojoj glavi.
+AI vam pomaže s **jednim korakom u nizu.**
 :::
 
 ::: {.notes}
-Set the baseline gently. Everyone here already does this. No judgment — name it so the contrast lands.
+Blago postavite polazište. Svi u dvorani to već rade. Bez osude — imenujte to da kontrast kasnije sjedne.
 :::
 
-## The leap {.smaller}
+## Iskorak {.smaller}
 
 ::: {.incremental}
-- **Chat AI helps you _do_ the work.**
-- **Agentic AI is _assigned_ the work.**
+- **Razgovorna AI (chat AI) _pomaže vam_ da obavite posao.**
+- **Agentskoj AI (agentic AI) se posao _povjerava_.**
 :::
 
 ::: {.fragment}
-You stop crafting a prompt to get an answer.
-You start **specifying a goal + constraints**, then **supervising** while it plans, acts, checks its
-own work, and comes back when it's done.
+Prestajete sastavljati prompt da biste dobili odgovor.
+Počinjete **zadavati cilj + ograničenja**, a zatim **nadzirati** dok ona planira, djeluje, provjerava
+vlastiti rad i vraća se kad je gotovo.
 :::
 
 ::: {.notes}
-This single slide is the thesis. Don't rush it. The shift bundles three things at once — let later slides unpack them.
+Ovaj jedan slajd je teza. Ne žurite. Iskorak istovremeno mijenja tri stvari — neka ih kasniji slajdovi razlože.
 :::
 
-## This is *your* kind of problem {.smaller}
+## Ovo je vama poznata vrsta problema {.smaller}
 
-Don't think "smarter chatbot." Think about what you already do every day:
+Ne razmišljajte "pametniji chatbot". Razmislite o onome što ionako svakodnevno radite:
 
 ::: {.incremental}
-- You **brief and supervise an RA** — and you check their work.
-- You write a **pre-analysis plan** before you touch the data.
-- You **peer review** — the author doesn't get to grade their own paper.
-- You keep an **audit trail** so the result is defensible and reproducible.
+- **Brifirate i nadzirete asistenta (RA)** — i provjeravate njegov rad.
+- Pišete **plan analize** prije nego što dotaknete podatke.
+- **Recenzirate (peer review)** — autor ne ocjenjuje vlastiti rad.
+- Vodite **revizijski trag** kako bi rezultat bio obranjiv i ponovljiv.
 :::
 
 ::: {.fragment}
-Agentic AI is built out of exactly these moves. You are *uniquely* equipped to lead it.
+Agentska AI sastavljena je upravo od tih poteza. Vi ste **jedinstveno** osposobljeni da je vodite.
 :::
 
-## Four aches it goes after {.smaller}
+## Četiri boli koje rješava {.smaller}
 
 ::: {.incremental}
-1. **It forgets** — between sessions, *why* you chose that notation or which bug you fixed.
-2. **Quality wobbles** — one table is clean, the next is missing standard errors.
-3. **Review is exhausting** — checking 140 slides by hand is soul-destroying.
-4. **The deep one** — a spell-checker catches *teh*, but never a **flipped sign** in a theorem
-   or a regression that is quietly wrong.
+1. **Zaboravlja** — između sesija, *zašto* ste odabrali tu notaciju ili koji ste bug ispravili.
+2. **Kvaliteta varira** — jedna tablica je čista, sljedećoj nedostaju standardne greške.
+3. **Pregledavanje iscrpljuje** — ručno provjeriti 140 slajdova ubija volju.
+4. **Ona najdublja** — provjera pravopisa uhvati *pogeršku*, ali nikad **obrnuti predznak** u teoremu
+   ili regresiju koja je tiho pogrešna.
 :::
 
 ::: {.notes}
-Ache #4 is the emotional core for this audience. The mechanical errors are real and they've all been burned.
+Bol #4 je emocionalna srž za ovu publiku. Mehaničke greške su stvarne i svi su se na njima opekli.
 :::
 
-## The whole thing in one breath {.smaller}
+## Sve u jednom dahu {.smaller}
 
-You describe what you want, in plain English. Claude behaves like a **general contractor**:
+Opišete što želite, običnim jezikom. Claude se ponaša kao **glavni izvođač radova**:
 
 ::: {.incremental}
-- draws up a **blueprint** and gets your approval,
-- **hires a crew** of specialists,
-- **inspects** their work and sends them back to fix what's wrong,
-- comes back to you only when the job **passes inspection**.
+- izradi **nacrt** i zatraži vaše odobrenje,
+- **unajmi ekipu** specijalista,
+- **pregleda** njihov rad i vrati ih da poprave što ne valja,
+- vrati se k vama tek kad posao **prođe inspekciju**.
 :::
 
 ::: {.fragment}
-**You talk, Claude runs the site.** Everything else is plumbing built so you never think about plumbing.
+**Vi govorite, Claude vodi gradilište.** Sve ostalo su instalacije, izgrađene tako da nikad ne morate misliti na instalacije.
 :::
 
-## The crew and the house {.smaller}
+## Ekipa i kuća {.smaller}
 
-Five layers do all the work. Each has a plain-English nickname:
+Pet slojeva obavlja sav posao. Svaki ima nadimak na običnom jeziku:
 
-| Layer | Nickname | What it is |
+| Sloj | Nadimak | Što je |
 |---|---|---|
-| `CLAUDE.md` | **Constitution** | One short page of house rules, read every session |
-| Rules | **Handbooks** | Manuals that appear only when relevant |
-| Skills | **Buttons** | Named recipes (`/render`, `/proofread`, `/commit`) |
-| Agents | **The crew** | Narrow specialists, each inspecting one thing |
-| Settings + Hooks | **Automatic systems** | Permissions, and alarms that fire by themselves |
+| `CLAUDE.md` | **Ustav** | Jedna kratka stranica kućnih pravila, čita se svake sesije |
+| Rules | **Priručnici** | Priručnici koji se pojave samo kad su relevantni |
+| Skills | **Gumbi** | Imenovani recepti (`/render`, `/proofread`, `/commit`) |
+| Agents | **Ekipa** | Uski specijalisti, svaki provjerava jednu stvar |
+| Settings + Hooks | **Automatski sustavi** | Dozvole i alarmi koji se sami okidaju |
 
 ::: {.fragment}
-Underneath it all: a **memory that survives** across sessions.
+Ispod svega: **memorija koja preživljava** kroz sesije.
 :::
 
-## Idea 1 — specialists beat a generalist {.smaller}
+## Ideja 1 — specijalisti pobjeđuju generalista {.smaller}
 
-Ask one assistant to watch grammar, layout, math, **and** code at once → it does a mediocre job at all four.
+Tražite od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku **i** kôd → osrednje obavi sve četvero.
 
 ::: {.fragment}
-Give every dimension its **own narrow inspector** → the errors that hide in plain sight finally get caught.
+Dajte svakoj dimenziji **vlastitog uskog inspektora** → greške skrivene na vidnom mjestu napokon budu uhvaćene.
 :::
 
 ::: {.fragment}
-On a 140-slide deck: one agent catches the subscript that silently changed, one catches the
-overlapping diagram label, one catches the script that ran *k = 10* while the slide says *k = 5*.
+Na špici od 140 slajdova: jedan agent uhvati indeks koji se tiho promijenio, jedan uhvati preklapajuću
+oznaku na dijagramu, jedan uhvati skriptu koja je vrtjela *k = 10* dok slajd kaže *k = 5*.
 :::
 
-## Idea 2 — the adversarial loop {.smaller}
+## Ideja 2 — suparnička petlja (adversarial loop) {.smaller}
 
-The heart of the design.
+Srce dizajna.
 
 ::: {.incremental}
-- A **critic** reads the work and lists every fault — but may **not touch the files.**
-- A separate **fixer** makes the repairs — but may **not bless its own work.**
-- The critic reads it again. Around they go, until a clean pass.
+- **Kritičar (deck-critic)** čita rad i nabraja svaku grešku — ali **ne smije dirati datoteke.**
+- Zaseban **ispravljač (deck-fixer)** obavlja popravke — ali **ne smije odobriti vlastiti rad.**
+- Kritičar ponovno čita. Tako u krug, do čistog prolaza.
 :::
 
 ::: {.fragment}
-The critic can't fix, so it has no reason to go easy. The fixer can't sign off, so it can't declare
-victory early. **This is just peer review** — and it kills AI's most common failure:
-cheerfully announcing "looks good" when it isn't.
+Kritičar ne može popravljati, pa nema razloga biti popustljiv. Ispravljač ne može potpisati, pa ne
+može prerano proglasiti pobjedu. **To je naprosto recenzija (peer review)** — i ubija najčešći AI
+promašaj: veselo objaviti "izgleda dobro" kad nije.
 :::
 
-## Two rules that keep it honest {.smaller}
+## Dva pravila koja održavaju poštenje {.smaller}
 
-**A score out of 100, read like a traffic light:**
+**Ocjena od 100, čita se kao semafor:**
 
 ::: {.incremental}
-- **80** → safe to save your progress
-- **90** → ready to ship
-- **95** → excellence
-- **below 80** → blocked until the faults are fixed
+- **80** → sigurno za spremanje napretka
+- **90** → spremno za isporuku
+- **95** → izvrsnost
+- **ispod 80** → blokirano dok se greške ne isprave
 :::
 
 ::: {.fragment}
-**A verification rule:** Claude may not call a task finished until it has actually **compiled,
-rendered, or run** the thing. No announcing success from imagination.
+**Pravilo provjere:** Claude ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
+renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
 :::
 
-## What survives when the chat fills up {.smaller}
+## Što preživi kad se chat napuni {.smaller}
 
-Long conversations get compressed — and the live chat is the thing that does **not** survive.
-So anything worth keeping gets written to **disk**. Four labeled drawers:
+Dugi razgovori se sažimaju — i živi chat je ono što **ne** preživljava.
+Zato sve vrijedno čuvanja ide na **disk**. Četiri označene ladice:
 
 ::: {.incremental}
-- **Constitution** — the standing rules.
-- **Corrections log** — lessons, so the same mistake is never made twice.
-- **Plans** — the strategy for the current task.
-- **Session logs** — the *why* behind each choice. *Git records what; the log records why.*
+- **Ustav** — stalna pravila.
+- **Dnevnik ispravaka** — lekcije, da se ista greška nikad ne ponovi.
+- **Planovi** — strategija za trenutni zadatak.
+- **Dnevnici sesija** — *zašto* iza svake odluke. *Git bilježi što; dnevnik bilježi zašto.*
 :::
 
 ::: {.fragment}
-The chat is a whiteboard that gets wiped. The drawers are a lab notebook that doesn't.
+Chat je ploča koja se briše. Ladice su laboratorijski dnevnik koji se ne briše.
 :::
 
-## How a real job flows {.smaller}
+## Kako teče stvarni posao {.smaller}
 
-Two moves, in order:
+Dva poteza, redom:
 
 ::: {.incremental}
-1. **Plan before building.** Claude drafts a plan, saves it, and shows it to you *before* touching a
-   file. You approve or revise.
-2. **Contractor mode** takes the wheel: it works, verifies, runs the inspectors in parallel, applies
-   fixes worst-first, scores the result, and loops until a clean pass.
+1. **Prvo planiraj.** Claude izradi plan, spremi ga i pokaže vam *prije* nego dotakne ijednu datoteku.
+   Vi odobrite ili izmijenite.
+2. **Način rada izvođača (contractor mode)** preuzima upravljač: radi, provjerava, pokreće inspektore
+   paralelno, primjenjuje popravke od najgoreg prema najmanjem, ocjenjuje rezultat i vrti petlju do čistog prolaza.
 :::
 
 ::: {.fragment}
-Then it hands you a short summary and waits. **It commits nothing until you say so.**
+Zatim vam preda kratak sažetak i čeka. **Ništa ne sprema (commit) dok vi ne kažete.**
 :::
 
-## It fails — and that's the point {.smaller}
+## Griješi — i to je poanta {.smaller}
 
-A flawless demo is a sales pitch. Honest tools show their failure modes:
+Besprijekorna demonstracija je prodajni trik. Pošteni alati pokazuju svoje načine otkazivanja:
 
 ::: {.incremental}
-- It can **hallucinate a citation** — so a verifier checks every reference against a real catalogue.
-- It can be **confidently wrong** — so the critic re-audits and the gate **blocks** bad work.
-- It can take a **wrong action** — so high-stakes steps wait for your approval.
+- Može **izmisliti citat (halucinacija)** — pa provjeritelj uspoređuje svaku referencu sa stvarnim katalogom.
+- Može biti **samouvjereno u krivu** — pa kritičar ponovno provjerava, a prag **blokira** loš rad.
+- Može poduzeti **pogrešnu radnju** — pa visokorizični koraci čekaju vaše odobrenje.
 :::
 
 ::: {.fragment}
-**Autonomy is a dial, not a switch.** You decide where it's safe to let go.
+**Autonomija je regulator, a ne prekidač.** Vi odlučujete gdje je sigurno popustiti uzde.
 :::
 
-## A note on cost {.smaller}
+## Riječ o trošku {.smaller}
 
-Cheap models do the grunt work; the expensive model does the thinking.
+Jeftini modeli rade crnčarenje; skupi model razmišlja.
 
 ::: {.incremental}
-- **~70%** of small mechanical tasks → the fast, cheap model
-- **~20%** of review work → the middle model
-- **~10%** of real judgment → the top model
+- **~70%** sitnih mehaničkih zadataka → brzi, jeftini model
+- **~20%** posla pregleda → srednji model
+- **~10%** stvarne prosudbe → vrhunski model
 :::
 
 ::: {.fragment}
-The bill drops **50–80%**, and the mechanical work loses nothing. You don't pay a senior professor
-to reformat citations.
+Račun padne **50–80%**, a mehanički posao ništa ne gubi. Ne plaćate redovitog profesora da preoblikuje citate.
 :::
 
-## You don't need all of it {.smaller}
+## Ne treba vam sve odjednom {.smaller}
 
-The full system is **18 agents, 52 skills, 32 rules.**
+Cijeli sustav je **18 agenata (agents), 52 vještine (skills), 32 pravila (rules).**
 
 ::: {.fragment}
-That is the **ceiling, not the floor.**
+To je **strop, a ne pod.**
 :::
 
 ::: {.fragment}
-Start with a **constitution** and **three buttons** — render, proofread, commit. Add a handbook or a
-specialist only when you actually feel the lack of it.
+Počnite s **ustavom** i **tri gumba** — `/render`, `/proofread`, `/commit`. Dodajte priručnik ili
+specijalista tek kad stvarno osjetite da nedostaje.
 :::
 
-## These slides, by the way {.smaller}
+## Usput, ovi slajdovi {.smaller}
 
-This deck is a **plain-text file** in a folder.
+Ova špica je **obična tekstualna datoteka** u mapi.
 
 ::: {.incremental}
-- An **agent helped write it.**
-- It lives in **version control** — you can see exactly what changed, line by line.
-- **One command rebuilds** the whole thing, code outputs and all.
+- **Agent je pomogao da se napiše.**
+- Živi u **sustavu za verzioniranje (git)** — vidite točno što se promijenilo, redak po redak.
+- **Jedna naredba ponovno izgradi** cijelu stvar, zajedno s ispisima kôda.
 :::
 
 ::: {.fragment}
-The medium *is* the message: this is what "agent-authored, reproducible work" looks like.
+Medij *jest* poruka: ovako izgleda "rad koji je napisao agent i koji je ponovljiv".
 :::
 
-## If you forget everything else {.smaller}
+## Ako zaboravite sve ostalo {.smaller}
 
 ::: {.incremental}
-- **You talk, Claude runs the site.**
-- **Specialists beat a generalist.**
-- A **critic who can't fix**, paired with a **fixer who can't bless itself**, keeps the work honest.
-- Anything you don't **write to disk** vanishes when the conversation fills up.
-- **Start small** and let it grow.
+- **Vi govorite, Claude vodi gradilište.**
+- **Specijalisti pobjeđuju generalista.**
+- **Kritičar koji ne može popravljati**, uparen s **ispravljačem koji ne može sam sebe odobriti**, održava rad poštenim.
+- Što ne **zapišete na disk** nestaje kad se razgovor napuni.
+- **Počnite malo** i pustite da raste.
 :::
 
-## Where to start this week {.smaller}
+## Gdje početi ovaj tjedan {.smaller}
 
 ::: {.incremental}
-- Pick **one tedious, mechanical task** you'd hand a first-year RA.
-- Write it as a **task spec**: the goal, the constraints, what "done" looks like.
-- Let the agent plan it; **approve the plan**; review the result against your own standards.
+- Odaberite **jedan dosadan, mehanički zadatak** koji biste dali asistentu prve godine.
+- Napišite ga kao **specifikaciju zadatka (task spec)**: cilj, ograničenja, kako izgleda "gotovo".
+- Pustite agenta da ga isplanira; **odobrite plan**; pregledajte rezultat prema vlastitim mjerilima.
 :::
 
 ::: {.fragment}
-That one experiment teaches more than any slide. *(Resource kit: glossary + quality-gate card + cheat sheet.)*
+Taj jedan pokus nauči vas više od bilo kojeg slajda. *(Komplet resursa: pojmovnik + kartica praga kvalitete + podsjetnik.)*
 :::

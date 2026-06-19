@@ -1,15 +1,16 @@
-# Resource kit (the "following resources")
+# Komplet resursa (prateći materijali)
 
-Small, tightly-matched takeaways. The research is blunt: anything bigger becomes shelfware. Keep each
-to one or two pages, and use the **same vocabulary** as the slides and the [glossary](glossary.md).
+Mali, usko prilagođeni materijali za ponijeti. Istraživanje je jasno: sve veće od toga postaje
+"materijal za policu". Držite svaki na jednoj-dvije stranice i koristite **isti rječnik** kao slajdovi
+i [pojmovnik](glossary.md). Engleska tehnička imena ostaju na engleskom, u zagradama: *hrvatski pojam (english-name)*.
 
-| Handout | Status | Spec |
+| Materijal | Status | Što sadrži |
 |---|---|---|
-| [`glossary.md`](glossary.md) | **draft done** | 10–20 chat→agentic term pairs + a mini-diagram |
-| `quality-gate-card.md` | to build | ≤10 checks in green/yellow/red: data scope, claims verified, procedural vs. substantive, can I still defend this as my own work? |
-| `cheat-sheet.md` | to build | 3–5 research patterns (literature triage; draft an analysis plan; workflow automation), each = when-to-use + a task-spec starter + a risk box + a "try this week" nudge |
-| starter repo / Colab | optional (Approach C) | one-click examples, narrative README — only if you move to a hands-on workshop |
+| [`glossary.md`](glossary.md) | **nacrt gotov** | 9 parova chat→agentski pojam + mali dijagram |
+| `quality-gate-card.md` | za izradu | ≤ 10 provjera u zeleno/žuto/crveno: opseg podataka, jesu li tvrdnje provjerene, proceduralno vs. sadržajno, mogu li ovo i dalje braniti kao svoj rad? |
+| `cheat-sheet.md` | za izradu | 3–5 istraživačkih obrazaca (trijaža literature; nacrt plana analize; automatizacija radnih tokova), svaki = kad-koristiti + zametak specifikacije zadatka + okvir o rizicima + poticaj "isprobaj ovaj tjedan" |
+| starter repozitorij / Colab | opcionalno (pristup C) | primjeri "u jednom kliku", narativni README — samo ako prijeđete na praktičnu radionicu |
 
-Say the line out loud in the talk: *"these slides are a text file in version control, an agent helped
-write them, and one command rebuilds the whole deck — that's what reproducible, agent-authored work
-looks like."*
+Izgovorite rečenicu naglas u izlaganju: *"ovi slajdovi su tekstualna datoteka u sustavu za
+verzioniranje, agent je pomogao da se napišu, i jedna naredba ponovno izgradi cijelu špicu — tako
+izgleda ponovljiv rad koji je napisao agent."*

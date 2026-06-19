@@ -56,10 +56,12 @@ Verification, Adversarial Review, Memory, Audience Fidelity). They override this
 ## Current state (2026-06-19)
 - Building blocks present: **constitution** (this file), **rules** (4), **governance**, **skills** (4),
   **agents** (3). The one layer not yet built is **settings + hooks** (layer 5) — add when ready.
-- Deck: concept-first skeleton in `slides/talk.qmd` (executive-map narrative arc).
+- **Language:** audience-facing content + the study map are in **Croatian** (`slides/talk.qmd`,
+  `resources/`, `harness-map/`); the machinery (this file, rules, agents, governance) stays English.
+  English block/skill/agent names are kept and bracketed as *hrvatski pojam (english-name)*; slash-commands stay English.
 - **Quarto not yet installed** — `/render` will stop and tell you to install it. See `harness-map/README.md`.
-- Resources: starter glossary in `resources/`, rest stubbed.
-- Not yet a git repo — `/commit` will ask before `git init`.
+- Resources: Croatian glossary in `resources/`, quality-gate card + cheat sheet still to build.
+- **Git:** connected to GitHub `origin` → `lusiki/AI-radionica-za-istra-iva-e` (branch `main`).
 
 ## How we work
 - Quality bar: do not ship a slide with a typo, an overflowing block, or an unverifiable claim.
