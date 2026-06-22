@@ -30,69 +30,99 @@ Otvorite prozor za chat. Sastavite prompt. Dobijete odgovor.
 Zatim **vi** kopirate kôd, pokrenete ga, naletite na grešku, zalijepite grešku natrag i pokušate ponovno.
 
 ::: {.fragment}
-Vi ste voditelj projekta. Cijeli plan držite u svojoj glavi.
-AI vam pomaže s **jednim korakom u nizu.**
+Vi ste voditelj projekta. Cijeli plan držite u svojoj glavi, a AI vam pomaže s **jednim korakom u nizu.**
 :::
 
 ::: {.notes}
-Blago postavite polazište. Svi u dvorani to već rade. Bez osude — imenujte to da kontrast kasnije sjedne.
+Blago postavite polazište. Svi u dvorani to već rade. Bez osude. Imenujte to da kontrast kasnije sjedne.
 :::
 
 ## Iskorak {.smaller}
 
-::: {.incremental}
-- **Razgovorna AI (chat AI) _pomaže vam_ da obavite posao.**
-- **Agentskoj AI (agentic AI) se posao _povjerava_.**
+::: {.fragment}
+**Razgovorna AI (chat AI)** *pomaže vam* da obavite posao.
 :::
 
 ::: {.fragment}
-Prestajete sastavljati prompt da biste dobili odgovor.
-Počinjete **zadavati cilj + ograničenja**, a zatim **nadzirati** dok ona planira, djeluje, provjerava
-vlastiti rad i vraća se kad je gotovo.
+**Agentskoj AI (agentic AI)** se posao *povjerava*.
+:::
+
+::: {.fragment}
+Prestajete sastavljati prompt da biste dobili odgovor. Počinjete **zadavati cilj i ograničenja**, a zatim **nadzirati** dok ona planira, djeluje, provjerava vlastiti rad i vraća se kad je gotovo.
 :::
 
 ::: {.notes}
-Ovaj jedan slajd je teza. Ne žurite. Iskorak istovremeno mijenja tri stvari — neka ih kasniji slajdovi razlože.
+Ovaj jedan slajd je teza. Ne žurite. Iskorak istovremeno mijenja tri stvari, neka ih kasniji slajdovi razlože.
 :::
 
 ## Ovo je vama poznata vrsta problema {.smaller}
 
-Ne razmišljajte "pametniji chatbot". Razmislite o onome što ionako svakodnevno radite:
+Ne razmišljajte o "pametnijem chatbotu". Razmislite o onome što ionako svakodnevno radite.
 
-::: {.incremental}
-- **Brifirate i nadzirete asistenta (RA)** — i provjeravate njegov rad.
-- Pišete **plan analize** prije nego što dotaknete podatke.
-- **Recenzirate (peer review)** — autor ne ocjenjuje vlastiti rad.
-- Vodite **revizijski trag** kako bi rezultat bio obranjiv i ponovljiv.
+::: {.fragment}
+**Brifirate i nadzirete asistenta (RA)** te provjeravate njegov rad.
 :::
 
 ::: {.fragment}
-Agentska AI sastavljena je upravo od tih poteza. Vi ste **jedinstveno** osposobljeni da je vodite.
+Pišete **plan analize** prije nego što dotaknete podatke.
+:::
+
+::: {.fragment}
+**Recenzirate (peer review)** tuđi rad jer autor ne ocjenjuje objektivno vlastiti.
+:::
+
+::: {.fragment}
+Vodite **revizijski trag** kako bi rezultat bio obranjiv i ponovljiv.
+:::
+
+::: {.fragment}
+Agentska AI sastavljena je upravo od tih poteza, a vi ste **jedinstveno** osposobljeni da je vodite.
 :::
 
 ## Četiri boli koje rješava {.smaller}
 
-::: {.incremental}
-1. **Zaboravlja** — između sesija, *zašto* ste odabrali tu notaciju ili koji ste bug ispravili.
-2. **Kvaliteta varira** — jedna tablica je čista, sljedećoj nedostaju standardne greške.
-3. **Pregledavanje iscrpljuje** — ručno provjeriti 140 slajdova ubija volju.
-4. **Ona najdublja** — provjera pravopisa uhvati *pogeršku*, ali nikad **obrnuti predznak** u teoremu
-   ili regresiju koja je tiho pogrešna.
+::: {.fragment}
+**Zaboravlja** između sesija *zašto* ste odabrali tu notaciju ili koji ste bug ispravili.
+:::
+
+::: {.fragment}
+**Kvaliteta varira**, pa je jedna tablica čista, a sljedećoj nedostaju standardne greške.
+:::
+
+::: {.fragment}
+**Pregledavanje iscrpljuje**, jer ručno provjeriti 140 slajdova ubija volju. Umoran recenzent propušta grešku u analizi, ne samo tipfeler.
+:::
+
+::: {.fragment}
+Najdublja je ova. Provjera pravopisa uhvati **pogrešku u slovu**, ali nikad **obrnuti predznak** u teoremu ili regresiju koja je tiho pogrešna.
 :::
 
 ::: {.notes}
-Bol #4 je emocionalna srž za ovu publiku. Mehaničke greške su stvarne i svi su se na njima opekli.
+Bol broj 4 je emocionalna srž za ovu publiku. Mehaničke greške su stvarne i svi su se na njima opekli.
 :::
 
 ## Sve u jednom dahu {.smaller}
 
-Opišete što želite, običnim jezikom. AI se ponaša kao **glavni izvođač radova**:
+Opišete što želite, običnim jezikom, a AI se ponaša kao **glavni izvođač radova**.
 
-::: {.incremental}
-- izradi **nacrt** i zatraži vaše odobrenje,
-- **unajmi ekipu** specijalista,
-- **pregleda** njihov rad i vrati ih da poprave što ne valja,
-- vrati se k vama tek kad posao **prođe inspekciju**.
+::: {.fragment}
+Izradi **nacrt** i zatraži vaše odobrenje.
+:::
+
+::: {.fragment}
+**Unajmi ekipu** specijalista.
+:::
+
+::: {.fragment}
+**Pregleda** njihov rad i vrati ih da poprave što ne valja.
+:::
+
+::: {.fragment}
+Vrati se k vama tek kad posao **prođe inspekciju**.
+:::
+
+::: {.fragment}
+Može se zapetljati ili preskočiti korak, pa zato vi odobravate plan *prije* nego dotakne datoteke, a prag kvalitete blokira rad ispod praga.
 :::
 
 ::: {.fragment}
@@ -101,91 +131,114 @@ Opišete što želite, običnim jezikom. AI se ponaša kao **glavni izvođač ra
 
 ## Ekipa i kuća {.smaller}
 
-Pet slojeva obavlja sav posao — svaki je **stvarna datoteka**:
+Pet slojeva obavlja sav posao, a svaki je **stvarna datoteka**.
 
-| Sloj (datoteka) | Što je |
+| Što sloj radi | Datoteka |
 |---|---|
-| `CLAUDE.md` · `AGENTS.md` | kratka stranica kućnih pravila, čita se svake sesije |
-| `.claude/rules/*.md` | priručnici koji se pojave samo kad su relevantni |
-| `.claude/skills/*/SKILL.md` | imenovani recepti (`/render`, `/proofread`, `/commit`) |
-| `.claude/agents/*.md` | uski specijalisti, svaki provjerava jednu stvar |
-| `.claude/settings.json` + hooks | dozvole i alarmi koji se sami okidaju |
+| **Ustav**, stalna kućna pravila koja se čitaju svake sesije | `CLAUDE.md` · `AGENTS.md` |
+| **Priručnici na zahtjev** koji se pojave samo kad su relevantni | `.claude/rules/*.md` |
+| **Imenovani gumbi (vještine / skills)**: `/render`, `/proofread`, `/commit` | `.claude/skills/*/SKILL.md` |
+| **Uski specijalisti**, svaki provjerava jednu stvar | `.claude/agents/*.md` |
+| **Dozvole i alarmi** koji se automatski okidaju *(opciono za početak)* | `.claude/settings.json` + hooks |
 
 ::: {.fragment}
-`CLAUDE.md` je Claudeov oblik; `AGENTS.md` je isti pojam u GPT-u / Codexu. Ispod svega: **memorija koja preživljava** kroz sesije.
+`CLAUDE.md` je Claudeov oblik, a sličan obrazac postoji u OpenAI-jevim alatima (`AGENTS.md`, npr. Codex CLI). Ispod svega je **memorija koja preživljava** kroz sesije.
 :::
 
-## Ideja 1 — specijalisti pobjeđuju generalista {.smaller}
+## Ideja 1: specijalisti pobjeđuju generalista {.smaller}
 
-Tražite od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku **i** kôd → osrednje obavi sve četvero.
+Tražite li od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku **i** kôd, sve četvero obavi osrednje.
 
 ::: {.fragment}
-Dajte svakoj dimenziji **vlastitog uskog inspektora** → greške skrivene na vidnom mjestu napokon budu uhvaćene.
-:::
-
-::: {.fragment}
-Na špici od 140 slajdova: jedan agent uhvati indeks koji se tiho promijenio, jedan uhvati preklapajuću
-oznaku na dijagramu, jedan uhvati skriptu koja je vrtjela *k = 10* dok slajd kaže *k = 5*.
-:::
-
-## Ideja 2 — suparnička petlja (adversarial loop) {.smaller}
-
-Srce dizajna.
-
-::: {.incremental}
-- **Kritičar (deck-critic)** čita rad i nabraja svaku grešku — ali **ne smije dirati datoteke.**
-- Zaseban **ispravljač (deck-fixer)** obavlja popravke — ali **ne smije odobriti vlastiti rad.**
-- Kritičar ponovno čita. Tako u krug, do čistog prolaza.
+Dajte svakoj dimenziji **vlastitog uskog inspektora** i greške skrivene na vidnom mjestu napokon budu uhvaćene.
 :::
 
 ::: {.fragment}
-Kritičar ne može popravljati, pa nema razloga biti popustljiv. Ispravljač ne može potpisati, pa ne
-može prerano proglasiti pobjedu. **To je naprosto recenzija (peer review)** — i ubija najčešći AI
-promašaj: veselo objaviti "izgleda dobro" kad nije.
+Kao u istraživačkom timu, jedan RA čisti podatke, drugi provjerava kodiranje, a treći potpisuje, nikad jedna osoba za sve.
+:::
+
+::: {.fragment}
+Na špici od 140 slajdova jedan agent uhvati indeks koji se tiho promijenio, drugi uhvati preklapajuću oznaku na dijagramu, a treći uhvati skriptu koja je vrtjela *k = 10* dok slajd kaže *k = 5*.
+:::
+
+## Ideja 2: suparnička petlja (adversarial loop) {.smaller}
+
+Ovo je srce dizajna.
+
+::: {.fragment}
+**Kritičar (deck-critic)** čita rad i nabraja svaku grešku, ali **ne smije dirati datoteke.**
+:::
+
+::: {.fragment}
+Zaseban **ispravljač (deck-fixer)** obavlja popravke, ali **ne smije odobriti vlastiti rad.**
+:::
+
+::: {.fragment}
+Kritičar zatim ponovno čita, i tako u krug, do čistog prolaza.
+:::
+
+::: {.fragment}
+Kritičar ne može popravljati, pa nema razloga biti popustljiv. Ispravljač ne može potpisati, pa ne može prerano proglasiti pobjedu. **To je naprosto recenzija (peer review)**, i ubija najčešći AI promašaj: veselo objaviti "izgleda dobro" kad nije.
 :::
 
 ## Kako se to povezuje {.smaller}
 
-Blokovi nisu zasebni — to su **datoteke koje surađuju** na jednom zadatku:
-
-```text
-  vaš cilj  ─►  1) PLAN      AI pročita CLAUDE.md + pravila → VI odobrite
-                2) IZVOĐAČ   vještina razašalje agente (kritičar + recenzent, samo čitaju),
-                             ispravljač popravi, kritičar PONOVNO provjeri → /render potvrdi HTML
-                3) OCJENA    0–100 + sažetak → VI odobrite spremanje (/commit)
-```
+Blokovi nisu zasebni. To su **datoteke koje surađuju** na jednom zadatku, a posao teče u tri koraka.
 
 ::: {.fragment}
-**Vi pokrenete vještinu** (`/…`) → ona zove **agente**; `CLAUDE.md`, **pravila** i **memorija** rade u
-pozadini. Vi ste na **dvije kontrolne točke** — odobrenje plana i odobrenje spremanja.
+**Prvo plan.** AI pročita `CLAUDE.md` i relevantna pravila te napiše plan, a onda ga **vi odobrite**.
+:::
+
+::: {.fragment}
+**Zatim izvođač.** Vještina razašalje agente, pri čemu kritičar i recenzent samo čitaju, ispravljač popravi, a kritičar ponovno provjeri. Naredba `/render` potvrdi da se HTML stvarno izgradio.
+:::
+
+::: {.fragment}
+**Na kraju ocjena.** Dobijete ocjenu **0–100** i kratak sažetak, pa **vi odobrite spremanje** naredbom `/commit`.
+:::
+
+::: {.fragment}
+**Vi pokrenete vještinu** (`/…`), a ona zove **agente**. `CLAUDE.md`, **pravila** i **memorija** rade u pozadini, a vi ste prisutni na **dvije kontrolne točke**, kod odobrenja plana i kod odobrenja spremanja.
 :::
 
 ## Dva pravila koja održavaju poštenje {.smaller}
 
-**Ocjena od 100, čita se kao semafor:**
+Ocjena ide do 100 i čita se kao semafor.
 
-::: {.incremental}
-- **80** → sigurno za spremanje napretka
-- **90** → spremno za isporuku
-- **95** → izvrsnost
-- **ispod 80** → blokirano dok se greške ne isprave
+::: {.fragment}
+**80** znači sigurno za spremanje napretka.
 :::
 
 ::: {.fragment}
-**Pravilo provjere:** AI ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
-renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
+**90** znači spremno za isporuku, a **95** je izvrsnost.
+:::
+
+::: {.fragment}
+Sve **ispod 80** je blokirano dok se greške ne isprave.
+:::
+
+::: {.fragment}
+**Pravilo provjere** je da AI ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao, renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
 :::
 
 ## Što preživi kad se chat napuni {.smaller}
 
-Dugi razgovori se sažimaju — i živi chat je ono što **ne** preživljava.
-Zato sve vrijedno čuvanja ide na **disk**. Četiri označene ladice:
+Dugi razgovori se sažimaju, a živi chat je ono što **ne** preživljava. Zato sve vrijedno čuvanja ide na **disk**, u četiri označene ladice.
 
-::: {.incremental}
-- **Ustav** — stalna pravila.
-- **Dnevnik ispravaka** — lekcije, da se ista greška nikad ne ponovi.
-- **Planovi** — strategija za trenutni zadatak.
-- **Dnevnici sesija** — *zašto* iza svake odluke. *Git bilježi što; dnevnik bilježi zašto.*
+::: {.fragment}
+**Ustav** drži stalna pravila.
+:::
+
+::: {.fragment}
+**Dnevnik ispravaka** drži lekcije, da se ista greška nikad ne ponovi.
+:::
+
+::: {.fragment}
+**Planovi** drže strategiju za trenutni zadatak.
+:::
+
+::: {.fragment}
+**Dnevnici sesija** drže *zašto* iza svake odluke. *Git bilježi što, a dnevnik bilježi zašto.*
 :::
 
 ::: {.fragment}
@@ -194,168 +247,232 @@ Chat je ploča koja se briše. Ladice su laboratorijski dnevnik koji se ne briš
 
 ## Kako teče stvarni posao {.smaller}
 
-Dva poteza, redom:
+Dva poteza, redom.
 
-::: {.incremental}
-1. **Prvo planiraj.** AI izradi plan, spremi ga i pokaže vam *prije* nego dotakne ijednu datoteku.
-   Vi odobrite ili izmijenite.
-2. **Način rada izvođača (contractor mode)** preuzima upravljač: radi, provjerava, pokreće inspektore
-   paralelno, primjenjuje popravke od najgoreg prema najmanjem, ocjenjuje rezultat i vrti petlju do čistog prolaza.
+::: {.fragment}
+**Prvo planiraj.** AI izradi plan, spremi ga i pokaže vam *prije* nego dotakne ijednu datoteku, a vi ga odobrite ili izmijenite.
 :::
 
 ::: {.fragment}
-Zatim vam preda kratak sažetak i čeka. **Ništa ne sprema (commit) dok vi ne kažete.**
-:::
-
-## Griješi — i to je poanta {.smaller}
-
-Besprijekorna demonstracija je prodajni trik. Pošteni alati pokazuju svoje načine otkazivanja:
-
-::: {.incremental}
-- Može **izmisliti citat (halucinacija)** — pa provjeritelj uspoređuje svaku referencu sa stvarnim katalogom.
-- Može biti **samouvjereno u krivu** — pa kritičar ponovno provjerava, a prag **blokira** loš rad.
-- Može poduzeti **pogrešnu radnju** — pa visokorizični koraci čekaju vaše odobrenje.
+Zatim **način rada izvođača (contractor mode)** preuzima upravljač. Radi, provjerava, pokreće inspektore paralelno, primjenjuje popravke od najgoreg prema najmanjem, ocjenjuje rezultat i vrti petlju do čistog prolaza.
 :::
 
 ::: {.fragment}
-**Autonomija je regulator, a ne prekidač.** Vi odlučujete gdje je sigurno popustiti uzde.
+Na kraju vam preda kratak sažetak i čeka. **Ništa ne sprema (commit) dok vi ne kažete.**
+:::
+
+## Griješi, i to je poanta {.smaller}
+
+Besprijekorna demonstracija je prodajni trik. Pošteni alati pokazuju svoje načine otkazivanja.
+
+::: {.fragment}
+Može **izmisliti citat (halucinacija)**, pa agent za provjeru uspoređuje svaku referencu sa stvarnim katalogom.
+:::
+
+::: {.fragment}
+Može biti **samouvjereno u krivu**, pa kritičar ponovno provjerava, a prag **blokira** loš rad.
+:::
+
+::: {.fragment}
+Može poduzeti **pogrešnu radnju**, pa visokorizični koraci čekaju vaše odobrenje.
+:::
+
+::: {.fragment}
+**Regulator autonomije nije prekidač.** Visokorizični koraci, poput brisanja datoteke, commita ili slanja, stanu i čekaju vaše "da", a niskorizični teku sami.
+:::
+
+::: {.fragment}
+Kao kod plana analize, unaprijed odlučite koji su koraci visokorizični (čekaju vaše odobrenje), a koji niskorizični (teku sami).
 :::
 
 ## Riječ o trošku {.smaller}
 
-Jeftini modeli rade crnčarenje; skupi model razmišlja.
+Jeftini modeli rade crnčarenje, a skupi model razmišlja.
 
-::: {.incremental}
-- **~70%** sitnih mehaničkih zadataka → brzi, jeftini model
-- **~20%** posla pregleda → srednji model
-- **~10%** stvarne prosudbe → vrhunski model
+::: {.fragment}
+Otprilike **70%** sitnih mehaničkih zadataka odlazi brzom, jeftinom modelu *(ilustrativna procjena)*.
 :::
 
 ::: {.fragment}
-Račun padne **50–80%**, a mehanički posao ništa ne gubi. Ne plaćate redovitog profesora da preoblikuje citate.
+Otprilike **20%** posla pregleda odlazi srednjem modelu.
+:::
+
+::: {.fragment}
+Otprilike **10%** stvarne prosudbe odlazi vrhunskom modelu.
+:::
+
+::: {.fragment}
+U nekim projektima račun zna pasti i za pola, ovisno o poslu *(ilustrativno)*. Mehanički posao ništa ne gubi. Ne plaćate redovitog profesora da preoblikuje citate.
 :::
 
 ## Ne treba vam sve odjednom {.smaller}
 
-Cijeli ovaj repozitorij je samo **1 ustav, 4 pravila, 4 vještine, 3 agenta.**
+Cijeli ovaj repozitorij je samo **1 ustav, 4 pravila, 4 vještine i 3 agenta** *(peti sloj, dozvole i alarmi, još nije dodan)*.
 
 ::: {.fragment}
-I ni to ne trebate odjednom — **strop, a ne pod.**
+I ni to ne trebate odjednom. To je **strop, a ne pod.**
 :::
 
 ::: {.fragment}
-Počnite s **ustavom** i **tri gumba** — `/render`, `/proofread`, `/commit`. Dodajte priručnik ili
-specijalista tek kad stvarno osjetite da nedostaje.
+Počnite s **ustavom** i **tri vještine (skills)**, a to su `/render`, `/proofread` i `/commit`. Dodajte priručnik ili specijalista tek kad stvarno osjetite da nedostaje.
 :::
 
 ## Usput, ovi slajdovi {.smaller}
 
 Ova špica je **obična tekstualna datoteka** u mapi.
 
-::: {.incremental}
-- **Agent je pomogao da se napiše.**
-- Živi u **sustavu za verzioniranje (git)** — vidite točno što se promijenilo, redak po redak.
-- **Jedna naredba ponovno izgradi** cijelu stvar, zajedno s ispisima kôda.
+::: {.fragment}
+**Agent je pomogao da se napiše.**
 :::
 
 ::: {.fragment}
-Medij *jest* poruka: ovako izgleda "rad koji je napisao agent i koji je ponovljiv".
+Živi u **sustavu za verzioniranje (git)**, pa vidite točno što se promijenilo, redak po redak.
+:::
+
+::: {.fragment}
+**Jedna naredba ponovno izgradi** cijelu stvar, zajedno s ispisima kôda.
+:::
+
+::: {.fragment}
+Medij *jest* poruka. Ovako izgleda "rad koji je napisao agent i koji je ponovljiv".
 :::
 
 ## Ako zaboravite sve ostalo {.smaller}
 
-::: {.incremental}
-- **Vi govorite, AI vodi gradilište.**
-- **Specijalisti pobjeđuju generalista.**
-- **Kritičar koji ne može popravljati**, uparen s **ispravljačem koji ne može sam sebe odobriti**, održava rad poštenim.
-- Što ne **zapišete na disk** nestaje kad se razgovor napuni.
-- **Počnite malo** i pustite da raste.
+::: {.fragment}
+**Vi govorite, AI vodi gradilište.**
+:::
+
+::: {.fragment}
+**Specijalisti pobjeđuju generalista.**
+:::
+
+::: {.fragment}
+**Kritičar koji ne može popravljati**, uparen s **ispravljačem koji ne može sam sebe odobriti**, održava rad poštenim.
+:::
+
+::: {.fragment}
+Što ne **zapišete na disk** nestaje kad se razgovor napuni.
+:::
+
+::: {.fragment}
+**Počnite malo** i pustite da raste.
 :::
 
 ## Kako se zapravo radi {.smaller}
 
-Tri načina da razgovarate s *istim* AI-jem (primjeri vrijede za Claude Code, Codex i druge alate):
+Razgovarate s *istim* AI-jem kroz tri sučelja, a isti obrazac vrijedi i za Codex i druge alate.
 
-::: {.incremental}
-- **Chat (claude.ai)** — poznato, ali *ne* dira vaše datoteke. Za učenje, ne za projekt.
-- **Ekstenzija u VS Codeu (plugin)** — AI asistent unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
-- **Terminal (CLI)** — utipkate `claude` (ili `codex`) u mapi projekta. Najmoćnije; terminal se brzo zavoli.
+::: {.fragment}
+**Chat** (npr. claude.ai) je poznat, ali *ne* dira vaše datoteke. Dobar je za učenje, ne za projekt.
 :::
 
 ::: {.fragment}
-Agenti, vještine i pravila žive u zadnja dva — tu je "gradilište". *(Detalji: `setup/README.md`.)*
+**Ekstenzija u VS Codeu (plugin)** je AI asistent unutar uređivača. Vidite datoteke, gumbe i klik za odobrenje. To je **preporuka za početak.**
+:::
+
+::: {.fragment}
+**Terminal (CLI)** znači da utipkate `claude` (ili `codex`) u mapi projekta. To je jedino sučelje gdje agenti, vještine i pravila rade zajedno.
+:::
+
+::: {.fragment}
+Agenti, vještine i pravila žive u zadnja dva sučelja. Tu je "gradilište". *(Detalji su u `setup/README.md`.)*
 :::
 
 ## Što vam treba i koliko košta {.smaller}
 
-Preduvjeti: **Claude Code, Node.js, git** (Quarto / R po potrebi).
+Preduvjeti su **Claude Code, Node.js i git**, a po potrebi Quarto i R. *(Cijene se mijenjaju.)*
 
-::: {.incremental}
-- **Claude Pro — ~20 $/mj — uključuje Claude Code.** Dovoljno za početak.
-- Max 5× ~100 $/mj · Max 20× ~200 $/mj — za intenzivan rad.
-- Trik s troškom: raspodjela **70 / 20 / 10** (Haiku / Sonnet / Opus) → račun pada **50–80%**.
+::: {.fragment}
+**Claude Pro** stoji oko **20 $ mjesečno** i uključuje Claude Code. To je dovoljno za početak.
 :::
 
 ::: {.fragment}
-Točne cijene i preduvjeti: `setup/README.md` · službeno: anthropic.com/pricing. *(cijene se mijenjaju)*
+Napredni planovi stoje oko **100–200 $ mjesečno**, za intenzivan rad.
+:::
+
+::: {.fragment}
+Točne cijene i preduvjeti su u `setup/README.md`, a službeno na anthropic.com/pricing.
 :::
 
 ## Gdje početi ovaj tjedan {.smaller}
 
-::: {.incremental}
-- Odaberite **jedan dosadan, mehanički zadatak** koji biste dali asistentu prve godine.
-- Napišite ga kao **specifikaciju zadatka (task spec)**: cilj, ograničenja, kako izgleda "gotovo".
-- Pustite agenta da ga isplanira; **odobrite plan**; pregledajte rezultat prema vlastitim mjerilima.
+::: {.fragment}
+Odaberite **jedan dosadan, mehanički zadatak** koji biste dali asistentu prve godine.
 :::
 
 ::: {.fragment}
-Taj jedan pokus nauči vas više od bilo kojeg slajda. *(Komplet resursa: pojmovnik + kartica praga kvalitete + podsjetnik.)*
+Napišite ga kao **specifikaciju zadatka (task spec)**, s ciljem, ograničenjima i opisom kako izgleda "gotovo".
 :::
 
-## Empirijski primjer — uzmite s GitHuba {.smaller}
+::: {.fragment}
+Pustite agenta da ga isplanira, **odobrite plan**, pa pregledajte rezultat prema vlastitim mjerilima.
+:::
 
-Nije teorija. Klonirajte repozitorij i pokrenite dva mala pokusa:
+::: {.fragment}
+Taj jedan pokus nauči vas više od bilo kojeg slajda. *(Komplet resursa čine pojmovnik, kartica praga kvalitete i podsjetnik.)*
+:::
+
+## Empirijski primjer: uzmite s GitHuba {.smaller}
+
+Ovo nije teorija. Klonirajte repozitorij i pokrenite dva mala pokusa.
 
 ```bash
 git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
 ```
 
 ::: {.fragment}
-Otvorite mapu u VS Codeu (ili `claude` u terminalu) — i krenite. *(Korak po korak: `demos/README.md`.)*
+Otvorite mapu u VS Codeu, ili pokrenite `claude` u terminalu, i krenite. *(Korak po korak je u `demos/README.md`.)*
 :::
 
-## Pokus 1 — renderiraj i provjeri {.smaller}
+## Pokus 1: renderiraj i provjeri {.smaller}
 
-**Što utipkate:** `/render`
+Utipkate `/render`.
 
-::: {.incremental}
-- AI pokrene `quarto render`, pa **provjeri da `slides/talk.html` stvarno postoji.**
-- Tek tada javi "gotovo". Otvorite HTML — špica je tu.
+::: {.fragment}
+AI pokrene `quarto render`, pa **provjeri da `slides/talk.html` stvarno postoji.**
 :::
 
 ::: {.fragment}
-**Poanta:** agent ne tvrdi uspjeh dok ga nije provjerio. Jedna naredba → ponovljiv rezultat. *(Bez Quarta `/render` pošteno STANE.)*
-:::
-
-## Pokus 2 — suparnička petlja {.smaller}
-
-**Što utipkate:** `/review-deck`
-
-::: {.incremental}
-- `deck-critic` + `audience-reviewer` (samo čitaju) → nalazi po težini + ocjena 0–100.
-- `deck-fixer` popravi najgore prvo → kritičar **ponovno** provjeri → nova ocjena.
+Tek tada javi "gotovo". Otvorite HTML i špica je tu.
 :::
 
 ::: {.fragment}
-**Poanta:** kritičar ne smije uređivati, ispravljač ne smije sam sebe odobriti. Recenzija koja hvata i ono što provjera pravopisa ne bi (npr. tvrdnju bez pokrića).
+**Poanta** je da agent ne tvrdi uspjeh dok ga nije provjerio. Jedna naredba daje ponovljiv rezultat. *(Bez Quarta `/render` pošteno STANE.)*
 :::
 
-## Hvala — i naprijed {.smaller}
+## Pokus 2: suparnička petlja {.smaller}
 
-::: {.incremental}
-- Sve je u repozitoriju: [github.com/lusiki/AI-radionica-za-istra-iva-e](https://github.com/lusiki/AI-radionica-za-istra-iva-e)
-- Pregled blokova: `index.html` · Mapa za učenje: `harness-map/` · Pokusi: `demos/`
-- Odaberite jedan dosadan zadatak ovaj tjedan i **delegirajte ga.**
+Utipkate `/review-deck`.
+
+::: {.fragment}
+Agenti `deck-critic` i `audience-reviewer` samo čitaju, ne mijenjaju.
+:::
+
+::: {.fragment}
+`audience-reviewer` pazi da poruka ostane primjerena publici, a izlaz su nalazi po težini i ocjena **0–100**.
+:::
+
+::: {.fragment}
+Zatim `deck-fixer` popravi najgore prvo, kritičar **ponovno** provjeri, i dobijete novu ocjenu.
+:::
+
+::: {.fragment}
+**Poanta** je da kritičar ne smije uređivati, a ispravljač ne smije sam sebe odobriti. To je recenzija koja hvata i ono što provjera pravopisa ne bi, na primjer tvrdnju bez pokrića.
+:::
+
+## Hvala i naprijed {.smaller}
+
+::: {.fragment}
+Sve je u repozitoriju: [github.com/lusiki/AI-radionica-za-istra-iva-e](https://github.com/lusiki/AI-radionica-za-istra-iva-e).
+:::
+
+::: {.fragment}
+Pregled blokova je u `index.html`, mapa za učenje u `harness-map/`, a pokusi u `demos/`.
+:::
+
+::: {.fragment}
+Odaberite jedan dosadan zadatak ovaj tjedan i **delegirajte ga.**
 :::
 
 ::: {.fragment}

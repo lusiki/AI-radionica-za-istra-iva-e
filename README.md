@@ -1,7 +1,7 @@
 # AI radionica za istraživače
 
-**Agentska AI za metodološka istraživanja.** Kako prijeći s *chat-promptanja* na **agentski rad** —
-gdje AI-ju *povjeravate* cijeli zadatak: on ga planira, izvršava, provjerava vlastiti rad i vraća se
+**Agentska AI za metodološka istraživanja.** Kako prijeći s *chat-promptanja* na **agentski rad**?
+U AI-ju *povjeravate* cijeli zadatak. On ga planira, izvršava, provjerava vlastiti rad i vraća se
 tek na vaše odobrenje. Ovaj repozitorij je i sam mali radni primjer tog okvira. *(Medij je poruka.)*
 
 **🌐 Živa prezentacija (web):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
