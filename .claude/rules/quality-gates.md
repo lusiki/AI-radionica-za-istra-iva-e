@@ -1,6 +1,6 @@
 ---
 description: Score slides/resources 0-100 and gate on the score (80 commit / 90 ship / 95 excellence).
-paths: ['**/*.qmd', 'resources/**']
+paths: ['**/*.qmd', 'radionica/**']
 ---
 
 # Quality Gates  (loads on slides & resources)

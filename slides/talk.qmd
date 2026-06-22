@@ -376,7 +376,7 @@ Razgovarate s *istim* AI-jem kroz tri sučelja, a isti obrazac vrijedi i za Code
 :::
 
 ::: {.fragment}
-Agenti, vještine i pravila žive u zadnja dva sučelja. Tu je "gradilište". *(Detalji su u `setup/README.md`.)*
+Agenti, vještine i pravila žive u zadnja dva sučelja. Tu je "gradilište". *(Detalji su u `radionica/01-postavljanje/`.)*
 :::
 
 ## Što vam treba i koliko košta {.smaller}
@@ -392,7 +392,7 @@ Napredni planovi stoje oko **100–200 $ mjesečno**, za intenzivan rad.
 :::
 
 ::: {.fragment}
-Točne cijene i preduvjeti su u `setup/README.md`, a službeno na anthropic.com/pricing.
+Točne cijene i preduvjeti su u `radionica/01-postavljanje/`, a službeno na anthropic.com/pricing.
 :::
 
 ## Gdje početi ovaj tjedan {.smaller}
@@ -422,7 +422,7 @@ git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
 ```
 
 ::: {.fragment}
-Otvorite mapu u VS Codeu, ili pokrenite `claude` u terminalu, i krenite. *(Korak po korak je u `demos/README.md`.)*
+Otvorite mapu u VS Codeu, ili pokrenite `claude` u terminalu, i krenite. *(Korak po korak je u `radionica/02-primjeri/`.)*
 :::
 
 ## Pokus 1: renderiraj i provjeri {.smaller}
@@ -468,7 +468,7 @@ Sve je u repozitoriju: [github.com/lusiki/AI-radionica-za-istra-iva-e](https://g
 :::
 
 ::: {.fragment}
-Pregled blokova je u `index.html`, mapa za učenje u `harness-map/`, a pokusi u `demos/`.
+Pregled blokova je u `index.html`, mapa za učenje u `radionica/00-razumijevanje/`, a pokusi u `radionica/02-primjeri/`.
 :::
 
 ::: {.fragment}

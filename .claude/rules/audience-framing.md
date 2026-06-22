@@ -1,6 +1,6 @@
 ---
 description: How to frame everything for non-technical academic methodologists. Project domain handbook.
-paths: ['slides/**', 'resources/**']
+paths: ['slides/**', 'radionica/**']
 ---
 
 # Audience Framing  (loads on slides & resources)
@@ -13,7 +13,7 @@ IDEs/terminals/git/agentic AI. Every slide and handout must obey:
 - Lead with their **values**: rigor, transparency, human judgment, integrity.
 - Map onto schemas they already own: **RA supervision, pre-analysis plans, peer review, lab notebook.**
 - Show **failure modes + the guardrail** that catches them. Honesty earns this audience; magic loses it.
-- Use the **same word for the same concept** everywhere (see `resources/glossary.md`).
+- Use the **same word for the same concept** everywhere (see `radionica/03-komplet/pojmovnik.md`).
 - Introduce **one new idea at a time**; keep slides to ≤ ~6 bullets.
 
 **Don't**

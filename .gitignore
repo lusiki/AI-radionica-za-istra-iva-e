@@ -14,4 +14,7 @@ desktop.ini
 # Claude Code local (personal, machine-specific overrides)
 .claude/settings.local.json
 
+# Design mockups (not workshop content)
+/Design/
+
 **/*.quarto_ipynb

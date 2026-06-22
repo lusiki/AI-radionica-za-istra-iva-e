@@ -119,4 +119,4 @@ argument-hint: "[datoteka .qmd — zadano slides/talk.qmd]"
 
 ---
 
-Više o tome kako se svaki blok uklapa: [mapa za učenje](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/harness-map/README.md).
+Više o tome kako se svaki blok uklapa: [mapa za učenje](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/radionica/00-razumijevanje/mapa-okvira.md).

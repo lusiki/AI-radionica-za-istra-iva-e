@@ -18,6 +18,12 @@ tek na vaše odobrenje. Ovaj repozitorij je i sam mali radni primjer tog okvira.
 - **Postavljanje — sučelja, preduvjeti, cijene:** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/setup.html>
 - **Vođena vježba (~20 min):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/vjezba.html>
 
+## Struktura repozitorija
+
+Korijen mape čita se kao tri sloja: 🛠️ **STROJ** (sam okvir: `CLAUDE.md`, `.claude/`, `pregled.html`) ·
+📚 **RADIONICA** (gradivo: `*.qmd`, `slides/`, `radionica/`) · ⚙️ **IZVEDENO** (`docs/`, `quality_reports/`).
+Počnite od **[`00-KRENI-OVDJE.md`](00-KRENI-OVDJE.md)** — vodi kroz pet slojeva okvira i pokazuje gdje sve živi.
+
 ---
 
 *Autor / voditelj radionice: [Luka Šikić](https://www.lukasikic.info/).*

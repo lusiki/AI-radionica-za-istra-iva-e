@@ -1,2 +1,10 @@
 project:
   output-dir: docs
+  # Only these pages are published. Without this allowlist, `quarto render`
+  # builds every .md/.qmd in the repo (CLAUDE.md, plans, radionica/…) into docs/.
+  render:
+    - index.qmd
+    - primjeri.qmd
+    - setup.qmd
+    - vjezba.qmd
+    - slides/talk.qmd

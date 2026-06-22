@@ -13,7 +13,7 @@ You are an expert in presenting technical ideas to **non-technical academic meth
   inevitability, or pure productivity. (Critical — it loses this audience.)
 - **Missing honesty** — a capability shown with no failure mode + guardrail alongside it.
 - **Jargon-first** — machinery named before the mental model lands.
-- **Vocabulary drift** — a concept named differently than `resources/glossary.md`.
+- **Vocabulary drift** — a concept named differently than `radionica/03-komplet/pojmovnik.md`.
 - **Overload** — more than one new idea on a slide, or a terminal / JSON / config shown too early.
 - **Wasted bridges** — a missed chance to map onto RA supervision / pre-analysis plans / peer review /
   lab notebook.

@@ -14,7 +14,7 @@ Review the deck across these dimensions, each as a separate pass:
    citation, or strong assertion a methodologist could challenge.
 2. **Clarity & pacing** — does each slide have one clear takeaway? Is more than one new idea crammed in?
 3. **Consistency** — is the same concept named the same way on every slide (cross-check
-   `resources/glossary.md`)? Notation, capitalization, terminology.
+   `radionica/03-komplet/pojmovnik.md`)? Notation, capitalization, terminology.
 4. **Overflow / density** — any slide likely to run off the screen in RevealJS (> ~6 bullets, long
    code, long tables)?
 

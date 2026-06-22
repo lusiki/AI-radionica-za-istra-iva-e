@@ -24,15 +24,16 @@ medium demonstrates the message.
 5. **Write decisions to disk,** not just into the chat (plans, session notes) — chat gets wiped.
 
 ## Folder structure
-- `index.qmd`     — the talk as a Quarto HTML document → renders to `docs/` (published via GitHub Pages)
-- `primjeri.qmd` / `setup.qmd` / `vjezba.qmd` — extra web docs (examples gallery + tiles, setup, guided exercise) → `docs/`
-- `pregled.html`  — clickable building-block overview (open locally)
-- `slides/`       — the Quarto → RevealJS deck (`talk.qmd`), the dog-food artifact
-- `resources/`    — the takeaway kit (glossary, quality-gate card, cheat sheet)
-- `setup/`       — interfaces, prerequisites & pricing (Croatian)
-- `demos/`        — empirical example: clone from GitHub + two worked examples (Croatian)
-- `harness-map/`  — my annotated study map of the full harness (for Luka)
-- `.claude/`      — this mini-harness: `skills/`, `rules/`, `agents/`, `constitutional-governance.md`
+The root reads as three tiers — **STROJ** (the machine/harness) · **RADIONICA** (content) · **IZVEDENO** (derived):
+- `00-KRENI-OVDJE.md` — START-HERE map: walks the five harness layers and points at their real paths
+- *STROJ:* `CLAUDE.md` + `.claude/` (the mini-harness: `skills/`, `rules/`, `agents/`, `constitutional-governance.md`); `pregled.html` is the clickable door into `.claude/` (open locally)
+- *RADIONICA — web docs (stay at root; URLs frozen):* `index.qmd` → `docs/index.html`; `primjeri.qmd` / `setup.qmd` / `vjezba.qmd`; `slides/` is the RevealJS deck (`talk.qmd`), the dog-food artifact
+- *RADIONICA — content (`radionica/`, Croatian, numbered for reading order):*
+  - `00-razumijevanje/mapa-okvira.md` — annotated study map of the full harness (for Luka)
+  - `01-postavljanje/README.md` — interfaces, prerequisites & pricing (included by `setup.qmd`)
+  - `02-primjeri/README.md` — empirical example: clone from GitHub + two worked examples
+  - `03-komplet/` — takeaway kit: `README.md` (plan) + `pojmovnik.md` (glossary)
+- *IZVEDENO (never hand-edited):* `docs/` — build output served by GitHub Pages (main /docs); `quality_reports/` — working memory (plans, reviews)
 
 ## Skills (the buttons)
 | Command      | What it does                                                        |
@@ -57,18 +58,20 @@ medium demonstrates the message.
 `.claude/constitutional-governance.md` holds the higher-altitude Articles (Plan-First, Quality Gate,
 Verification, Adversarial Review, Memory, Audience Fidelity). They override this file on conflict.
 
-## Current state (2026-06-19)
+## Current state (2026-06-22)
 - Building blocks present: **constitution** (this file), **rules** (4), **governance**, **skills** (4),
   **agents** (3). The one layer not yet built is **settings + hooks** (layer 5) — add when ready.
+- **Repo reorg (branch `repo-reorg-two-world`):** root regrouped into three tiers (STROJ / RADIONICA / IZVEDENO);
+  content moved under `radionica/00–03`; `00-KRENI-OVDJE.md` added; web-doc `.qmd` + `slides/` kept at root so URLs + QR stay frozen.
 - **Language:** audience-facing content + the study map are in **Croatian** (`slides/talk.qmd`,
-  `resources/`, `harness-map/`); the machinery (this file, rules, agents, governance) stays English.
+  `radionica/`); the machinery (this file, rules, agents, governance) stays English.
   English block/skill/agent names are kept and bracketed as *hrvatski pojam (english-name)*; slash-commands stay English.
 - **HTML overview:** `pregled.html` — a clickable index of every building block; each name links to the file.
 - **Published web page:** `index.qmd` → `docs/index.html`, live at https://lusiki.github.io/AI-radionica-za-istra-iva-e/ (GitHub Pages, source main /docs).
 - **Web docs:** `primjeri.qmd` (examples + clickable tiles), `setup.qmd` (interfaces/prereqs/prices), `vjezba.qmd` (guided exercise) → `docs/*.html`. The presentation links to these via tiles.
-- **Onboarding:** `setup/` (interfaces + prereqs + pricing) and `demos/` (clone-and-run empirical example), both Croatian.
+- **Onboarding:** `radionica/01-postavljanje/` (interfaces + prereqs + pricing) and `radionica/02-primjeri/` (clone-and-run empirical example), both Croatian.
 - **Quarto installed** (1.9.x) — `quarto render` builds the deck + document into `docs/`.
-- Resources: Croatian glossary in `resources/`, quality-gate card + cheat sheet still to build.
+- Resources: Croatian glossary at `radionica/03-komplet/pojmovnik.md`, quality-gate card + cheat sheet still to build.
 - **Git:** connected to GitHub `origin` → `lusiki/AI-radionica-za-istra-iva-e` (branch `main`).
 
 ## How we work
