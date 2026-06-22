@@ -5,6 +5,12 @@
 
 **🌐 Živa prezentacija (web):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
 
+### 📱 Skenirajte za otvaranje na mobitelu
+
+Usmjerite kameru telefona na ovaj QR kod — otvorit će živu prezentaciju.
+
+<img src="assets/qr-prezentacija.png" alt="QR kod — otvara https://lusiki.github.io/AI-radionica-za-istra-iva-e/" width="220" height="220">
+
 > **Cilj radionice:** pomoći metodološkim istraživačima da naprave iskorak od *chat-promptanja*
 > (razgovora s AI-jem radi jednog odgovora) prema **agentskom radu** — gdje AI-ju *povjeravate* cijeli
 > zadatak: on ga planira, izvršava, provjerava vlastiti rad i vraća se tek na vaše odobrenje.

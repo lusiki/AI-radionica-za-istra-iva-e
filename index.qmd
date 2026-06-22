@@ -38,7 +38,7 @@ zatim **nadzirati** dok ona planira, djeluje, provjerava vlastiti rad i vraća s
 
 ## Ovo je vama poznata vrsta problema
 
-Ne razmišljajte „pametniji chatbot”. Razmislite o onome što ionako svakodnevno radite:
+Ne razmišljajte na način da se radi o „pametnijem chatbot-u”. Razmislite o onome što ionako svakodnevno radite:
 
 - **Brifirate i nadzirete asistenta (RA)** i provjeravate njegov rad.
 - Pišete **plan analize** prije nego što dotaknete podatke.
