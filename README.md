@@ -42,16 +42,18 @@ gledate sam okvir na djelu. *(Medij je poruka.)*
 
 ## Pet gradivnih blokova *(the building blocks)*
 
-Cijeli sustav stoji na pet slojeva; svaki ima nadimak na običnom jeziku. Engleska imena zadržana su i
-navedena u zagradama.
+Cijeli sustav stoji na pet slojeva; svaki je stvarna datoteka u projektu. Engleska imena su zadržana
+jer ih alat tako traži.
 
-| Sloj | Nadimak | Što je |
-|---|---|---|
-| `CLAUDE.md` | **Ustav** | jedna kratka stranica kućnih pravila, čita se svake sesije |
-| Rules | **Priručnici** | priručnici koji se pojave samo kad su relevantni (po putanji datoteke) |
-| Skills | **Gumbi** | imenovani recepti — naredbe poput `/render`, `/proofread`, `/commit` |
-| Agents | **Ekipa** | uski specijalisti, svaki provjerava jednu stvar |
-| Settings + Hooks | **Automatski sustavi** | dozvole i alarmi koji se sami okidaju *(još nije izrađeno)* |
+| Sloj (datoteka) | Što je |
+|---|---|
+| `CLAUDE.md` · `AGENTS.md` | kratka stranica kućnih pravila, čita se svake sesije |
+| `.claude/rules/*.md` | priručnici koji se pojave samo kad su relevantni (po putanji datoteke) |
+| `.claude/skills/*/SKILL.md` | imenovani recepti — naredbe poput `/render`, `/proofread`, `/commit` |
+| `.claude/agents/*.md` | uski specijalisti, svaki provjerava jednu stvar |
+| `.claude/settings.json` (+ hooks) | dozvole i alarmi koji se sami okidaju *(još nije izrađeno)* |
+
+`CLAUDE.md` je naziv u Claude Codeu; `AGENTS.md` je isti, vendor-neutralan oblik koji koriste GPT / Codex i drugi alati.
 
 **Srce sustava — suparnička petlja *(adversarial loop)*:** **kritičar (deck-critic)** samo čita i
 nabraja greške (ne smije uređivati), **ispravljač (deck-fixer)** ih popravlja (ne smije odobriti

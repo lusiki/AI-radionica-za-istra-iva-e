@@ -76,3 +76,13 @@ main h1, .quarto-title-block h1 { letter-spacing: -0.02em; }
 .tile .tile-k { display: block; font-family: 'Roboto Mono', monospace; font-weight: 500; font-size: .95rem; color: $ink; }
 .tile .tile-k::after { content: " ↗"; color: $accent; }
 .tile .tile-d { display: block; font-size: .85rem; color: $muted; margin-top: 4px; }
+
+// Collapsible "how it looks in practice" panels
+details { border: 1px solid $hairline; border-left: 3px solid $accent; border-radius: 6px; padding: 0 16px; margin: 10px 0; background: #fff; }
+details[open] { padding-bottom: 10px; }
+summary { cursor: pointer; font-family: 'Roboto Mono', monospace; font-size: .88rem; padding: 11px 0; color: $ink; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▸  "; color: $accent; }
+details[open] summary::before { content: "▾  "; }
+summary:hover { color: $accent; }
+details pre { margin: .2rem 0 .4rem; }

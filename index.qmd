@@ -18,14 +18,14 @@ format:
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 ---
 
-> Kako metodološki istraživači mogu prijeći s *chat-promptanja* na **agentski rad** — i zašto je
-> to upravo njihov teren. Ovaj dokument je web-verzija prezentacije; postoji i
+> Kako metodološki istraživači mogu prijeći s *chat-promptanja* na **agentski rad** i zašto je
+> to upravo njihov teren. Ovaj dokument je web-verzija prezentacije. Postoji i
 > [verzija sa slajdovima](slides/talk.html).
 
 ## Gdje ste sada
 
 Otvorite prozor za chat. Sastavite prompt. Dobijete odgovor. Zatim **vi** kopirate kôd, pokrenete ga,
-naletite na grešku, zalijepite je natrag i pokušate ponovno. Vi ste voditelj projekta — cijeli plan
+naletite na grešku, zalijepite je natrag i pokušate ponovno. Vi ste voditelj projekta. Cijeli plan
 držite u svojoj glavi, a AI vam pomaže s **jednim korakom u nizu.**
 
 ## Iskorak
@@ -40,48 +40,146 @@ zatim **nadzirati** dok ona planira, djeluje, provjerava vlastiti rad i vraća s
 
 Ne razmišljajte „pametniji chatbot”. Razmislite o onome što ionako svakodnevno radite:
 
-- **Brifirate i nadzirete asistenta (RA)** — i provjeravate njegov rad.
+- **Brifirate i nadzirete asistenta (RA)** i provjeravate njegov rad.
 - Pišete **plan analize** prije nego što dotaknete podatke.
-- **Recenzirate (peer review)** — autor ne ocjenjuje vlastiti rad.
+- **Recenzirate (peer review)** jer autor ne ocjenjuje objektivno vlastiti rad.
 - Vodite **revizijski trag** kako bi rezultat bio obranjiv i ponovljiv.
 
-Agentska AI sastavljena je upravo od tih poteza. Vi ste **jedinstveno** osposobljeni da je vodite.
+Agentska AI sastavljena je upravo od tih procedura.
 
-## Četiri boli koje rješava
+## Četiri problema koje agentski AI rješava
 
-1. **Zaboravlja** — između sesija, *zašto* ste odabrali tu notaciju ili koji ste bug ispravili.
-2. **Kvaliteta varira** — jedna tablica je čista, sljedećoj nedostaju standardne greške.
-3. **Pregledavanje iscrpljuje** — ručno provjeriti 140 slajdova ubija volju.
-4. **Ona najdublja** — provjera pravopisa uhvati *pogrešku u slovu*, ali nikad **obrnuti predznak** u
+1. **Zaborav** između sesija, *zašto* ste odabrali tu notaciju ili koji ste bug ispravili.
+2. **Kvaliteta varira** jer jedna tablica je čista, sljedećoj nedostaju standardne greške.
+3. **Pregledavanje iscrpljuje.** Ručno provjeriti 140 slajdova ubija svaku volju.
+4. **Dubinska provjera pravopisa** uhvati *pogrešku u slovu*, ali nikad **obrnuti predznak** u
    teoremu ili regresiju koja je tiho pogrešna.
 
-## Sve u jednom dahu
+## Sve u jednoj (bauštelskoj) metafori
 
-Opišete što želite, običnim jezikom. Claude se ponaša kao **glavni izvođač radova**: izradi **nacrt** i
+Opišete što želite, običnim jezikom. AI se ponaša kao **glavni izvođač radova**. Izradi **nacrt** i
 zatraži vaše odobrenje, **unajmi ekipu** specijalista, **pregleda** njihov rad i vrati ih da poprave što
-ne valja, te se vrati k vama tek kad posao **prođe inspekciju**. **Vi govorite, Claude vodi gradilište.**
+ne valja, te se vrati k vama tek kad posao **prođe inspekciju**. **Vi nadgledate, AI vodi gradilište.**
 
-## Ekipa i kuća — pet slojeva
+## Pet slojeva agentskog sustava
 
-Svaki sloj ima nadimak na običnom jeziku; engleska imena ostaju u zagradama.
+Svaki sloj je **stvarna datoteka** u projektu; engleska imena su zadržana jer ih alat tako traži.
 
-| Sloj | Nadimak | Što je |
-|---|---|---|
-| `CLAUDE.md` | **Ustav** | jedna kratka stranica kućnih pravila, čita se svake sesije |
-| Rules | **Priručnici** | priručnici koji se pojave samo kad su relevantni (po putanji) |
-| Skills | **Gumbi** | imenovani recepti — `/render`, `/proofread`, `/commit` |
-| Agents | **Ekipa** | uski specijalisti, svaki provjerava jednu stvar |
-| Settings + Hooks | **Automatski sustavi** | dozvole i alarmi koji se sami okidaju |
+| Sloj (datoteka) | Što je |
+|---|---|
+| `CLAUDE.md` · `AGENTS.md` | kratka stranica kućnih pravila, čita se svake sesije |
+| `.claude/rules/*.md` | priručnici koji se pojave samo kad su relevantni (po putanji) |
+| `.claude/skills/*/SKILL.md` | imenovani recepti — `/render`, `/proofread`, `/commit` |
+| `.claude/agents/*.md` | uski specijalisti, svaki provjerava jednu stvar |
+| `.claude/settings.json` (+ hooks) | dozvole i alarmi koji se sami okidaju |
+
+`CLAUDE.md` je naziv u Claude Codeu; `AGENTS.md` je isti, vendor-neutralan oblik koji koriste GPT / Codex i drugi agentski alati.
 
 Ispod svega: **memorija koja preživljava** kroz sesije.
 
+**Kako izgledaju u praksi.** Otvorite blok da vidite stvarnu datoteku iz ovog repozitorija — baš one koje pokreće empirijski primjer niže.
+
+<details>
+<summary><code>.claude/skills/render/SKILL.md</code> · vještina koju pokreće <code>/render</code> (Pokus 1)</summary>
+
+```markdown
+---
+name: render
+description: Render the Quarto RevealJS deck to HTML and verify it actually built.
+argument-hint: "[path to .qmd — defaults to slides/talk.qmd]"
+---
+
+# Steps
+1. Resolve target. Use the argument if given, otherwise `slides/talk.qmd`.
+2. Check the tool exists. Run `quarto --version`. If missing, STOP and tell the user
+   to install it — do NOT pretend the render succeeded (the verification rule).
+3. Render. Run `quarto render <target>`.
+4. VERIFY (mandatory). Confirm the command exited 0 AND the output `.html` exists.
+   You may not say "done" without this check.
+5. If it failed, read the error, fix the `.qmd`, and re-render. Loop until it builds.
+```
+
+</details>
+
+<details>
+<summary><code>.claude/agents/deck-critic.md</code> · agent kojeg pokreće <code>/review-deck</code> (Pokus 2)</summary>
+
+```markdown
+---
+name: deck-critic
+description: Read-only adversarial critic for the deck. Finds faults, scores 0–100.
+model: sonnet                 # ~20% middle tier (70/20/10)
+tools: Read, Grep, Glob       # no Edit/Write → cannot change files
+---
+
+You are a skeptical reviewer. You CANNOT edit files — only find faults, so you have
+no incentive to go easy. Review in separate passes:
+1. Substance — wrong / unverifiable / overstated claims?
+2. Clarity — one takeaway per slide?
+3. Consistency — same concept named the same way (cross-check the glossary)?
+4. Overflow — anything that runs off the slide?
+
+Output: findings grouped Critical / Major / Minor + a single score 0–100 +
+a verdict APPROVED / NEEDS WORK. Default to flagging when unsure.
+```
+
+</details>
+
+<details>
+<summary><code>.claude/rules/verification-protocol.md</code> · pravilo (učitava se uz <code>.qmd</code>)</summary>
+
+```markdown
+---
+description: Never declare a slide task done without actually rendering it.
+paths: ['**/*.qmd', 'slides/**']     # loads ONLY on these files
+---
+
+# Verification Protocol
+You may NOT report a deck task "done" until you have rendered it and confirmed the
+output exists.
+- After any edit to a `.qmd`, run `/render` (quarto render + check the `.html` exists).
+- If the render fails: read the error, fix, re-render. Loop until it builds clean.
+"Done" means rendered and verified, never "looks right in my head".
+```
+
+</details>
+
+<details>
+<summary><code>CLAUDE.md</code> · ustav (skraćeno — cijela datoteka u repozitoriju)</summary>
+
+```markdown
+# CLAUDE.md — Project Constitution
+
+> Slim "constitution" Claude reads at the start of every session
+> (~120 lines max; detail lives in path-scoped rules).
+
+## Core principles
+1. Plan before building anything non-trivial. Show me the plan first.
+2. Verify before declaring done — actually render / run the thing.
+3. Audience first: non-technical methodologists. Delegation & rigour, not "faster chatbot".
+4. Specialists beat a generalist; a critic that can't edit + a fixer that can't bless itself.
+5. Write decisions to disk, not just chat.
+
+## Skills (the buttons)
+| Command      | What it does                                      |
+|--------------|---------------------------------------------------|
+| /render      | build the deck to HTML and verify it rendered     |
+| /proofread   | grammar / consistency / overflow pass             |
+| /commit      | stage + commit — only after I say so              |
+| /review-deck | adversarial critic→fixer loop, then a 0–100 score |
+
+# … (skraćeno)
+```
+
+</details>
+
 ## Dvije ideje zbog kojih sve funkcionira
 
-**1 — Specijalisti pobjeđuju generalista.** Tražite od jednog asistenta da istovremeno pazi na
+**Specijalisti pobjeđuju generalista.** Tražite od jednog asistenta da istovremeno pazi na
 gramatiku, raspored, matematiku *i* kôd → osrednje obavi sve. Dajte svakoj dimenziji **vlastitog uskog
 inspektora** i greške skrivene na vidnom mjestu napokon budu uhvaćene.
 
-**2 — Suparnička petlja (adversarial loop).** **Kritičar (deck-critic)** čita rad i nabraja svaku
+**Suparnička petlja (adversarial loop).** **Kritičar (deck-critic)** čita rad i nabraja svaku
 grešku, ali *ne smije dirati datoteke*. Zaseban **ispravljač (deck-fixer)** obavlja popravke, ali *ne
 smije odobriti vlastiti rad*. Kritičar zatim ponovno čita — i tako u krug, do čistog prolaza. To je
 naprosto **recenzija**, i ubija najčešći AI promašaj: veselo objaviti „izgleda dobro” kad nije.
@@ -91,12 +189,12 @@ naprosto **recenzija**, i ubija najčešći AI promašaj: veselo objaviti „izg
 Ocjena od 100, čita se kao semafor: **80** → sigurno za spremanje · **90** → spremno za isporuku ·
 **95** → izvrsnost · **ispod 80** → blokirano dok se greške ne isprave.
 
-**Pravilo provjere:** Claude ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
+**Pravilo provjere** je AI ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
 renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
 
 ## Što preživi kad se chat napuni
 
-Dugi razgovori se sažimaju — i živi chat je ono što *ne* preživljava. Zato sve vrijedno čuvanja ide na
+Dugi razgovori se sažimaju i živi chat je ono što *ne* preživljava. Zato sve vrijedno čuvanja ide na
 **disk**, u četiri označene ladice: **ustav** (stalna pravila), **dnevnik ispravaka** (lekcije, da se
 greška ne ponovi), **planovi** (strategija za zadatak) i **dnevnici sesija** (*zašto* iza svake odluke).
 *Git bilježi što; dnevnik bilježi zašto.*

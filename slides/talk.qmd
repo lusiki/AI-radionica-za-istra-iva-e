@@ -99,18 +99,18 @@ Opišete što želite, običnim jezikom. Claude se ponaša kao **glavni izvođa�
 
 ## Ekipa i kuća {.smaller}
 
-Pet slojeva obavlja sav posao. Svaki ima nadimak na običnom jeziku:
+Pet slojeva obavlja sav posao — svaki je **stvarna datoteka**:
 
-| Sloj | Nadimak | Što je |
-|---|---|---|
-| `CLAUDE.md` | **Ustav** | Jedna kratka stranica kućnih pravila, čita se svake sesije |
-| Rules | **Priručnici** | Priručnici koji se pojave samo kad su relevantni |
-| Skills | **Gumbi** | Imenovani recepti (`/render`, `/proofread`, `/commit`) |
-| Agents | **Ekipa** | Uski specijalisti, svaki provjerava jednu stvar |
-| Settings + Hooks | **Automatski sustavi** | Dozvole i alarmi koji se sami okidaju |
+| Sloj (datoteka) | Što je |
+|---|---|
+| `CLAUDE.md` · `AGENTS.md` | kratka stranica kućnih pravila, čita se svake sesije |
+| `.claude/rules/*.md` | priručnici koji se pojave samo kad su relevantni |
+| `.claude/skills/*/SKILL.md` | imenovani recepti (`/render`, `/proofread`, `/commit`) |
+| `.claude/agents/*.md` | uski specijalisti, svaki provjerava jednu stvar |
+| `.claude/settings.json` + hooks | dozvole i alarmi koji se sami okidaju |
 
 ::: {.fragment}
-Ispod svega: **memorija koja preživljava** kroz sesije.
+`CLAUDE.md` je Claudeov oblik; `AGENTS.md` je isti pojam u GPT-u / Codexu. Ispod svega: **memorija koja preživljava** kroz sesije.
 :::
 
 ## Ideja 1 — specijalisti pobjeđuju generalista {.smaller}
