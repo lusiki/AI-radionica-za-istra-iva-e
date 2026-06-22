@@ -1,7 +1,9 @@
 ---
 title: "Od chata do delegiranja"
 subtitle: "Agentska AI za metodološka istraživanja"
-author: "Luka Šikić"
+author:
+  - name: "Luka Šikić"
+    url: "https://www.lukasikic.info/"
 date: today
 lang: hr
 format:
@@ -30,8 +32,9 @@ držite u svojoj glavi, a AI vam pomaže s **jednim korakom u nizu.**
 
 ## Iskorak
 
-- **Razgovorna AI (chat AI)** *pomaže vam* da obavite posao.
-- **Agentskoj AI (agentic AI)** se posao *povjerava*.
+**Razgovorna AI (chat AI)** *pomaže vam* da obavite posao.
+vs.
+**Agentskoj AI (agentic AI)** se posao *povjerava*.
 
 Prestajete sastavljati prompt da biste dobili odgovor. Počinjete **zadavati cilj i ograničenja**, a
 zatim **nadzirati** dok ona planira, djeluje, provjerava vlastiti rad i vraća se kad je gotovo.
@@ -40,10 +43,13 @@ zatim **nadzirati** dok ona planira, djeluje, provjerava vlastiti rad i vraća s
 
 Ne razmišljajte na način da se radi o „pametnijem chatbot-u”. Razmislite o onome što ionako svakodnevno radite:
 
-- **Brifirate i nadzirete asistenta (RA)** i provjeravate njegov rad.
-- Pišete **plan analize** prije nego što dotaknete podatke.
-- **Recenzirate (peer review)** jer autor ne ocjenjuje objektivno vlastiti rad.
-- Vodite **revizijski trag** kako bi rezultat bio obranjiv i ponovljiv.
+**Brifirate i nadzirete asistenta (RA)** i provjeravate njegov rad.
+
+Pišete **plan analize** prije nego što dotaknete podatke.
+
+**Recenzirate (peer review)** (jer autor ne ocjenjuje objektivno vlastiti rad).
+
+Vodite **revizijski trag** kako bi rezultat bio obranjiv i ponovljiv.
 
 Agentska AI sastavljena je upravo od tih procedura.
 
@@ -68,8 +74,8 @@ Svaki sloj je **stvarna datoteka** u projektu; engleska imena su zadržana jer i
 | Sloj (datoteka) | Što je |
 |---|---|
 | `CLAUDE.md` · `AGENTS.md` | kratka stranica kućnih pravila, čita se svake sesije |
-| `.claude/rules/*.md` | priručnici koji se pojave samo kad su relevantni (po putanji) |
-| `.claude/skills/*/SKILL.md` | imenovani recepti — `/render`, `/proofread`, `/commit` |
+| `.claude/rules/*.md` | priručnici koji se pojave samo kad su relevantni (po proceduri) |
+| `.claude/skills/*/SKILL.md` | imenovani recepti kao: `/render`, `/proofread`, `/commit` |
 | `.claude/agents/*.md` | uski specijalisti, svaki provjerava jednu stvar |
 | `.claude/settings.json` (+ hooks) | dozvole i alarmi koji se sami okidaju |
 
@@ -175,9 +181,9 @@ output exists.
 
 ## Kako se to povezuje — tok kroz radni okvir
 
-Blokovi gore nisu zasebni primjeri — to su **točno datoteke koje surađuju** na jednom zadatku. Evo kako kontekst i posao teku.
+Blokovi gore su **datoteke koje surađuju** na jednom zadatku. Evo kako kontekst i posao teku.
 
-**Što se učita.** Na početku svake sesije učita se `CLAUDE.md` (stalna pravila). Čim AI dotakne neku datoteku, *automatski* se dodaju samo relevantni priručnici — npr. uz `.qmd` se učita `verification-protocol.md`. Sve ostalo miruje da ne zatrpa pažnju.
+**Što se učita.** Na početku svake sesije učita se `CLAUDE.md` (stalna pravila). Čim AI dotakne neku datoteku, *automatski* se dodaju samo relevantni priručnici, npr. uz `.qmd` se učita `verification-protocol.md`. Sve ostalo miruje da ne zatrpa pažnju.
 
 **Tok jednog zadatka** (npr. *„uredi i provjeri špicu"*):
 
@@ -197,7 +203,7 @@ Blokovi gore nisu zasebni primjeri — to su **točno datoteke koje surađuju** 
   3) OCJENA      0–100 + kratak sažetak   →  VI odobrite spremanje (/commit)
 ```
 
-**Tko koga zove.** Vi pokrenete **vještinu** (`/…`) — ili je AI sam odabere iz vašeg zahtjeva. Vještina poziva **agente** (specijaliste); `CLAUDE.md`, **pravila** i **memorija** rade u pozadini kao kontekst; **hooks** su automatski alarmi. Agente nikad ne zovete izravno, a vi ste prisutni na **dvije kontrolne točke**: odobrenje plana i odobrenje spremanja.
+**Tko koga zove.** Vi pokrenete **vještinu** (`/…`) — ili je AI sam odabere iz vašeg zahtjeva. Vještina poziva **agente** (specijaliste); `CLAUDE.md`, **pravila** i **memorija** rade u pozadini kao kontekst; **hooks** su automatski alarmi. Agente nikad ne zovete izravno, a vi ste prisutni na **dvije kontrolne točke**,  odobrenje plana i odobrenje spremanja.
 
 Tako se gornji blokovi spajaju: `/render` (vještina) pokreće **Pokus 1**, `deck-critic` (agent) **Pokus 2**, `verification-protocol` (pravilo) jamči korak provjere, a `CLAUDE.md` postavlja pravila igre.
 
@@ -209,12 +215,12 @@ inspektora** i greške skrivene na vidnom mjestu napokon budu uhvaćene.
 
 **Suparnička petlja (adversarial loop).** **Kritičar (deck-critic)** čita rad i nabraja svaku
 grešku, ali *ne smije dirati datoteke*. Zaseban **ispravljač (deck-fixer)** obavlja popravke, ali *ne
-smije odobriti vlastiti rad*. Kritičar zatim ponovno čita — i tako u krug, do čistog prolaza. To je
-naprosto **recenzija**, i ubija najčešći AI promašaj: veselo objaviti „izgleda dobro” kad nije.
+smije odobriti vlastiti rad*. Kritičar zatim ponovno čita, i tako u krug, do čistog prolaza. To je
+naprosto **recenzija**, i osigurava tendenciju AI veselo objaviti „izgleda dobro” kad nije.
 
 ## Dva pravila koja održavaju poštenje
 
-Ocjena od 100, čita se kao semafor: **80** → sigurno za spremanje · **90** → spremno za isporuku ·
+Ocjena do 100, čita se kao semafor. **80** → sigurno za spremanje · **90** → spremno za isporuku ·
 **95** → izvrsnost · **ispod 80** → blokirano dok se greške ne isprave.
 
 **Pravilo provjere** je AI ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
@@ -223,30 +229,32 @@ renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
 ## Što preživi kad se chat napuni
 
 Dugi razgovori se sažimaju i živi chat je ono što *ne* preživljava. Zato sve vrijedno čuvanja ide na
-**disk**, u četiri datoteke: **`CLAUDE.md`** (stalna pravila), **`MEMORY.md`** (dnevnik ispravaka — da
+**disk**, u četiri datoteke: **`CLAUDE.md`** (stalna pravila), **`MEMORY.md`** (dnevnik ispravaka/ da
 se greška ne ponovi), **`quality_reports/plans/`** (strategija za zadatak) i
 **`quality_reports/session_logs/`** (*zašto* iza svake odluke). *Git bilježi što; dnevnik bilježi zašto.*
 
 ## Kako teče stvarni posao
 
-Dva poteza, redom. **Prvo plan:** AI izradi plan, spremi ga i pokaže vam *prije* nego dotakne
-ijednu datoteku — vi odobrite ili izmijenite. Zatim **način rada izvođača (contractor mode)** preuzima
-upravljač: radi, provjerava, pokreće inspektore paralelno, popravlja od najgoreg prema najmanjem,
+Dva poteza, redom. **Prvo plan.** AI izradi plan, spremi ga i pokaže vam *prije* nego dotakne
+ijednu datoteku. Vi odobrite ili izmijenite. Zatim **način rada izvođača (contractor mode)** preuzima
+upravljač. On radi, provjerava, pokreće inspektore paralelno, popravlja od najgoreg prema najmanjem,
 ocjenjuje i vrti petlju do čistog prolaza. Na kraju vam preda kratak sažetak. **Ništa ne sprema dok vi ne kažete.**
 
-## Griješi — i to je poanta
+## Griješi (i to je poanta svega)
 
-Besprijekorna demonstracija je prodajni trik. Pošteni alati pokazuju svoje načine otkazivanja:
+Besprijekorna demonstracija je prodajni trik. Pošteni alati pokazuju svoje slabe točke.
 
-- Može **izmisliti citat (halucinacija)** — pa provjeritelj uspoređuje svaku referencu sa stvarnim katalogom.
-- Može biti **samouvjereno u krivu** — pa kritičar ponovno provjerava, a prag **blokira** loš rad.
-- Može poduzeti **pogrešnu radnju** — pa visokorizični koraci čekaju vaše odobrenje.
+Može **izmisliti citat (halucinacija)** pa provjeritelj uspoređuje svaku referencu sa stvarnim katalogom.
+
+Može biti **samouvjereno u krivu** pa kritičar ponovno provjerava, a prag **blokira** loš rad.
+
+Može poduzeti **pogrešnu radnju** pa visokorizični koraci čekaju vaše odobrenje.
 
 **Autonomija je regulator, a ne prekidač.** Vi odlučujete gdje je sigurno popustiti uzde.
 
-## Trošak — raspodjela 70 / 20 / 10
+## Trošak (raspodjela 70 / 20 / 10)
 
-Jeftini modeli rade crnčarenje; skupi model razmišlja.
+Jeftini modeli šljakaju.Skupi modeli razmišljaju.
 
 | Model | Uloga | Udio |
 |---|---|---|
@@ -254,7 +262,7 @@ Jeftini modeli rade crnčarenje; skupi model razmišlja.
 | Sonnet 4.6 | srednji — pregled i kritika | ~20% |
 | Opus 4.8 | vrhunski — prosudba | ~10% |
 
-Račun padne **50–80%**, a mehanički posao ništa ne gubi. (Detaljne cijene: vidi *Postavljanje* u repozitoriju.)
+Račun padne **50–80%**, a mehanički posao ništa ne gubi. (Za detaljne cijene vidi *Postavljanje* u repozitoriju.)
 
 **Kako se model bira po zadatku.** Svaki specijalist ima polje `model:` u svojoj datoteci — tako se posao usmjeri na pravu (jeftiniju ili skuplju) razinu.
 
@@ -283,18 +291,20 @@ tools: Read, Grep, Glob
 
 ## Ne treba vam sve odjednom
 
-Potpuno razrađen radni okvir (referentni predložak, **ne** ovaj mali repozitorij) može narasti na
-**18 agenata, 52 vještine i 32 pravila** — ali to je **strop, a ne pod.** Počnite s jednom datotekom
-(`CLAUDE.md`) i tri naredbe — `/render`, `/proofread`, `/commit` — a novo pravilo ili specijalista
-dodajte tek kad stvarno osjetite da nedostaje.
+Cijeli ovaj repozitorij je samo **jedan ustav (`CLAUDE.md`), 4 pravila, 4 vještine i 3 agenta** — i
+ni to ne trebate odjednom. To je **strop, a ne pod.** Počnite s jednom datotekom (`CLAUDE.md`) i tri
+naredbe — `/render`, `/proofread`, `/commit` — a novo pravilo ili specijalista dodajte tek kad stvarno
+osjetite da nedostaje.
 
 ## Kako se zapravo radi
 
 Razgovarate s *istim* AI-jem kroz različita sučelja (primjeri vrijede za Claude Code, Codex i druge alate):
 
-- **Chat** (npr. claude.ai, chatgpt.com) — poznato, ali *ne* dira vaše datoteke. Za učenje, ne za projekt.
-- **Ekstenzija u VS Codeu (plugin)** — AI asistent unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
-- **Terminal (CLI)** — utipkate naredbu (`claude`, `codex`, …) u mapi projekta. Najmoćnije; terminal se brzo zavoli.
+**Chat** (npr. claude.ai, chatgpt.com) je poznat. On *ne* dira vaše datoteke. Za učenje, ne za projekt.
+
+**Ekstenzija u VS Codeu (plugin)** je AI asistent unutar uređivača. Vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
+
+**Terminal (CLI)** za utipkati naredbu (`claude`, `codex`, …) u mapi projekta. Najmoćnije. Terminal se brzo zavoli, a najviše mrzi.
 
 ## Što vam treba i koliko košta
 
@@ -302,7 +312,7 @@ Preduvjeti: **Claude Code, Node.js, git** (Quarto / R po potrebi). **Claude Pro 
 Claude Code** i dovoljan je za početak; Max 5× (~100 $) i Max 20× (~200 $) za intenzivan rad.
 *(Cijene se mijenjaju — provjerite na anthropic.com/pricing.)*
 
-## Empirijski primjer — uzmite s GitHuba
+## Empirijski primjer (uzmite s GitHuba)
 
 Nije teorija. *Klonirati repozitorij* znači preuzeti besplatnu kopiju cijelog projekta s GitHuba na
 svoje računalo. Otvorite je u VS Codeu (ili pokrenete `claude` u terminalu) i isprobate dva mala pokusa.
@@ -316,8 +326,8 @@ git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
 provjeri* da je datoteka stvarno nastala prije nego javi „gotovo". Poanta: ne vjeruje na riječ — provjeri.
 
 **Pokus 2 — `/review-deck` (pregled u paru).** Utipkate `/review-deck`. Jedan agent (samo čita) nađe
-greške i dâ ocjenu, drugi ih popravi, pa prvi **ponovno** provjeri. Poanta: onaj tko nalazi greške ne
-smije ih sam popravljati — kao recenzija.
+greške i dâ ocjenu, drugi ih popravi, pa prvi **ponovno** provjeri. Poanta je da onaj tko nalazi greške ne
+smije ih sam popravljati. Kao recenzija.
 
 Korak po korak, za prve korake: [vođena vježba](vjezba.html).
 

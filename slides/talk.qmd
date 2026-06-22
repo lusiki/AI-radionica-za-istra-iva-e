@@ -1,7 +1,9 @@
 ---
 title: "Od chata do delegiranja"
 subtitle: "Agentska AI za metodološka istraživanja"
-author: "Luka Šikić"
+author:
+  - name: "Luka Šikić"
+    url: "https://www.lukasikic.info/"
 date: today
 lang: hr
 format:
@@ -84,7 +86,7 @@ Bol #4 je emocionalna srž za ovu publiku. Mehaničke greške su stvarne i svi s
 
 ## Sve u jednom dahu {.smaller}
 
-Opišete što želite, običnim jezikom. Claude se ponaša kao **glavni izvođač radova**:
+Opišete što želite, običnim jezikom. AI se ponaša kao **glavni izvođač radova**:
 
 ::: {.incremental}
 - izradi **nacrt** i zatraži vaše odobrenje,
@@ -94,7 +96,7 @@ Opišete što želite, običnim jezikom. Claude se ponaša kao **glavni izvođa�
 :::
 
 ::: {.fragment}
-**Vi govorite, Claude vodi gradilište.** Sve ostalo su instalacije, izgrađene tako da nikad ne morate misliti na instalacije.
+**Vi govorite, AI vodi gradilište.** Sve ostalo su instalacije, izgrađene tako da nikad ne morate misliti na instalacije.
 :::
 
 ## Ekipa i kuća {.smaller}
@@ -142,6 +144,22 @@ može prerano proglasiti pobjedu. **To je naprosto recenzija (peer review)** —
 promašaj: veselo objaviti "izgleda dobro" kad nije.
 :::
 
+## Kako se to povezuje {.smaller}
+
+Blokovi nisu zasebni — to su **datoteke koje surađuju** na jednom zadatku:
+
+```text
+  vaš cilj  ─►  1) PLAN      AI pročita CLAUDE.md + pravila → VI odobrite
+                2) IZVOĐAČ   vještina razašalje agente (kritičar + recenzent, samo čitaju),
+                             ispravljač popravi, kritičar PONOVNO provjeri → /render potvrdi HTML
+                3) OCJENA    0–100 + sažetak → VI odobrite spremanje (/commit)
+```
+
+::: {.fragment}
+**Vi pokrenete vještinu** (`/…`) → ona zove **agente**; `CLAUDE.md`, **pravila** i **memorija** rade u
+pozadini. Vi ste na **dvije kontrolne točke** — odobrenje plana i odobrenje spremanja.
+:::
+
 ## Dva pravila koja održavaju poštenje {.smaller}
 
 **Ocjena od 100, čita se kao semafor:**
@@ -154,7 +172,7 @@ promašaj: veselo objaviti "izgleda dobro" kad nije.
 :::
 
 ::: {.fragment}
-**Pravilo provjere:** Claude ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
+**Pravilo provjere:** AI ne smije proglasiti zadatak gotovim dok stvarno nije **kompajlirao,
 renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
 :::
 
@@ -179,7 +197,7 @@ Chat je ploča koja se briše. Ladice su laboratorijski dnevnik koji se ne briš
 Dva poteza, redom:
 
 ::: {.incremental}
-1. **Prvo planiraj.** Claude izradi plan, spremi ga i pokaže vam *prije* nego dotakne ijednu datoteku.
+1. **Prvo planiraj.** AI izradi plan, spremi ga i pokaže vam *prije* nego dotakne ijednu datoteku.
    Vi odobrite ili izmijenite.
 2. **Način rada izvođača (contractor mode)** preuzima upravljač: radi, provjerava, pokreće inspektore
    paralelno, primjenjuje popravke od najgoreg prema najmanjem, ocjenjuje rezultat i vrti petlju do čistog prolaza.
@@ -219,10 +237,10 @@ Račun padne **50–80%**, a mehanički posao ništa ne gubi. Ne plaćate redovi
 
 ## Ne treba vam sve odjednom {.smaller}
 
-Cijeli sustav je **18 agenata (agents), 52 vještine (skills), 32 pravila (rules).**
+Cijeli ovaj repozitorij je samo **1 ustav, 4 pravila, 4 vještine, 3 agenta.**
 
 ::: {.fragment}
-To je **strop, a ne pod.**
+I ni to ne trebate odjednom — **strop, a ne pod.**
 :::
 
 ::: {.fragment}
@@ -247,7 +265,7 @@ Medij *jest* poruka: ovako izgleda "rad koji je napisao agent i koji je ponovlji
 ## Ako zaboravite sve ostalo {.smaller}
 
 ::: {.incremental}
-- **Vi govorite, Claude vodi gradilište.**
+- **Vi govorite, AI vodi gradilište.**
 - **Specijalisti pobjeđuju generalista.**
 - **Kritičar koji ne može popravljati**, uparen s **ispravljačem koji ne može sam sebe odobriti**, održava rad poštenim.
 - Što ne **zapišete na disk** nestaje kad se razgovor napuni.
@@ -256,12 +274,12 @@ Medij *jest* poruka: ovako izgleda "rad koji je napisao agent i koji je ponovlji
 
 ## Kako se zapravo radi {.smaller}
 
-Tri načina da razgovarate s *istim* Claudeom:
+Tri načina da razgovarate s *istim* AI-jem (primjeri vrijede za Claude Code, Codex i druge alate):
 
 ::: {.incremental}
 - **Chat (claude.ai)** — poznato, ali *ne* dira vaše datoteke. Za učenje, ne za projekt.
-- **Ekstenzija u VS Codeu (plugin)** — Claude unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
-- **Terminal (CLI)** — utipkate `claude` u mapi projekta. Najmoćnije; terminal se brzo zavoli.
+- **Ekstenzija u VS Codeu (plugin)** — AI asistent unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
+- **Terminal (CLI)** — utipkate `claude` (ili `codex`) u mapi projekta. Najmoćnije; terminal se brzo zavoli.
 :::
 
 ::: {.fragment}
@@ -311,7 +329,7 @@ Otvorite mapu u VS Codeu (ili `claude` u terminalu) — i krenite. *(Korak po ko
 **Što utipkate:** `/render`
 
 ::: {.incremental}
-- Claude pokrene `quarto render`, pa **provjeri da `slides/talk.html` stvarno postoji.**
+- AI pokrene `quarto render`, pa **provjeri da `slides/talk.html` stvarno postoji.**
 - Tek tada javi "gotovo". Otvorite HTML — špica je tu.
 :::
 
