@@ -195,13 +195,13 @@ renderirao ili pokrenuo** rezultat. Bez objave uspjeha iz mašte.
 ## Što preživi kad se chat napuni
 
 Dugi razgovori se sažimaju i živi chat je ono što *ne* preživljava. Zato sve vrijedno čuvanja ide na
-**disk**, u četiri označene ladice: **ustav** (stalna pravila), **dnevnik ispravaka** (lekcije, da se
-greška ne ponovi), **planovi** (strategija za zadatak) i **dnevnici sesija** (*zašto* iza svake odluke).
-*Git bilježi što; dnevnik bilježi zašto.*
+**disk**, u četiri datoteke: **`CLAUDE.md`** (stalna pravila), **`MEMORY.md`** (dnevnik ispravaka — da
+se greška ne ponovi), **`quality_reports/plans/`** (strategija za zadatak) i
+**`quality_reports/session_logs/`** (*zašto* iza svake odluke). *Git bilježi što; dnevnik bilježi zašto.*
 
 ## Kako teče stvarni posao
 
-Dva poteza, redom. **Prvo plan:** Claude izradi plan, spremi ga i pokaže vam *prije* nego dotakne
+Dva poteza, redom. **Prvo plan:** AI izradi plan, spremi ga i pokaže vam *prije* nego dotakne
 ijednu datoteku — vi odobrite ili izmijenite. Zatim **način rada izvođača (contractor mode)** preuzima
 upravljač: radi, provjerava, pokreće inspektore paralelno, popravlja od najgoreg prema najmanjem,
 ocjenjuje i vrti petlju do čistog prolaza. Na kraju vam preda kratak sažetak. **Ništa ne sprema dok vi ne kažete.**
@@ -228,19 +228,45 @@ Jeftini modeli rade crnčarenje; skupi model razmišlja.
 
 Račun padne **50–80%**, a mehanički posao ništa ne gubi. (Detaljne cijene: vidi *Postavljanje* u repozitoriju.)
 
+**Kako se model bira po zadatku.** Svaki specijalist ima polje `model:` u svojoj datoteci — tako se posao usmjeri na pravu (jeftiniju ili skuplju) razinu.
+
+<details>
+<summary>Primjer: isti posao, različite razine modela</summary>
+
+```markdown
+# .claude/agents/deck-fixer.md  — mehanički popravci
+---
+name: deck-fixer
+model: haiku        # brzo i jeftino → ~70% posla
+tools: Read, Edit, Write
+---
+
+# .claude/agents/deck-critic.md — pregled i ocjena
+---
+name: deck-critic
+model: sonnet       # prosudba pri pregledu → ~20%
+tools: Read, Grep, Glob
+---
+
+# visoka prosudba (urednik, provjera tvrdnji) → model: opus   (~10%)
+```
+
+</details>
+
 ## Ne treba vam sve odjednom
 
-Cijeli sustav je **18 agenata, 52 vještine, 32 pravila.** To je **strop, a ne pod.** Počnite s
-**ustavom** i **tri gumba** — `/render`, `/proofread`, `/commit` — i dodajte priručnik ili specijalista
-tek kad stvarno osjetite da nedostaje.
+Potpuno razrađen radni okvir (referentni predložak, **ne** ovaj mali repozitorij) može narasti na
+**18 agenata, 52 vještine i 32 pravila** — ali to je **strop, a ne pod.** Počnite s jednom datotekom
+(`CLAUDE.md`) i tri naredbe — `/render`, `/proofread`, `/commit` — a novo pravilo ili specijalista
+dodajte tek kad stvarno osjetite da nedostaje.
 
 ## Kako se zapravo radi
 
-Razgovarate s *istim* Claudeom kroz različita sučelja:
+Razgovarate s *istim* AI-jem kroz različita sučelja (primjeri vrijede za Claude Code, Codex i druge alate):
 
-- **Chat (claude.ai)** — poznato, ali *ne* dira vaše datoteke. Za učenje, ne za projekt.
-- **Ekstenzija u VS Codeu (plugin)** — Claude unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
-- **Terminal (CLI)** — utipkate `claude` u mapi projekta. Najmoćnije; terminal se brzo zavoli.
+- **Chat** (npr. claude.ai, chatgpt.com) — poznato, ali *ne* dira vaše datoteke. Za učenje, ne za projekt.
+- **Ekstenzija u VS Codeu (plugin)** — AI asistent unutar uređivača: vidite datoteke, gumbe, klik za odobrenje. **Preporuka za početak.**
+- **Terminal (CLI)** — utipkate naredbu (`claude`, `codex`, …) u mapi projekta. Najmoćnije; terminal se brzo zavoli.
 
 ## Što vam treba i koliko košta
 
@@ -250,14 +276,22 @@ Claude Code** i dovoljan je za početak; Max 5× (~100 $) i Max 20× (~200 $) za
 
 ## Empirijski primjer — uzmite s GitHuba
 
-Nije teorija. Klonirajte repozitorij i pokrenite dva mala pokusa:
+Nije teorija. *Klonirati repozitorij* znači preuzeti besplatnu kopiju cijelog projekta s GitHuba na
+svoje računalo. Otvorite je u VS Codeu (ili pokrenete `claude` u terminalu) i isprobate dva mala pokusa.
 
 ```bash
+# preuzmite kopiju projekta na svoje računalo
 git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
 ```
 
-- **Pokus 1 — `/render`:** Claude izgradi špicu i *provjeri* da HTML postoji prije nego javi gotovo.
-- **Pokus 2 — `/review-deck`:** kritičar nađe greške i ocijeni → ispravljač popravi → kritičar ponovno provjeri.
+**Pokus 1 — `/render` (izgradi i provjeri).** Utipkate `/render`. AI izgradi prezentaciju u HTML i *sam
+provjeri* da je datoteka stvarno nastala prije nego javi „gotovo". Poanta: ne vjeruje na riječ — provjeri.
+
+**Pokus 2 — `/review-deck` (pregled u paru).** Utipkate `/review-deck`. Jedan agent (samo čita) nađe
+greške i dâ ocjenu, drugi ih popravi, pa prvi **ponovno** provjeri. Poanta: onaj tko nalazi greške ne
+smije ih sam popravljati — kao recenzija.
+
+Korak po korak, za prve korake: [vođena vježba](vjezba.html).
 
 ## Gdje početi ovaj tjedan
 
