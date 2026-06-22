@@ -2266,6 +2266,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
   <li><a href="#četiri-problema-koje-agentski-ai-rješava" id="toc-četiri-problema-koje-agentski-ai-rješava" class="nav-link" data-scroll-target="#četiri-problema-koje-agentski-ai-rješava">Četiri problema koje agentski AI rješava</a></li>
   <li><a href="#sve-u-jednoj-bauštelskoj-metafori" id="toc-sve-u-jednoj-bauštelskoj-metafori" class="nav-link" data-scroll-target="#sve-u-jednoj-bauštelskoj-metafori">Sve u jednoj (bauštelskoj) metafori</a></li>
   <li><a href="#pet-slojeva-agentskog-sustava" id="toc-pet-slojeva-agentskog-sustava" class="nav-link" data-scroll-target="#pet-slojeva-agentskog-sustava">Pet slojeva agentskog sustava</a></li>
+  <li><a href="#kako-se-to-povezuje-tok-kroz-radni-okvir" id="toc-kako-se-to-povezuje-tok-kroz-radni-okvir" class="nav-link" data-scroll-target="#kako-se-to-povezuje-tok-kroz-radni-okvir">Kako se to povezuje — tok kroz radni okvir</a></li>
   <li><a href="#dvije-ideje-zbog-kojih-sve-funkcionira" id="toc-dvije-ideje-zbog-kojih-sve-funkcionira" class="nav-link" data-scroll-target="#dvije-ideje-zbog-kojih-sve-funkcionira">Dvije ideje zbog kojih sve funkcionira</a></li>
   <li><a href="#dva-pravila-koja-održavaju-poštenje" id="toc-dva-pravila-koja-održavaju-poštenje" class="nav-link" data-scroll-target="#dva-pravila-koja-održavaju-poštenje">Dva pravila koja održavaju poštenje</a></li>
   <li><a href="#što-preživi-kad-se-chat-napuni" id="toc-što-preživi-kad-se-chat-napuni" class="nav-link" data-scroll-target="#što-preživi-kad-se-chat-napuni">Što preživi kad se chat napuni</a></li>
@@ -2337,7 +2338,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 </section>
 <section id="ovo-je-vama-poznata-vrsta-problema" class="level2">
 <h2 class="anchored" data-anchor-id="ovo-je-vama-poznata-vrsta-problema">Ovo je vama poznata vrsta problema</h2>
-<p>Ne razmišljajte „pametniji chatbot”. Razmislite o onome što ionako svakodnevno radite:</p>
+<p>Ne razmišljajte na način da se radi o „pametnijem chatbot-u”. Razmislite o onome što ionako svakodnevno radite:</p>
 <ul>
 <li><strong>Brifirate i nadzirete asistenta (RA)</strong> i provjeravate njegov rad.</li>
 <li>Pišete <strong>plan analize</strong> prije nego što dotaknete podatke.</li>
@@ -2397,7 +2398,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 </tbody>
 </table>
 <p><code>CLAUDE.md</code> je naziv u Claude Codeu; <code>AGENTS.md</code> je isti, vendor-neutralan oblik koji koriste GPT / Codex i drugi agentski alati.</p>
-<p>Ispod svega: <strong>memorija koja preživljava</strong> kroz sesije.</p>
+<p>Ispod svega je <strong>memorija koja preživljava</strong> kroz sesije.</p>
 <p><strong>Kako izgledaju u praksi.</strong> Otvorite blok da vidite stvarnu datoteku iz ovog repozitorija — baš one koje pokreće empirijski primjer niže.</p>
 <details>
 <summary>
@@ -2482,6 +2483,27 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu"># … (skraćeno)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
+<section id="kako-se-to-povezuje-tok-kroz-radni-okvir" class="level2">
+<h2 class="anchored" data-anchor-id="kako-se-to-povezuje-tok-kroz-radni-okvir">Kako se to povezuje — tok kroz radni okvir</h2>
+<p>Blokovi gore nisu zasebni primjeri — to su <strong>točno datoteke koje surađuju</strong> na jednom zadatku. Evo kako kontekst i posao teku.</p>
+<p><strong>Što se učita.</strong> Na početku svake sesije učita se <code>CLAUDE.md</code> (stalna pravila). Čim AI dotakne neku datoteku, <em>automatski</em> se dodaju samo relevantni priručnici — npr. uz <code>.qmd</code> se učita <code>verification-protocol.md</code>. Sve ostalo miruje da ne zatrpa pažnju.</p>
+<p><strong>Tok jednog zadatka</strong> (npr. <em>„uredi i provjeri špicu”</em>):</p>
+<pre><code>  vaš cilj, običnim jezikom
+           │
+           ▼
+  1) PLAN        AI pročita CLAUDE.md + relevantna pravila, napiše plan  →  VI odobrite
+           │
+           ▼
+  2) IZVOĐAČ     pokrene se vještina (npr. /review-deck), koja:
+     (contractor)  • razašalje agente: deck-critic + audience-reviewer  (samo čitaju)
+           │       • deck-fixer primijeni popravke (ne smije se sam odobriti)
+           │       • deck-critic PONOVNO provjeri      → petlja do čistog prolaza
+           │       • /render potvrdi da se HTML stvarno izgradio  (pravilo provjere)
+           ▼
+  3) OCJENA      0–100 + kratak sažetak   →  VI odobrite spremanje (/commit)</code></pre>
+<p><strong>Tko koga zove.</strong> Vi pokrenete <strong>vještinu</strong> (<code>/…</code>) — ili je AI sam odabere iz vašeg zahtjeva. Vještina poziva <strong>agente</strong> (specijaliste); <code>CLAUDE.md</code>, <strong>pravila</strong> i <strong>memorija</strong> rade u pozadini kao kontekst; <strong>hooks</strong> su automatski alarmi. Agente nikad ne zovete izravno, a vi ste prisutni na <strong>dvije kontrolne točke</strong>: odobrenje plana i odobrenje spremanja.</p>
+<p>Tako se gornji blokovi spajaju: <code>/render</code> (vještina) pokreće <strong>Pokus 1</strong>, <code>deck-critic</code> (agent) <strong>Pokus 2</strong>, <code>verification-protocol</code> (pravilo) jamči korak provjere, a <code>CLAUDE.md</code> postavlja pravila igre.</p>
+</section>
 <section id="dvije-ideje-zbog-kojih-sve-funkcionira" class="level2">
 <h2 class="anchored" data-anchor-id="dvije-ideje-zbog-kojih-sve-funkcionira">Dvije ideje zbog kojih sve funkcionira</h2>
 <p><strong>Specijalisti pobjeđuju generalista.</strong> Tražite od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku <em>i</em> kôd → osrednje obavi sve. Dajte svakoj dimenziji <strong>vlastitog uskog inspektora</strong> i greške skrivene na vidnom mjestu napokon budu uhvaćene.</p>
@@ -2545,21 +2567,21 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 <summary>
 Primjer: isti posao, različite razine modela
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># .claude/agents/deck-fixer.md  — mehanički popravci</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>name: deck-fixer</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>model: haiku        # brzo i jeftino → ~70% posla</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tools: Read, Edit, Write</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># .claude/agents/deck-critic.md — pregled i ocjena</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>name: deck-critic</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>model: sonnet       # prosudba pri pregledu → ~20%</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>tools: Read, Grep, Glob</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu"># visoka prosudba (urednik, provjera tvrdnji) → model: opus   (~10%)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># .claude/agents/deck-fixer.md  — mehanički popravci</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>name: deck-fixer</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>model: haiku        # brzo i jeftino → ~70% posla</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>tools: Read, Edit, Write</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># .claude/agents/deck-critic.md — pregled i ocjena</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>name: deck-critic</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>model: sonnet       # prosudba pri pregledu → ~20%</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>tools: Read, Grep, Glob</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu"># visoka prosudba (urednik, provjera tvrdnji) → model: opus   (~10%)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="ne-treba-vam-sve-odjednom" class="level2">
@@ -2582,8 +2604,8 @@ Primjer: isti posao, različite razine modela
 <section id="empirijski-primjer-uzmite-s-githuba" class="level2">
 <h2 class="anchored" data-anchor-id="empirijski-primjer-uzmite-s-githuba">Empirijski primjer — uzmite s GitHuba</h2>
 <p>Nije teorija. <em>Klonirati repozitorij</em> znači preuzeti besplatnu kopiju cijelog projekta s GitHuba na svoje računalo. Otvorite je u VS Codeu (ili pokrenete <code>claude</code> u terminalu) i isprobate dva mala pokusa.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># preuzmite kopiju projekta na svoje računalo</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># preuzmite kopiju projekta na svoje računalo</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Pokus 1 — <code>/render</code> (izgradi i provjeri).</strong> Utipkate <code>/render</code>. AI izgradi prezentaciju u HTML i <em>sam provjeri</em> da je datoteka stvarno nastala prije nego javi „gotovo”. Poanta: ne vjeruje na riječ — provjeri.</p>
 <p><strong>Pokus 2 — <code>/review-deck</code> (pregled u paru).</strong> Utipkate <code>/review-deck</code>. Jedan agent (samo čita) nađe greške i dâ ocjenu, drugi ih popravi, pa prvi <strong>ponovno</strong> provjeri. Poanta: onaj tko nalazi greške ne smije ih sam popravljati — kao recenzija.</p>
 <p>Korak po korak, za prve korake: <a href="vjezba.html">vođena vježba</a>.</p>

@@ -75,7 +75,7 @@ Svaki sloj je **stvarna datoteka** u projektu; engleska imena su zadržana jer i
 
 `CLAUDE.md` je naziv u Claude Codeu; `AGENTS.md` je isti, vendor-neutralan oblik koji koriste GPT / Codex i drugi agentski alati.
 
-Ispod svega: **memorija koja preživljava** kroz sesije.
+Ispod svega je **memorija koja preživljava** kroz sesije.
 
 **Kako izgledaju u praksi.** Otvorite blok da vidite stvarnu datoteku iz ovog repozitorija — baš one koje pokreće empirijski primjer niže.
 
@@ -172,6 +172,34 @@ output exists.
 ```
 
 </details>
+
+## Kako se to povezuje — tok kroz radni okvir
+
+Blokovi gore nisu zasebni primjeri — to su **točno datoteke koje surađuju** na jednom zadatku. Evo kako kontekst i posao teku.
+
+**Što se učita.** Na početku svake sesije učita se `CLAUDE.md` (stalna pravila). Čim AI dotakne neku datoteku, *automatski* se dodaju samo relevantni priručnici — npr. uz `.qmd` se učita `verification-protocol.md`. Sve ostalo miruje da ne zatrpa pažnju.
+
+**Tok jednog zadatka** (npr. *„uredi i provjeri špicu"*):
+
+```
+  vaš cilj, običnim jezikom
+           │
+           ▼
+  1) PLAN        AI pročita CLAUDE.md + relevantna pravila, napiše plan  →  VI odobrite
+           │
+           ▼
+  2) IZVOĐAČ     pokrene se vještina (npr. /review-deck), koja:
+     (contractor)  • razašalje agente: deck-critic + audience-reviewer  (samo čitaju)
+           │       • deck-fixer primijeni popravke (ne smije se sam odobriti)
+           │       • deck-critic PONOVNO provjeri      → petlja do čistog prolaza
+           │       • /render potvrdi da se HTML stvarno izgradio  (pravilo provjere)
+           ▼
+  3) OCJENA      0–100 + kratak sažetak   →  VI odobrite spremanje (/commit)
+```
+
+**Tko koga zove.** Vi pokrenete **vještinu** (`/…`) — ili je AI sam odabere iz vašeg zahtjeva. Vještina poziva **agente** (specijaliste); `CLAUDE.md`, **pravila** i **memorija** rade u pozadini kao kontekst; **hooks** su automatski alarmi. Agente nikad ne zovete izravno, a vi ste prisutni na **dvije kontrolne točke**: odobrenje plana i odobrenje spremanja.
+
+Tako se gornji blokovi spajaju: `/render` (vještina) pokreće **Pokus 1**, `deck-critic` (agent) **Pokus 2**, `verification-protocol` (pravilo) jamči korak provjere, a `CLAUDE.md` postavlja pravila igre.
 
 ## Dvije ideje zbog kojih sve funkcionira
 
