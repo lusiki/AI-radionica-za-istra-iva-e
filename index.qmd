@@ -68,13 +68,13 @@ Opišete što želite, običnim jezikom. Recimo, *„Renderiraj slajdove, prođi
 blok ne ispada izvan okvira i vrati mi ih spremne za izlaganje."*, a taj AI se ponaša kao **glavni
 izvođač radova**.
 
-Izradi **nacrt** i zatraži vaše odobrenje. **Unajmi ekipu** specijalista. **Pregleda** njihov rad i
+AI izradi **nacrt** i zatraži vaše odobrenje. **Unajmi ekipu** specijalista. **Pregleda** njihov rad i
 vrati ih da poprave što ne valja. Vrati se k vama tek kad posao **prođe inspekciju**. Može se zapetljati
 ili preskočiti korak, pa zato vi odobravate plan *prije* nego dotakne datoteke, a prag kvalitete blokira
 rad ispod razine. **Vi usmjeravate, AI provodi**, a sve ostalo su instalacije, izgrađene tako da
 nikad ne morate misliti na instalacije.
 
-## Ekipa i kuća
+## Elementi (slojevi) agentskog sustava
 
 Sav taj posao obavlja pet slojeva, a svaki je **stvarna datoteka** u projektu. Engleska imena su
 zadržana jer ih alat tako traži.
@@ -94,25 +94,24 @@ sesije. Kako te datoteke izgledaju iznutra, možete vidjeti u [odjeljku na dnu](
 ## Dvije ideje zbog kojih sve radi
 
 **Specijalisti pobjeđuju generalista.** Tražite li od jednog asistenta da istovremeno pazi na
-gramatiku, raspored, matematiku *i* kôd, sve četvero obavi osrednje. Dajte svakoj dimenziji **vlastitog
-uskog inspektora** i greške skrivene na vidnom mjestu napokon budu uhvaćene. Kao u istraživačkom timu,
+gramatiku, raspored, matematiku *i* kôd, sve zadatke obavi osrednje. Dodjelite svakoj dimenziji **specijaliziranog asistenta** i greške ne ostaju skrivene. Kao u istraživačkom timu,
 jedan RA čisti podatke, drugi provjerava kodiranje, treći potpisuje, i nikad jedna osoba za sve.
 
-**Suparnička petlja (adversarial loop).** Ovo je srce dizajna. **Kritičar (deck-critic)** čita rad i
+**Suparnička petlja (adversarial loop).** Ovo je srce dizajna. **Kritičar (deck-critic)** čita i
 nabraja svaku grešku, ali *ne smije dirati datoteke*. Zaseban **ispravljač (deck-fixer)** obavlja
 popravke, ali *ne smije odobriti vlastiti rad*. Kritičar zatim ponovno čita, i tako u krug, do čistog
 prolaza. Kritičar nema razloga biti popustljiv jer ne može popravljati, a ispravljač ne može prerano
-proglasiti pobjedu jer ne može potpisati. To je naprosto **recenzija (peer review)**, i ona **ubija**
-najčešći AI promašaj, a to je veselo objaviti „izgleda dobro" kad nije.
+proglasiti pobjedu jer ne može potpisati. To je naprosto **recenzija (peer review)**, i ona **rješava**
+glavni problem AI, a to je veselo objaviti da je sve u redu...i kad nije.
 
 Na našem zadatku to izgleda ovako. Jedan specijalist renderira slajdove i pročita ih jedan po jedan,
 drugi provjerava ispada li koji blok izvan okvira. Kritičar javi da **slajd 12 prelijeva preko ruba pa
-zadnji redak zaključka nestane sa zaslona**, točno ona greška koju provjera pravopisa nikad ne bi uhvatila,
-jer iskoči tek kad se slajd projicira. Ispravljač skrati blok, kritičar ponovno provjeri.
+zadnji redak zaključka nestane sa zaslona** (primjer greške koju provjera pravopisa ne bi uhvatila,
+jer iskoči tek kad se slajd projicira). Ispravljač skrati blok, kritičar ponovno provjeri.
 
 ## Kako se to povezuje
 
-Blokovi gore nisu zasebni. To su **datoteke koje surađuju** na jednom zadatku, a posao teče u tri koraka.
+Gore navedeni slojevi nisu zasebni elementi. To su **datoteke koje surađuju** na jednom zadatku, a posao teče u tri koraka.
 
 **Prvo plan.** Na početku svake sesije učita se `CLAUDE.md` (stalna pravila), a čim AI dotakne neku
 datoteku, *automatski* se dodaju samo relevantni priručnici, pa se uz `.qmd` primjerice učita pravilo

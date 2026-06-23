@@ -3141,7 +3141,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
   <li><a href="#iskorak" id="toc-iskorak" class="nav-link" data-scroll-target="#iskorak">Iskorak</a></li>
   <li><a href="#ovo-vam-je-poznata-vrsta-problema" id="toc-ovo-vam-je-poznata-vrsta-problema" class="nav-link" data-scroll-target="#ovo-vam-je-poznata-vrsta-problema">Ovo vam je poznata vrsta problema</a></li>
   <li><a href="#ai-kao-glavni-izvođač-radova" id="toc-ai-kao-glavni-izvođač-radova" class="nav-link" data-scroll-target="#ai-kao-glavni-izvođač-radova">AI kao glavni izvođač radova</a></li>
-  <li><a href="#ekipa-i-kuća" id="toc-ekipa-i-kuća" class="nav-link" data-scroll-target="#ekipa-i-kuća">Ekipa i kuća</a></li>
+  <li><a href="#elementi-slojevi-agentskog-sustava" id="toc-elementi-slojevi-agentskog-sustava" class="nav-link" data-scroll-target="#elementi-slojevi-agentskog-sustava">Elementi (slojevi) agentskog sustava</a></li>
   <li><a href="#dvije-ideje-zbog-kojih-sve-radi" id="toc-dvije-ideje-zbog-kojih-sve-radi" class="nav-link" data-scroll-target="#dvije-ideje-zbog-kojih-sve-radi">Dvije ideje zbog kojih sve radi</a></li>
   <li><a href="#kako-se-to-povezuje" id="toc-kako-se-to-povezuje" class="nav-link" data-scroll-target="#kako-se-to-povezuje">Kako se to povezuje</a></li>
   <li><a href="#dva-pravila-koja-održavaju-poštenje" id="toc-dva-pravila-koja-održavaju-poštenje" class="nav-link" data-scroll-target="#dva-pravila-koja-održavaju-poštenje">Dva pravila koja održavaju poštenje</a></li>
@@ -3217,10 +3217,10 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 <section id="ai-kao-glavni-izvođač-radova" class="level2">
 <h2 class="anchored" data-anchor-id="ai-kao-glavni-izvođač-radova">AI kao glavni izvođač radova</h2>
 <p>Opišete što želite, običnim jezikom. Recimo, <em>„Renderiraj slajdove, prođi lekturu, provjeri da nijedan blok ne ispada izvan okvira i vrati mi ih spremne za izlaganje.”</em>, a taj AI se ponaša kao <strong>glavni izvođač radova</strong>.</p>
-<p>Izradi <strong>nacrt</strong> i zatraži vaše odobrenje. <strong>Unajmi ekipu</strong> specijalista. <strong>Pregleda</strong> njihov rad i vrati ih da poprave što ne valja. Vrati se k vama tek kad posao <strong>prođe inspekciju</strong>. Može se zapetljati ili preskočiti korak, pa zato vi odobravate plan <em>prije</em> nego dotakne datoteke, a prag kvalitete blokira rad ispod razine. <strong>Vi usmjeravate, AI provodi</strong>, a sve ostalo su instalacije, izgrađene tako da nikad ne morate misliti na instalacije.</p>
+<p>AI izradi <strong>nacrt</strong> i zatraži vaše odobrenje. <strong>Unajmi ekipu</strong> specijalista. <strong>Pregleda</strong> njihov rad i vrati ih da poprave što ne valja. Vrati se k vama tek kad posao <strong>prođe inspekciju</strong>. Može se zapetljati ili preskočiti korak, pa zato vi odobravate plan <em>prije</em> nego dotakne datoteke, a prag kvalitete blokira rad ispod razine. <strong>Vi usmjeravate, AI provodi</strong>, a sve ostalo su instalacije, izgrađene tako da nikad ne morate misliti na instalacije.</p>
 </section>
-<section id="ekipa-i-kuća" class="level2">
-<h2 class="anchored" data-anchor-id="ekipa-i-kuća">Ekipa i kuća</h2>
+<section id="elementi-slojevi-agentskog-sustava" class="level2">
+<h2 class="anchored" data-anchor-id="elementi-slojevi-agentskog-sustava">Elementi (slojevi) agentskog sustava</h2>
 <p>Sav taj posao obavlja pet slojeva, a svaki je <strong>stvarna datoteka</strong> u projektu. Engleska imena su zadržana jer ih alat tako traži.</p>
 <table class="caption-top table">
 <colgroup>
@@ -3260,13 +3260,13 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bgMAAAHsAAAARkdERUZmOmahAA
 </section>
 <section id="dvije-ideje-zbog-kojih-sve-radi" class="level2">
 <h2 class="anchored" data-anchor-id="dvije-ideje-zbog-kojih-sve-radi">Dvije ideje zbog kojih sve radi</h2>
-<p><strong>Specijalisti pobjeđuju generalista.</strong> Tražite li od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku <em>i</em> kôd, sve četvero obavi osrednje. Dajte svakoj dimenziji <strong>vlastitog uskog inspektora</strong> i greške skrivene na vidnom mjestu napokon budu uhvaćene. Kao u istraživačkom timu, jedan RA čisti podatke, drugi provjerava kodiranje, treći potpisuje, i nikad jedna osoba za sve.</p>
-<p><strong>Suparnička petlja (adversarial loop).</strong> Ovo je srce dizajna. <strong>Kritičar (deck-critic)</strong> čita rad i nabraja svaku grešku, ali <em>ne smije dirati datoteke</em>. Zaseban <strong>ispravljač (deck-fixer)</strong> obavlja popravke, ali <em>ne smije odobriti vlastiti rad</em>. Kritičar zatim ponovno čita, i tako u krug, do čistog prolaza. Kritičar nema razloga biti popustljiv jer ne može popravljati, a ispravljač ne može prerano proglasiti pobjedu jer ne može potpisati. To je naprosto <strong>recenzija (peer review)</strong>, i ona <strong>ubija</strong> najčešći AI promašaj, a to je veselo objaviti „izgleda dobro” kad nije.</p>
-<p>Na našem zadatku to izgleda ovako. Jedan specijalist renderira slajdove i pročita ih jedan po jedan, drugi provjerava ispada li koji blok izvan okvira. Kritičar javi da <strong>slajd 12 prelijeva preko ruba pa zadnji redak zaključka nestane sa zaslona</strong>, točno ona greška koju provjera pravopisa nikad ne bi uhvatila, jer iskoči tek kad se slajd projicira. Ispravljač skrati blok, kritičar ponovno provjeri.</p>
+<p><strong>Specijalisti pobjeđuju generalista.</strong> Tražite li od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku <em>i</em> kôd, sve zadatke obavi osrednje. Dodjelite svakoj dimenziji <strong>specijaliziranog asistenta</strong> i greške ne ostaju skrivene. Kao u istraživačkom timu, jedan RA čisti podatke, drugi provjerava kodiranje, treći potpisuje, i nikad jedna osoba za sve.</p>
+<p><strong>Suparnička petlja (adversarial loop).</strong> Ovo je srce dizajna. <strong>Kritičar (deck-critic)</strong> čita i nabraja svaku grešku, ali <em>ne smije dirati datoteke</em>. Zaseban <strong>ispravljač (deck-fixer)</strong> obavlja popravke, ali <em>ne smije odobriti vlastiti rad</em>. Kritičar zatim ponovno čita, i tako u krug, do čistog prolaza. Kritičar nema razloga biti popustljiv jer ne može popravljati, a ispravljač ne može prerano proglasiti pobjedu jer ne može potpisati. To je naprosto <strong>recenzija (peer review)</strong>, i ona <strong>rješava</strong> glavni problem AI, a to je veselo objaviti da je sve u redu…i kad nije.</p>
+<p>Na našem zadatku to izgleda ovako. Jedan specijalist renderira slajdove i pročita ih jedan po jedan, drugi provjerava ispada li koji blok izvan okvira. Kritičar javi da <strong>slajd 12 prelijeva preko ruba pa zadnji redak zaključka nestane sa zaslona</strong> (primjer greške koju provjera pravopisa ne bi uhvatila, jer iskoči tek kad se slajd projicira). Ispravljač skrati blok, kritičar ponovno provjeri.</p>
 </section>
 <section id="kako-se-to-povezuje" class="level2">
 <h2 class="anchored" data-anchor-id="kako-se-to-povezuje">Kako se to povezuje</h2>
-<p>Blokovi gore nisu zasebni. To su <strong>datoteke koje surađuju</strong> na jednom zadatku, a posao teče u tri koraka.</p>
+<p>Gore navedeni slojevi nisu zasebni elementi. To su <strong>datoteke koje surađuju</strong> na jednom zadatku, a posao teče u tri koraka.</p>
 <p><strong>Prvo plan.</strong> Na početku svake sesije učita se <code>CLAUDE.md</code> (stalna pravila), a čim AI dotakne neku datoteku, <em>automatski</em> se dodaju samo relevantni priručnici, pa se uz <code>.qmd</code> primjerice učita pravilo provjere. AI napiše plan, a onda ga <strong>vi odobrite</strong>.</p>
 <p><strong>Zatim izvođač.</strong> Vještina aktivira agente. Kritičar i specijalist za publiku (pazi je li poruka primjerena publici) samo čitaju, ispravljač popravlja, a kritičar ponovno provjerava, sve u petlji do čistog prolaza. Usput <code>/render</code> potvrdi da se HTML stvarno izgradio.</p>
 <p><strong>Na kraju ocjena.</strong> Dobijete ocjenu <strong>0–100</strong> i kratak sažetak, pa <strong>vi odobrite spremanje</strong> naredbom <code>/commit</code>.</p>
