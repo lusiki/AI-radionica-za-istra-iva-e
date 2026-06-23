@@ -1,0 +1,14 @@
+# Normalize all text files to LF in the repo, regardless of the OS that
+# touched them. This stops Dropbox / cross-platform editors from creating
+# phantom CRLF-vs-LF diffs across the whole tree.
+* text=auto eol=lf
+
+# Binary types git should never try to normalize.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.ico binary
+*.woff binary
+*.woff2 binary
