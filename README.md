@@ -4,26 +4,26 @@
 U AI-ju *povjeravate* cijeli zadatak. On ga planira, izvršava, provjerava vlastiti rad i vraća se
 tek na vaše odobrenje. Ovaj repozitorij je i sam mali radni primjer tog okvira. *(Medij je poruka.)*
 
-**🌐 Živa prezentacija (web):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
+**🌐 Živa prezentacija (web)**, <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
 
 ### 📱 Skenirajte za otvaranje na mobitelu
 
-<img src="assets/qr-prezentacija.png" alt="QR kod — otvara živu prezentaciju" width="200" height="200">
+<img src="assets/qr-prezentacija.png" alt="QR kod, otvara živu prezentaciju" width="200" height="200">
 
 ## Materijali
 
-- **Prezentacija (web):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
-- **Prezentacija (slajdovi):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/slides/talk.html>
-- **Primjeri datoteka:** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/primjeri.html>
-- **Postavljanje — sučelja, preduvjeti, cijene:** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/setup.html>
-- **Vođena vježba (~20 min):** <https://lusiki.github.io/AI-radionica-za-istra-iva-e/vjezba.html>
+- **Prezentacija (web)**, <https://lusiki.github.io/AI-radionica-za-istra-iva-e/>
+- **Prezentacija (slajdovi)**, <https://lusiki.github.io/AI-radionica-za-istra-iva-e/slides/talk.html>
+- **Primjeri datoteka**, <https://lusiki.github.io/AI-radionica-za-istra-iva-e/primjeri.html>
+- **Postavljanje, sučelja, preduvjeti, cijene**, <https://lusiki.github.io/AI-radionica-za-istra-iva-e/setup.html>
+- **Vođena vježba (~20 min)**, <https://lusiki.github.io/AI-radionica-za-istra-iva-e/vjezba.html>
 
 ## Struktura repozitorija
 
-Korijen mape čita se kao tri sloja: 🛠️ **STROJ** (sam okvir: `CLAUDE.md`, `.claude/`, `pregled.html`) ·
-📚 **RADIONICA** (gradivo: `*.qmd`, `slides/`, `radionica/`) · ⚙️ **IZVEDENO** (`docs/`, `quality_reports/`).
-Počnite od **[`00-KRENI-OVDJE.md`](00-KRENI-OVDJE.md)** — vodi kroz pet slojeva okvira i pokazuje gdje sve živi.
+Korijen mape čita se kao tri sloja, 🛠️ **STROJ** (sam okvir, `CLAUDE.md`, `.claude/`, `pregled.html`) ·
+📚 **RADIONICA** (gradivo, `*.qmd`, `slides/`, `radionica/`) · ⚙️ **IZVEDENO** (`docs/`, `quality_reports/`).
+Počnite od **[`00-KRENI-OVDJE.md`](00-KRENI-OVDJE.md)**, koji vodi kroz pet slojeva okvira i pokazuje gdje sve živi.
 
 ---
 
-*Autor / voditelj radionice: [Luka Šikić](https://www.lukasikic.info/).*
+*Autor / voditelj radionice je [Luka Šikić](https://www.lukasikic.info/).*

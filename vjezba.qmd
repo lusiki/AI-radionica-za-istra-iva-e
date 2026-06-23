@@ -1,6 +1,6 @@
 ---
 title: "Vođena vježba"
-subtitle: "Odvrtite petlju jednom — oko 20 minuta"
+subtitle: "Odvrtite petlju jednom, oko 20 minuta"
 lang: hr
 format:
   html:
@@ -17,11 +17,11 @@ format:
 ---
 
 Najbolji način da *osjetite* radni okvir je da ga jednom pokrenete na ovom repozitoriju. Cijela vježba
-ima isti ritam koji okvir teži: **plan → djeluj → provjeri → pregledaj → vaše odobrenje.**
+ima isti ritam kojem okvir teži, **plan, djeluj, provjeri, pregledaj, pa vaše odobrenje.**
 
 ## Priprema
 
-Preduvjeti i instalacija: vidi [Postavljanje](setup.html). Ukratko trebate **Claude Code, git** i (za
+Preduvjete i instalaciju potražite u [Postavljanju](setup.html). Ukratko trebate **Claude Code, git** i (za
 ovu vježbu) **Quarto**.
 
 ```bash
@@ -31,36 +31,36 @@ cd AI-radionica-za-istra-iva-e
 
 Otvorite mapu u **VS Codeu** i pokrenite Claude Code panel (ili u terminalu utipkajte `claude`).
 
-## Korak 1 — zatražite promjenu (prvo plan)
+## Korak 1, zatražite promjenu (prvo plan)
 
 Recite, običnim jezikom:
 
 > *„Dodaj završni slajd 'Hvala' u špicu, pa je renderiraj.”*
 
-Gledajte kako Claude **prvo pokaže plan** i čeka vaše odobrenje — još ništa nije dirao.
+Gledajte kako Claude **prvo pokaže plan** i čeka vaše odobrenje, još ništa nije dirao.
 
-## Korak 2 — odobrite i gledajte izvođača
+## Korak 2, odobrite i gledajte izvođača
 
 Odobrite plan. Claude uredi `slides/talk.qmd`, pokrene `/render` i **provjeri** da je HTML stvarno
 nastao prije nego javi „gotovo”. (Bez Quarta `/render` pošteno STANE i kaže da ga instalirate.)
 
-## Korak 3 — pregled (suparnička petlja)
+## Korak 3, pregled (suparnička petlja)
 
-Pokrenite:
+Pokrenite ovu naredbu.
 
 ```
 /review-deck
 ```
 
-Kritičar (`deck-critic`) i specijalist za publiku (`audience-reviewer`) — oba **samo čitaju** — nađu
+Kritičar (`deck-critic`) i specijalist za publiku (`audience-reviewer`), oba **samo čitaju**, nađu
 greške i daju ocjenu. Ispravljač (`deck-fixer`) popravi najgore prvo, pa kritičar **ponovno** provjeri.
-*Trik:* prije pokretanja namjerno ubacite tvrdnju bez pokrića i gledajte kako je petlja uhvati.
+*Trik.* Prije pokretanja namjerno ubacite tvrdnju bez pokrića i gledajte kako je petlja uhvati.
 
-## Korak 4 — spremanje uz odobrenje
+## Korak 4, spremanje uz odobrenje
 
 Pokrenite `/commit`. Claude prvo pita prije nego išta spremi (`git init` / `commit`). **Vi ostajete glavni.**
 
 ## Što ste vidjeli
 
-Taj jedan krug — **plan → djeluj → provjeri → pregledaj → vaše odobrenje** — *jest* cijeli radni okvir
+Taj jedan krug, **plan, djeluj, provjeri, pregledaj, pa vaše odobrenje**, *jest* cijeli radni okvir
 u malom, na vašem stvarnom projektu, a ne na igrački.

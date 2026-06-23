@@ -57,7 +57,7 @@ Ovaj jedan slajd je teza. Ne žurite. Iskorak istovremeno mijenja tri stvari, ne
 
 ## Ovo je vama poznata vrsta problema {.smaller}
 
-Ne razmišljajte o "pametnijem chatbotu". Razmislite o onome što ionako svakodnevno radite.
+Ne razmišljajte o „pametnijem chatbotu". Razmislite o onome što ionako svakodnevno radite.
 
 ::: {.fragment}
 **Brifirate i nadzirete asistenta (RA)** te provjeravate njegov rad.
@@ -137,7 +137,7 @@ Pet slojeva obavlja sav posao, a svaki je **stvarna datoteka**.
 |---|---|
 | **Ustav**, stalna kućna pravila koja se čitaju svake sesije | `CLAUDE.md` · `AGENTS.md` |
 | **Priručnici na zahtjev** koji se pojave samo kad su relevantni | `.claude/rules/*.md` |
-| **Imenovani gumbi (vještine / skills)**: `/render`, `/proofread`, `/commit` | `.claude/skills/*/SKILL.md` |
+| **Imenovani gumbi (vještine / skills)**, `/render`, `/proofread`, `/commit` | `.claude/skills/*/SKILL.md` |
 | **Uski specijalisti**, svaki provjerava jednu stvar | `.claude/agents/*.md` |
 | **Dozvole i alarmi** koji se automatski okidaju *(opciono za početak)* | `.claude/settings.json` + hooks |
 
@@ -145,7 +145,7 @@ Pet slojeva obavlja sav posao, a svaki je **stvarna datoteka**.
 `CLAUDE.md` je Claudeov oblik, a sličan obrazac postoji u OpenAI-jevim alatima (`AGENTS.md`, npr. Codex CLI). Ispod svega je **memorija koja preživljava** kroz sesije.
 :::
 
-## Ideja 1: specijalisti pobjeđuju generalista {.smaller}
+## Ideja 1, specijalisti pobjeđuju generalista {.smaller}
 
 Tražite li od jednog asistenta da istovremeno pazi na gramatiku, raspored, matematiku **i** kôd, sve četvero obavi osrednje.
 
@@ -161,7 +161,7 @@ Kao u istraživačkom timu, jedan RA čisti podatke, drugi provjerava kodiranje,
 Na špici od 140 slajdova jedan agent uhvati indeks koji se tiho promijenio, drugi uhvati preklapajuću oznaku na dijagramu, a treći uhvati skriptu koja je vrtjela *k = 10* dok slajd kaže *k = 5*.
 :::
 
-## Ideja 2: suparnička petlja (adversarial loop) {.smaller}
+## Ideja 2, suparnička petlja (adversarial loop) {.smaller}
 
 Ovo je srce dizajna.
 
@@ -178,7 +178,7 @@ Kritičar zatim ponovno čita, i tako u krug, do čistog prolaza.
 :::
 
 ::: {.fragment}
-Kritičar ne može popravljati, pa nema razloga biti popustljiv. Ispravljač ne može potpisati, pa ne može prerano proglasiti pobjedu. **To je naprosto recenzija (peer review)**, i ubija najčešći AI promašaj: veselo objaviti "izgleda dobro" kad nije.
+Kritičar ne može popravljati, pa nema razloga biti popustljiv. Ispravljač ne može potpisati, pa ne može prerano proglasiti pobjedu. **To je naprosto recenzija (peer review)**, i ubija najčešći AI promašaj, a to je veselo objaviti „izgleda dobro" kad nije.
 :::
 
 ## Kako se to povezuje {.smaller}
@@ -194,7 +194,7 @@ Blokovi nisu zasebni. To su **datoteke koje surađuju** na jednom zadatku, a pos
 :::
 
 ::: {.fragment}
-**Na kraju ocjena.** Dobijete ocjenu **0–100** i kratak sažetak, pa **vi odobrite spremanje** naredbom `/commit`.
+**Na kraju ocjena.** Dobijete ocjenu **od 0 do 100** i kratak sažetak, pa **vi odobrite spremanje** naredbom `/commit`.
 :::
 
 ::: {.fragment}
@@ -278,7 +278,7 @@ Može poduzeti **pogrešnu radnju**, pa visokorizični koraci čekaju vaše odob
 :::
 
 ::: {.fragment}
-**Regulator autonomije nije prekidač.** Visokorizični koraci, poput brisanja datoteke, commita ili slanja, stanu i čekaju vaše "da", a niskorizični teku sami.
+**Regulator autonomije nije prekidač.** Visokorizični koraci, poput brisanja datoteke, commita ili slanja, stanu i čekaju vaše „da", a niskorizični teku sami.
 :::
 
 ::: {.fragment}
@@ -334,7 +334,7 @@ Ova špica je **obična tekstualna datoteka** u mapi.
 :::
 
 ::: {.fragment}
-Medij *jest* poruka. Ovako izgleda "rad koji je napisao agent i koji je ponovljiv".
+Medij *jest* poruka. Ovako izgleda „rad koji je napisao agent i koji je ponovljiv".
 :::
 
 ## Ako zaboravite sve ostalo {.smaller}
@@ -376,7 +376,7 @@ Razgovarate s *istim* AI-jem kroz tri sučelja, a isti obrazac vrijedi i za Code
 :::
 
 ::: {.fragment}
-Agenti, vještine i pravila žive u zadnja dva sučelja. Tu je "gradilište". *(Detalji su u `radionica/01-postavljanje/`.)*
+Agenti, vještine i pravila žive u zadnja dva sučelja. Tu je „gradilište". *(Detalji su u `radionica/01-postavljanje/`.)*
 :::
 
 ## Što vam treba i koliko košta {.smaller}
@@ -388,7 +388,7 @@ Preduvjeti su **Claude Code, Node.js i git**, a po potrebi Quarto i R. *(Cijene 
 :::
 
 ::: {.fragment}
-Napredni planovi stoje oko **100–200 $ mjesečno**, za intenzivan rad.
+Napredni planovi stoje oko **100 do 200 $ mjesečno**, za intenzivan rad.
 :::
 
 ::: {.fragment}
@@ -402,7 +402,7 @@ Odaberite **jedan dosadan, mehanički zadatak** koji biste dali asistentu prve g
 :::
 
 ::: {.fragment}
-Napišite ga kao **specifikaciju zadatka (task spec)**, s ciljem, ograničenjima i opisom kako izgleda "gotovo".
+Napišite ga kao **specifikaciju zadatka (task spec)**, s ciljem, ograničenjima i opisom kako izgleda „gotovo".
 :::
 
 ::: {.fragment}
@@ -413,7 +413,7 @@ Pustite agenta da ga isplanira, **odobrite plan**, pa pregledajte rezultat prema
 Taj jedan pokus nauči vas više od bilo kojeg slajda. *(Komplet resursa čine pojmovnik, kartica praga kvalitete i podsjetnik.)*
 :::
 
-## Empirijski primjer: uzmite s GitHuba {.smaller}
+## Empirijski primjer, uzmite s GitHuba {.smaller}
 
 Ovo nije teorija. Klonirajte repozitorij i pokrenite dva mala pokusa.
 
@@ -425,7 +425,7 @@ git clone https://github.com/lusiki/AI-radionica-za-istra-iva-e.git
 Otvorite mapu u VS Codeu, ili pokrenite `claude` u terminalu, i krenite. *(Korak po korak je u `radionica/02-primjeri/`.)*
 :::
 
-## Pokus 1: renderiraj i provjeri {.smaller}
+## Pokus 1, renderiraj i provjeri {.smaller}
 
 Utipkate `/render`.
 
@@ -434,14 +434,14 @@ AI pokrene `quarto render`, pa **provjeri da `slides/talk.html` stvarno postoji.
 :::
 
 ::: {.fragment}
-Tek tada javi "gotovo". Otvorite HTML i špica je tu.
+Tek tada javi „gotovo". Otvorite HTML i špica je tu.
 :::
 
 ::: {.fragment}
 **Poanta** je da agent ne tvrdi uspjeh dok ga nije provjerio. Jedna naredba daje ponovljiv rezultat. *(Bez Quarta `/render` pošteno STANE.)*
 :::
 
-## Pokus 2: suparnička petlja {.smaller}
+## Pokus 2, suparnička petlja {.smaller}
 
 Utipkate `/review-deck`.
 
@@ -450,7 +450,7 @@ Agenti `deck-critic` i `audience-reviewer` samo čitaju, ne mijenjaju.
 :::
 
 ::: {.fragment}
-`audience-reviewer` pazi da poruka ostane primjerena publici, a izlaz su nalazi po težini i ocjena **0–100**.
+`audience-reviewer` pazi da poruka ostane primjerena publici, a izlaz su nalazi po težini i ocjena **od 0 do 100**.
 :::
 
 ::: {.fragment}

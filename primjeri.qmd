@@ -16,21 +16,21 @@ format:
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 ---
 
-Ovo je mali skup primjera — *kostur* svakog gradivnog bloka, s engleskim ključevima i hrvatskim
+Ovo je mali skup primjera, *kostur* svakog gradivnog bloka, s engleskim ključevima i hrvatskim
 komentarima. Kliknite pločicu da skočite na primjer. Stvarne, radne verzije su u repozitoriju
 (`CLAUDE.md`, `.claude/agents/`, `.claude/rules/`, `.claude/skills/`).
 
 ::: {.tiles}
-<a class="tile" href="#ustav"><span class="tile-k">CLAUDE.md</span><span class="tile-d">Ustav — stalna pravila projekta</span></a>
+<a class="tile" href="#ustav"><span class="tile-k">CLAUDE.md</span><span class="tile-d">Ustav, stalna pravila projekta</span></a>
 <a class="tile" href="#agent"><span class="tile-k">Agent</span><span class="tile-d">Specijalist koji provjerava jednu stvar</span></a>
 <a class="tile" href="#pravilo"><span class="tile-k">Pravilo (rule)</span><span class="tile-d">Priručnik koji se učitava po putanji</span></a>
 <a class="tile" href="#vjestina"><span class="tile-k">Vještina (skill)</span><span class="tile-d">Naredba s koracima</span></a>
 :::
 
-## CLAUDE.md — ustav {#ustav}
+## CLAUDE.md, ustav {#ustav}
 
-Vitka stranica (~120 redaka) koju Claude čita na početku svake sesije: kratke direktive i pokazivači,
-**ne** opširna dokumentacija.
+Vitka stranica (~120 redaka) koju Claude čita na početku svake sesije. To su kratke direktive i
+pokazivači, **ne** opširna dokumentacija.
 
 ```markdown
 # CLAUDE.md — ustav projekta
@@ -55,11 +55,11 @@ Vitka stranica (~120 redaka) koju Claude čita na početku svake sesije: kratke 
 - Prezentacija objavljena na GitHub Pages.
 ```
 
-*Stvarni primjer:* [`CLAUDE.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/CLAUDE.md)
+*Stvarni primjer.* [`CLAUDE.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/CLAUDE.md)
 
-## Agent — specijalist {#agent}
+## Agent, specijalist {#agent}
 
-Živi u `.claude/agents/<ime>.md`. Zaglavlje (YAML) postavlja model i alate; tekst su upute agentu.
+Živi u `.claude/agents/<ime>.md`. Zaglavlje (YAML) postavlja model i alate, a tekst su upute agentu.
 Popis alata bez `Edit`/`Write` čini agenta **samo-za-čitanje** (kritičar koji ne može mijenjati datoteke).
 
 ```markdown
@@ -75,11 +75,11 @@ Provjeri: (1) sadržaj, (2) jasnoću, (3) dosljednost pojmova, (4) prelijevanje 
 Izvijesti po težini (Kritično / Veliko / Malo) i daj ocjenu 0–100.
 ```
 
-*Stvarni primjer:* [`.claude/agents/deck-critic.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/agents/deck-critic.md)
+*Stvarni primjer.* [`.claude/agents/deck-critic.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/agents/deck-critic.md)
 
-## Pravilo (rule) — priručnik {#pravilo}
+## Pravilo (rule), priručnik {#pravilo}
 
-Živi u `.claude/rules/<ime>.md`. Polje `paths:` čini ga **vezanim uz putanju** — učitava se samo kad
+Živi u `.claude/rules/<ime>.md`. Polje `paths:` čini ga **vezanim uz putanju**. Učitava se samo kad
 Claude dotakne datoteku koja odgovara. Bez `paths:` pravilo je "uvijek uključeno".
 
 ```markdown
@@ -94,11 +94,11 @@ paths: ['**/*.qmd']                # učitava se SAMO na .qmd datotekama
 - "Gotovo" znači *renderirano i provjereno*, nikad "izgleda dobro u glavi".
 ```
 
-*Stvarni primjer:* [`.claude/rules/quality-gates.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/rules/quality-gates.md)
+*Stvarni primjer.* [`.claude/rules/quality-gates.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/rules/quality-gates.md)
 
-## Vještina (skill) — gumb {#vjestina}
+## Vještina (skill), gumb {#vjestina}
 
-Živi u `.claude/skills/<ime>/SKILL.md`. Zaglavlje opisuje *kad* se koristi; tijelo su numerirani koraci.
+Živi u `.claude/skills/<ime>/SKILL.md`. Zaglavlje opisuje *kad* se koristi, a tijelo su numerirani koraci.
 Pozivate je s `/<ime>` ili je Claude sam odabere iz vašeg zahtjeva na običnom jeziku.
 
 ```markdown
@@ -115,8 +115,8 @@ argument-hint: "[datoteka .qmd — zadano slides/talk.qmd]"
 4. Ako je render pao: pročitaj grešku, popravi, ponovno renderiraj.
 ```
 
-*Stvarni primjer:* [`.claude/skills/render/SKILL.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/skills/render/SKILL.md)
+*Stvarni primjer.* [`.claude/skills/render/SKILL.md`](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/.claude/skills/render/SKILL.md)
 
 ---
 
-Više o tome kako se svaki blok uklapa: [mapa za učenje](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/radionica/00-razumijevanje/mapa-okvira.md).
+Više o tome kako se svaki blok uklapa pročitajte u [mapi za učenje](https://github.com/lusiki/AI-radionica-za-istra-iva-e/blob/main/radionica/00-razumijevanje/mapa-okvira.md).
